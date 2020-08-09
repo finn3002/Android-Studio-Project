@@ -21,7 +21,7 @@ public class AddActivity extends Activity {
     Button profilebutton;
     Button chatbutton;
     Button addbutton;
-    TextView totalcar;
+    TextView remainingresult,totaldollar;
 
 
 
@@ -77,12 +77,15 @@ public class AddActivity extends Activity {
             }
         });
 //        test=20.0;
-    totalcar = findViewById(R.id.totalresult);
+        remainingresult = findViewById(R.id.remainingresult);
+        totaldollar=findViewById(R.id.moneyresult);
 //    gv.setCal(140.0);
-    totalcar.setText((nf.format( gv.getCal())));
+        remainingresult.setText((nf.format( gv.getCal())));
+        totaldollar.setText((nf.format( gv.getDollar())));
 
 
 
 
     }
 }
+

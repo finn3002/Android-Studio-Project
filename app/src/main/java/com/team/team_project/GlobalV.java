@@ -9,10 +9,12 @@ public class GlobalV extends Application {
     private double carbonhydrate;
     private double protein;
     private double fat;
+    private int dollar;
     @Override
     public void onCreate() {
         super.onCreate();
         setCal(CAL);
+        setDollar(Dollar);
 
     }
     public Double getCal() {
@@ -28,6 +30,9 @@ public class GlobalV extends Application {
     public Double getFat(){
         return fat;
     };
+    public int getDollar(){
+        return dollar;
+    }
     public void setCal(Double cal) {
         this.cal = cal;
     }
@@ -40,7 +45,11 @@ public class GlobalV extends Application {
     public void setFat(Double fat) {
         this.fat = fat;
     }
+    public void setDollar(int dollar) {
+        this.dollar = dollar;
+    }
     private static final Double CAL = 100.0;
+    private static final int Dollar =0;
 //    初始值
 }
 

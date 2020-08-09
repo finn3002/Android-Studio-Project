@@ -191,10 +191,10 @@
         android:id="@+id/remainingresult"
         android:layout_width="64dp"
         android:layout_height="21dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="96dp"
         android:textSize="55px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -205,7 +205,7 @@
         android:layout_marginTop="144dp"
         android:textSize="55px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 

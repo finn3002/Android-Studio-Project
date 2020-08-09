@@ -430,10 +430,10 @@
         android:layout_width="180dp"
         android:layout_height="157dp"
 
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="316dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="@+id/grayback">
 
         <RadioButton
