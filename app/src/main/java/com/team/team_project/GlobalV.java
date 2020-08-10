@@ -1,6 +1,7 @@
 package com.team.team_project;
 
 import android.app.Application;
+import android.view.View;
 
 import java.util.DuplicateFormatFlagsException;
 
@@ -8,15 +9,20 @@ public class GlobalV extends Application {
     private double cal;
     private double carbonhydrate;
     private double protein;
-    private double fat;
-    private int dollar;
+    private double fat,height,weight;
+    private int dollar,age;
+
     @Override
     public void onCreate() {
         super.onCreate();
         setCal(CAL);
         setDollar(Dollar);
+        setAge(AGE);
+        setHeight(HEIGHT);
+        setWeight(WEIGHT);
 
     }
+
     public Double getCal() {
 
         return cal;
@@ -30,8 +36,17 @@ public class GlobalV extends Application {
     public Double getFat(){
         return fat;
     };
+    public Double getHeight(){
+        return height;
+    };
+    public Double getWeight(){
+        return weight;
+    };
     public int getDollar(){
         return dollar;
+    }
+    public int getAge(){
+        return age;
     }
     public void setCal(Double cal) {
         this.cal = cal;
@@ -45,11 +60,25 @@ public class GlobalV extends Application {
     public void setFat(Double fat) {
         this.fat = fat;
     }
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
     public void setDollar(int dollar) {
         this.dollar = dollar;
     }
-    private static final Double CAL = 100.0;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    //    初始值
+    private static final double CAL = 100.0;
     private static final int Dollar =0;
-//    初始值
+    private static final int AGE =21;
+    private static final double HEIGHT =170.0;
+    private static final double WEIGHT =56.5;
+
 }
 

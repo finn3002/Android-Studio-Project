@@ -20,11 +20,11 @@ public class PageActivity extends Activity {
     Button tablebutton;
     Button foodbutton;
     Button chatbutton;
-    EditText fieldheight, fieldweight, fieldage;
+    TextView fieldheight, fieldweight, fieldage;
     RadioGroup sex, work;
     RadioButton no, low, active, high;
     TextView result,carresult,porresult,fatresult;
-    Double TDEE,TDEEcar,TDEEpor,TDEEfat;
+
 
     private GlobalV gv;
     @Override
@@ -44,9 +44,9 @@ public class PageActivity extends Activity {
         low = findViewById(R.id.low);
         active = findViewById(R.id.active);
         high = findViewById(R.id.highactive);
-        fieldheight = (EditText) findViewById(R.id.edheight);
-        fieldweight = (EditText) findViewById(R.id.edweight);
-        fieldage = (EditText) findViewById(R.id.editage);
+        fieldheight = (TextView) findViewById(R.id.edheight);
+        fieldweight = (TextView) findViewById(R.id.edweight);
+        fieldage = (TextView) findViewById(R.id.editage);
         result = (TextView) findViewById(R.id.result);
         carresult =(TextView)  findViewById(R.id.carresult);
         porresult = (TextView) findViewById(R.id.portineresult);
@@ -87,25 +87,28 @@ public class PageActivity extends Activity {
                 startActivity(intent);
             }
         });
-//        gv.setCal(160.0);
-//        result.setText((nf.format( gv.getCal())));
+
+        fieldheight.setText((nf.format( gv.getHeight())));
+        fieldweight.setText((nf.format( gv.getWeight())));
+        fieldweight.setText((nf.format( gv.getWeight())));
+        fieldage.setText((nf.format( gv.getAge())));
     }
 
     public View.OnClickListener calcBMI = new View.OnClickListener() {
 
         public void onClick(View v) {
 
-//            GlobalVariable gv = (GlobalVariable)getApplicationContext();
+
             DecimalFormat nf = new DecimalFormat("0");
             //身高
-            double height = Double.parseDouble(fieldheight.getText().toString());
+//            double height = Double.parseDouble(fieldheight.getText().toString());
             //體重
-            double weight = Double.parseDouble(fieldweight.getText().toString());
+//            double weight = Double.parseDouble(fieldweight.getText().toString());
             //年齡
-            int age = Integer.parseInt(fieldage.getText().toString());
+//            int age = Integer.parseInt(fieldage.getText().toString());
 
-            double BMRboy = 66 + (13.7 * weight) + (5.0 * height) - (6.8 * age);
-            double BMRgirl = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+            double BMRboy = 66 + (13.7 * gv.getWeight()) + (5.0 *  gv.getHeight()) - (6.8 * gv.getAge());
+            double BMRgirl = 655 + (9.6 * gv.getWeight()) + (1.8 *  gv.getHeight()) - (4.7 * gv.getAge());
 
             if (sex.getCheckedRadioButtonId() == R.id.boy) {
 

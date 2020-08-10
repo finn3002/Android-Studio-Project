@@ -141,13 +141,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="143dp"
-        android:layout_height="175dp"
+        android:layout_width="137dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/userpic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/userpic" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gender"
@@ -202,7 +203,7 @@
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="108dp"
         android:text="歲"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.712"
@@ -261,29 +262,29 @@
         app:layout_constraintStart_toEndOf="@+id/cal"
         app:layout_constraintTop_toBottomOf="@+id/everyday" />
 
-    <EditText
+    <TextView
         android:id="@+id/editage"
         android:layout_width="42dp"
         android:layout_height="21dp"
         android:layout_marginTop="68dp"
         android:background="@drawable/grayback"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:textColor="@color/darkblue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toEndOf="@+id/age2"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 
-    <EditText
+    <TextView
         android:id="@+id/edheight"
         android:layout_width="51dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/grayback"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:textColor="@color/darkblue"
         app:layout_constraintEnd_toStartOf="@+id/weight"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toEndOf="@+id/height2"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -298,16 +299,16 @@
         app:layout_constraintStart_toEndOf="@+id/edheight"
         app:layout_constraintTop_toBottomOf="@+id/age2" />
 
-    <EditText
+    <TextView
         android:id="@+id/edweight"
         android:layout_width="62dp"
         android:layout_height="30dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/grayback"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:textColor="@color/darkblue"
         app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/weight"
         app:layout_constraintTop_toBottomOf="@+id/editage" />
 
@@ -315,11 +316,11 @@
         android:id="@+id/kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="92dp"
         android:text="公斤"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/edweight" />
 
     <TextView
@@ -430,10 +431,10 @@
         android:layout_width="180dp"
         android:layout_height="157dp"
 
-        android:layout_marginBottom="316dp"
+        android:layout_marginBottom="224dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="@+id/grayback">
 
         <RadioButton
@@ -509,5 +510,5 @@
 <!--        app:layout_constraintHorizontal_bias="0.449"-->
 <!--        app:layout_constraintStart_toEndOf="@+id/boy"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/user" />-->
-
+<!--    android:inputType="numberDecimal"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

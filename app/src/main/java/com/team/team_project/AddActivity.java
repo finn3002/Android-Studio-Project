@@ -26,7 +26,7 @@ public class AddActivity extends Activity {
     Button profilebutton;
     Button chatbutton;
     Button addbutton;
-    TextView totalcar;
+    TextView remainingresult,totalmoney;
     //ListView
     private MyAdapter adapter;
     private ArrayList<foodSet> foodsets= new ArrayList<>();
@@ -85,24 +85,33 @@ public class AddActivity extends Activity {
             }
         });
 //        test=20.0;
-    totalcar = findViewById(R.id.totalresult);
-//    gv.setCal(140.0);
-    totalcar.setText((nf.format( gv.getCal())));
+        remainingresult = findViewById(R.id.remainingresult);
+        totalmoney=findViewById(R.id.moneyresult);
 
+    gv.setDollar(125);
+        remainingresult.setText((nf.format( gv.getCal())));
+        totalmoney.setText((nf.format( gv.getDollar())));
     //recyclerView Set
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(linearLayoutManager); //設定 LayoutManager
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
-        foodsets.add(new foodSet("蛋糕",1234,5.5));
+        foodsets.add(new foodSet("蛋糕",125,350.0));
+        foodsets.add(new foodSet("豆腐",25,120.0));
+        foodsets.add(new foodSet("番茄",60,88.0));
+        foodsets.add(new foodSet("糕餅",150,425.0));
+        foodsets.add(new foodSet("蛋餅",25,240.0));
+
+
+
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
+//        foodsets.add(new foodSet("蛋糕",1234,5.5));
 
 
         adapter= new MyAdapter(foodsets);

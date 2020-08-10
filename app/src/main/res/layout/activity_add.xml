@@ -127,7 +127,7 @@
         android:id="@+id/cal2"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="84dp"
         android:text="kcal"
         android:textColor="#FFFFFF"
         android:textSize="40px"
@@ -140,7 +140,7 @@
         android:id="@+id/dollor"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="136dp"
         android:text="元"
         android:textColor="#FFFFFF"
         android:textSize="40px"
@@ -181,7 +181,7 @@
         android:layout_height="21dp"
         android:layout_marginTop="32dp"
         android:textColor="#FFFFFF"
-        android:textSize="55px"
+        android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/total"
@@ -191,8 +191,9 @@
         android:id="@+id/remainingresult"
         android:layout_width="64dp"
         android:layout_height="21dp"
-        android:layout_marginTop="96dp"
-        android:textSize="55px"
+        android:layout_marginTop="84dp"
+        android:textColor="#FFFFFF"
+        android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/total"
@@ -202,8 +203,9 @@
         android:id="@+id/moneyresult"
         android:layout_width="64dp"
         android:layout_height="21dp"
-        android:layout_marginTop="144dp"
-        android:textSize="55px"
+        android:layout_marginTop="136dp"
+        android:textColor="#FFFFFF"
+        android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
         app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toEndOf="@+id/total"
@@ -224,10 +226,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="374dp"
-        android:layout_height="351dp"
+        android:layout_width="375dp"
+        android:layout_height="328dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/darkblue"
         app:layout_constraintEnd_toEndOf="@+id/cal2"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/word"
         app:layout_constraintTop_toBottomOf="@+id/word" />
 
@@ -235,12 +239,13 @@
         android:id="@+id/additem"
         android:layout_width="110dp"
         android:layout_height="28dp"
+        android:layout_marginTop="184dp"
         android:background="@drawable/loginbar"
         android:text="新增"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toTopOf="@+id/word" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,14 @@
 
 
     <View
-        android:layout_width="533dp"
+        android:id="@+id/view"
+        android:layout_width="410dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/foodNm" />
@@ -23,35 +24,70 @@
         android:id="@+id/foodNm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:text="食物名稱"
-        android:textColor="#FF9800"
+        android:textColor="#FFFFFF"
+        android:textSize="80px"
+        android:textStyle="bold"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
 
     <TextView
         android:id="@+id/foodPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
         android:text="食物價格"
-        android:textColor="#FF9800"
-        app:layout_constraintBottom_toBottomOf="@+id/foodCal"
-        app:layout_constraintStart_toEndOf="@+id/foodCal"
-        app:layout_constraintTop_toTopOf="@+id/foodCal" />
+        android:textColor="#FFFFFF"
+        android:textSize="55px"
+        app:layout_constraintEnd_toStartOf="@+id/foodCal"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toEndOf="@+id/foodNm"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
         android:id="@+id/foodCal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginBottom="16dp"
         android:text="食物熱量"
-        android:textColor="#FF9800"
-        app:layout_constraintBottom_toBottomOf="@+id/foodNm"
+        android:textColor="@color/yellow"
+        android:textSize="55px"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/foodNm" />
+
+    <TextView
+        android:id="@+id/cal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="kcal"
+        android:textColor="@color/yellow"
+        android:textSize="40px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/foodCal"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/dollar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="$"
+        android:textColor="#FFFFFF"
+        android:textSize="55px"
+        app:layout_constraintEnd_toStartOf="@+id/foodPrice"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/foodNm"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
