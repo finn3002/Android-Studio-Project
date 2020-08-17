@@ -17,31 +17,19 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.logging.Formatter;
-
-
 public class AddActivity extends Activity {
-    Button tablebutton;
-    Button foodbutton;
-    Button profilebutton;
-    Button chatbutton;
-    Button addbutton;
-    TextView remainingresult,totalmoney;
+    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,cakedetail;
+    TextView remainingresult,totalmoney,totalresult;
     //ListView
     private MyAdapter adapter;
     private ArrayList<foodSet> foodsets= new ArrayList<>();
     private RecyclerView recyclerView;
-
-
-
-
     private GlobalV gv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-//        GV g= (GV) getApplicationContext();
          gv= (GlobalV) getApplication();
 
         tablebutton  = findViewById(R.id.table);
@@ -84,39 +72,39 @@ public class AddActivity extends Activity {
                 startActivity(intent);
             }
         });
-//        test=20.0;
         remainingresult = findViewById(R.id.remainingresult);
         totalmoney=findViewById(R.id.moneyresult);
-
-    gv.setDollar(125);
+        totalresult=findViewById(R.id.totalresult);
+        gv.setDollar(150);
+        gv.setAddcal(470.0);
+        gv.setCal((gv.getCal()-gv.getAddcal()));
         remainingresult.setText((nf.format( gv.getCal())));
         totalmoney.setText((nf.format( gv.getDollar())));
+        totalresult.setText((nf.format( gv.getAddcal())));
+
     //recyclerView Set
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
-        recyclerView.setLayoutManager(linearLayoutManager); //設定 LayoutManager
-        foodsets.add(new foodSet("蛋糕",125,350.0));
-        foodsets.add(new foodSet("豆腐",25,120.0));
-        foodsets.add(new foodSet("番茄",60,88.0));
-        foodsets.add(new foodSet("糕餅",150,425.0));
-        foodsets.add(new foodSet("蛋餅",25,240.0));
+        recyclerView.setLayoutManager(linearLayoutManager);
 
-
-
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-//        foodsets.add(new foodSet("蛋糕",1234,5.5));
-
-
+        //設定 LayoutManager
+        foodsets.add(new foodSet("藍莓蛋糕",125,350.0));
+        foodsets.add(new foodSet("蛋餅",25,120.0));
         adapter= new MyAdapter(foodsets);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
+
+        //蛋糕詳細資料
+        cakedetail  = findViewById(R.id.cakedetail);
+        cakedetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this,Cake.class);
+                startActivity(intent);
+            }
+        });
 
 
 

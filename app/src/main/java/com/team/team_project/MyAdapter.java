@@ -1,5 +1,6 @@
 package com.team.team_project;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
         foodsets=foodset;
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder
     {
         private TextView foodNm;
@@ -33,7 +35,9 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
 
 
         }
+
     }
+
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_row,parent,false);
@@ -59,3 +63,4 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
 
 
 }
+

@@ -115,11 +115,6 @@ public class PageActivity extends Activity {
                 switch (work.getCheckedRadioButtonId()) {
 
                     case R.id.no:
-//                         TDEE =BMRboy * 1.2;
-                        // TDEEcar = (TDEE*0.65)/4;
-//                         TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
-
                         gv.setCal((BMRboy * 1.2));
                         gv.setCarbonhydrate((gv.getCal() * 0.65) / 4);
                         gv.setProtein((gv.getCal() * 0.125 / 4));
@@ -131,71 +126,36 @@ public class PageActivity extends Activity {
                         porresult.setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
 
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
-
-
                     case R.id.low:
-
-
                         gv.setCal(BMRboy * 1.375);
                         gv.setCarbonhydrate((gv.getCal() * 0.65) / 4);
                         gv.setProtein((gv.getCal() * 0.125 / 4));
                         gv.setFat((gv.getCal() * 0.225 / 9));
-//                        TDEE =BMRboy * 1.375;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
-
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult.setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
-
                         break;
                     case R.id.active:
                         gv.setCal(BMRboy * 1.55);
                         gv.setCarbonhydrate((gv.getCal() * 0.65) / 4);
                         gv.setProtein((gv.getCal() * 0.125 / 4));
                         gv.setFat((gv.getCal() * 0.225 / 9));
-//                        TDEE =BMRboy * 1.55;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
 
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult.setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
                     case R.id.highactive:
                         gv.setCal(BMRboy * 1.725);
                         gv.setCarbonhydrate((gv.getCal() * 0.65) / 4);
                         gv.setProtein((gv.getCal() * 0.125 / 4));
                         gv.setFat((gv.getCal() * 0.225 / 9));
-//                        TDEE =BMRboy * 1.75;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult.setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()))  ;
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
 
                 }
@@ -207,82 +167,42 @@ public class PageActivity extends Activity {
                         gv.setCarbonhydrate((gv.getCal()*0.65)/4);
                         gv.setProtein((gv.getCal()*0.125/4));
                         gv.setFat((gv.getCal()*0.225/9));
-//                        TDEE =BMRgirl * 1.2;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
 
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult.setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
                     case R.id.low:
                         gv.setCal( BMRgirl * 1.375);
                         gv.setCarbonhydrate((gv.getCal()*0.65)/4);
                         gv.setProtein((gv.getCal()*0.125/4));
                         gv.setFat((gv.getCal()*0.225/9));
-//                        TDEE =BMRgirl * 1.375;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
 
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult .setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
                     case R.id.active:
                         gv.setCal( BMRgirl * 1.55);
                         gv.setCarbonhydrate((gv.getCal()*0.65)/4);
                         gv.setProtein((gv.getCal()*0.125/4));
                         gv.setFat((gv.getCal()*0.225/9));
-
-//                        TDEE =BMRgirl * 1.55;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
-
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult .setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
                     case R.id.highactive:
                         gv.setCal( BMRgirl * 1.725);
                         gv.setCarbonhydrate((gv.getCal()*0.65)/4);
                         gv.setProtein((gv.getCal()*0.125/4));
                         gv.setFat((gv.getCal()*0.225/9));
-
-//                        TDEE =BMRgirl * 1.725;
-//                        TDEEcar = (TDEE*0.65)/4;
-//                        TDEEpor = (TDEE*0.125)/4;
-//                        TDEEfat = (TDEE*0.225)/9;
-//
                         result.setText(nf.format(gv.getCal()));
                         carresult.setText(nf.format(gv.getCarbohydrate()));
                         porresult .setText(nf.format(gv.getProtein()));
                         fatresult.setText(nf.format(gv.getFat()));
-
-//                        result.setText(nf.format(TDEE));
-//                        carresult.setText(nf.format(TDEEcar));
-//                        porresult.setText(nf.format(TDEEpor));
-//                        fatresult.setText(nf.format(TDEEfat));
                         break;
                 }
             }

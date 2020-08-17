@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.DuplicateFormatFlagsException;
 
 public class GlobalV extends Application {
-    private double cal;
+    private double cal,addcal;
     private double carbonhydrate;
     private double protein;
     private double fat,height,weight;
@@ -16,6 +16,7 @@ public class GlobalV extends Application {
     public void onCreate() {
         super.onCreate();
         setCal(CAL);
+        setAddcal(ADDCAL);
         setDollar(Dollar);
         setAge(AGE);
         setHeight(HEIGHT);
@@ -26,6 +27,10 @@ public class GlobalV extends Application {
     public Double getCal() {
 
         return cal;
+    }
+    public Double getAddcal() {
+
+        return addcal;
     }
     public Double getCarbohydrate(){
         return carbonhydrate;
@@ -51,6 +56,9 @@ public class GlobalV extends Application {
     public void setCal(Double cal) {
         this.cal = cal;
     }
+    public void setAddcal(Double addcal) {
+        this.addcal = addcal;
+    }
     public void setCarbonhydrate(Double carbonhydrate) {
         this.carbonhydrate = carbonhydrate;
     }
@@ -74,7 +82,8 @@ public class GlobalV extends Application {
     }
 
     //    初始值
-    private static final double CAL = 100.0;
+    private static final double CAL = 0.0;
+    private static final double ADDCAL=0.0;
     private static final int Dollar =0;
     private static final int AGE =21;
     private static final double HEIGHT =170.0;
