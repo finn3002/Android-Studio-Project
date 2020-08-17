@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 public class AddActivity extends Activity {
-    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,cakedetail;
+    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,cakedetail,cheesedetail;
     TextView remainingresult,totalmoney,totalresult;
     //ListView
     private MyAdapter adapter;
@@ -75,8 +75,8 @@ public class AddActivity extends Activity {
         remainingresult = findViewById(R.id.remainingresult);
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
-        gv.setDollar(150);
-        gv.setAddcal(470.0);
+        gv.setDollar(160);
+        gv.setAddcal(730.0);
         gv.setCal((gv.getCal()-gv.getAddcal()));
         remainingresult.setText((nf.format( gv.getCal())));
         totalmoney.setText((nf.format( gv.getDollar())));
@@ -91,7 +91,7 @@ public class AddActivity extends Activity {
 
         //設定 LayoutManager
         foodsets.add(new foodSet("藍莓蛋糕",125,350.0));
-        foodsets.add(new foodSet("蛋餅",25,120.0));
+        foodsets.add(new foodSet("起司蛋餅",35,380.0));
         adapter= new MyAdapter(foodsets);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
@@ -102,6 +102,15 @@ public class AddActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddActivity.this,Cake.class);
+                startActivity(intent);
+            }
+        });
+        //起司蛋餅詳細資料
+        cheesedetail  = findViewById(R.id.cheesedetail);
+        cheesedetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this,Cheese.class);
                 startActivity(intent);
             }
         });

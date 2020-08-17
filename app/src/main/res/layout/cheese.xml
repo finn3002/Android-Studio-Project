@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Cheese">
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="458dp"
+        android:layout_height="744dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <TextView
+        android:id="@+id/detailback1"
+        android:layout_width="412dp"
+        android:layout_height="185dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/detailback1"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/detailback"
+        android:layout_width="415dp"
+        android:layout_height="491dp"
+        android:background="@drawable/detailback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancel2"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/loginbar"
+        android:text="X"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailback1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="379dp"
+        android:layout_height="365dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detailback"
+        app:srcCompat="@drawable/cheese" />
+
+    <TextView
+        android:id="@+id/cheese"
+        android:layout_width="268dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="40dp"
+        android:text="起司蛋餅"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detailback" />
+
+    <TextView
+        android:id="@+id/cheesedollar"
+        android:layout_width="73dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:text="$25"
+        android:textColor="@color/darkblue"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/bluebarrycake"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cheese_cal"
+        android:layout_width="80dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="56dp"
+        android:text="380"
+        android:textColor="@color/darkblue"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detailback1" />
+
+    <TextView
+        android:id="@+id/c_cal"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:text="kcal"
+        android:textColor="@color/darkblue"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="@+id/detailback1"
+        app:layout_constraintTop_toBottomOf="@+id/cheese_cal" />
+
+    <TextView
+        android:id="@+id/cheese_carbon"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:text="碳水化合物            15g"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/detailback1" />
+
+    <TextView
+        android:id="@+id/cheese_por"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:text="蛋白質                    15g"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cheese_carbon" />
+
+    <TextView
+        android:id="@+id/cheese_carbon3"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:text="脂肪                        32g"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cheese_por" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
