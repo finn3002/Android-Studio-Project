@@ -3,23 +3,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 public class AddActivity extends Activity {
+    //顏色黃→白
+    final int[] MY_COLORS = {
+            Color.  rgb(255,204,0),
+            Color. rgb(255,255,255)
+    };
     Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,cakedetail,cheesedetail;
     TextView remainingresult,totalmoney,totalresult;
+    PieChart pieChart;
     //ListView
     private MyAdapter adapter;
     private ArrayList<foodSet> foodsets= new ArrayList<>();
@@ -75,6 +86,7 @@ public class AddActivity extends Activity {
         remainingresult = findViewById(R.id.remainingresult);
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
+//        設假資料處
         gv.setDollar(160);
         gv.setAddcal(730.0);
         gv.setCal((gv.getCal()-gv.getAddcal()));
@@ -115,7 +127,35 @@ public class AddActivity extends Activity {
             }
         });
 
-
-
+        pieChart =(PieChart)findViewById(R.id.pieChart);
+        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setDragDecelerationFrictionCoef(0.7f);
+        pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
+        pieChart.setCenterTextColor(Color.WHITE);
+        pieChart.setCenterTextSize(15);
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(android.R.color.white);
+        pieChart.setTransparentCircleAlpha(110);
+        pieChart.setTransparentCircleRadius(58f);
+        pieChart.setRotationEnabled(false);
+//        內容
+        ArrayList<PieEntry> Values = new ArrayList<>();
+        Values.add(new PieEntry(34,""));
+        Values.add(new PieEntry(66,""));
+//        顏色順序
+        ArrayList<Integer> colors = new ArrayList<>();
+        for(int c: MY_COLORS) colors.add(c);
+//        pie動畫
+        pieChart.animateY(2000, Easing.EaseInOutCubic);
+//        顯示
+        PieDataSet dataSet = new PieDataSet(Values,"");
+        dataSet.setSliceSpace(0f);
+        dataSet.setColors(colors);
+        PieData data  = new PieData((dataSet));
+        data.setValueTextSize(0f);
+        pieChart.setData(data);
     }
-}
+    }
+
