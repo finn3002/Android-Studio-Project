@@ -1,45 +1,52 @@
 package com.team.team_project;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.Toolbar;
 
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Chat extends AppCompatActivity {
-    Button addbutton;
-    Button profilebutton;
-    Button foodbutton;
-    Button tablebutton;
+    Button addbutton,profilebutton,foodbutton,tablebutton;
+    androidx.appcompat.widget.Toolbar toolbar;
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    Fragment1 fragment1;
+    Fragment2 fragment2;
+    Fragment3 fragment3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        addbutton  = findViewById(R.id.pencil);
+        addbutton = findViewById(R.id.pencil);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Chat.this,AddActivity.class);
+                Intent intent = new Intent(Chat.this, AddActivity.class);
                 startActivity(intent);
             }
         });
 
-        profilebutton  = findViewById(R.id.profile);
+        profilebutton = findViewById(R.id.profile);
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Chat.this,PageActivity.class);
+                Intent intent = new Intent(Chat.this, PageActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,22 +54,71 @@ public class Chat extends AppCompatActivity {
         foodbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Chat.this,Food.class);
+                Intent intent = new Intent(Chat.this, Food.class);
                 startActivity(intent);
             }
         });
-        tablebutton  = findViewById(R.id.table);
+        tablebutton = findViewById(R.id.table);
         tablebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Chat.this,Analysis.class);
+                Intent intent = new Intent(Chat.this, Analysis.class);
                 startActivity(intent);
             }
         });
 
 
+//               toolbar = findViewById(R.id.toolbar);
+//    setSupportActionBar(toolbar);
+//
+//        viewPager=findViewById(R.id.view_pager);
+//        tabLayout=findViewById(R.id.tab_layout);
+//        fragment1 = new Fragment1();
+//        fragment2 = new Fragment2();
+//        fragment3 = new Fragment3();
+//
+//        tabLayout.setupWithViewPager(viewPager);
+//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),0);
+//        viewPagerAdapter.addfragment(fragment1,"數據");
+//        viewPagerAdapter.addfragment(fragment2,"分數");
+//        viewPagerAdapter.addfragment(fragment3,"分析");
+//        viewPager.setAdapter(viewPagerAdapter);
+//
+//
+//
+//
+//    }
+//    private class ViewPagerAdapter extends FragmentPagerAdapter {
+//        private List<Fragment> fragments = new ArrayList<>();
+//        private List<String> fragmentsTitle = new ArrayList<>();
+//
+//        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+//            super(fm, behavior);
+//        }
+//
+//        public void addfragment(Fragment fragment , String title){
+//            fragments.add(fragment);
+//            fragmentsTitle.add(title);
+//        }
+//
+//        @NonNull
+//        @Override
+//        public Fragment getItem(int position) {
+//            return fragments.get(position);
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return fragments.size();
+//        }
+//
+//        @Nullable
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return fragmentsTitle.get(position);
+//        }
+//    }
     }
-
     }
 
 

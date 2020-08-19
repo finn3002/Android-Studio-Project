@@ -140,6 +140,7 @@ public class AddActivity extends Activity {
         pieChart.setTransparentCircleAlpha(110);
         pieChart.setTransparentCircleRadius(58f);
         pieChart.setRotationEnabled(false);
+        pieChart.getLegend().setEnabled(false);
 //        內容
         ArrayList<PieEntry> Values = new ArrayList<>();
         Values.add(new PieEntry(34,""));
