@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/detailback1"
@@ -209,84 +209,5 @@
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/back"
         app:layout_constraintTop_toBottomOf="@+id/word" />
-
-    <EditText
-        android:id="@+id/edFoodnm"
-        android:layout_width="97dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:ems="10"
-        android:hint="edFoodnm"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/foodname"
-        app:layout_constraintStart_toEndOf="@+id/foodname"
-        app:layout_constraintTop_toTopOf="@+id/foodname"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <EditText
-        android:id="@+id/edPrice"
-        android:layout_width="97dp"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:hint="edPrice"
-        android:inputType="number|textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/cost"
-        app:layout_constraintStart_toEndOf="@+id/cost"
-        app:layout_constraintTop_toTopOf="@+id/cost" />
-
-    <EditText
-        android:id="@+id/edCal"
-        android:layout_width="38dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="edCal"
-        android:inputType="number|textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/max"
-        app:layout_constraintStart_toStartOf="@+id/max"
-        app:layout_constraintTop_toBottomOf="@+id/max" />
-
-    <EditText
-        android:id="@+id/edCar"
-        android:layout_width="43dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:hint="edCar"
-        android:inputType="number|textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/carbon2"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="@+id/carbon2"
-        app:layout_constraintTop_toBottomOf="@+id/carbon2" />
-
-    <EditText
-        android:id="@+id/edPro"
-        android:layout_width="57dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="edPro"
-        android:inputType="number|textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/por"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="@+id/por"
-        app:layout_constraintTop_toBottomOf="@+id/por" />
-
-    <EditText
-        android:id="@+id/edFat"
-        android:layout_width="65dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="edFat"
-        android:inputType="number|textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/fat2"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="@+id/fat2"
-        app:layout_constraintTop_toBottomOf="@+id/fat2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
