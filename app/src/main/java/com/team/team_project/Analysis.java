@@ -1,6 +1,12 @@
 package com.team.team_project;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,40 +14,43 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Analysis extends AppCompatActivity {
     Button addbutton;
     Button profilebutton;
     Button foodbutton;
     Button chatbutton;
-    PieChart pieChart;
+    androidx.appcompat.widget.Toolbar toolbar;
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    Fragment1 fragment1;
+    Fragment2 fragment2;
+    Fragment3 fragment3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis);
 
-        addbutton  = findViewById(R.id.pencil);
+        addbutton = findViewById(R.id.pencil);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Analysis.this,AddActivity.class);
+                Intent intent = new Intent(Analysis.this, AddActivity.class);
                 startActivity(intent);
             }
         });
 
-        profilebutton  = findViewById(R.id.profile);
+        profilebutton = findViewById(R.id.profile);
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Analysis.this,PageActivity.class);
+                Intent intent = new Intent(Analysis.this, PageActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,52 +58,74 @@ public class Analysis extends AppCompatActivity {
         foodbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Analysis.this,Food.class);
+                Intent intent = new Intent(Analysis.this, Food.class);
                 startActivity(intent);
             }
         });
-       chatbutton = findViewById(R.id.chat);
-     chatbutton.setOnClickListener(new View.OnClickListener() {
+        chatbutton = findViewById(R.id.chat);
+        chatbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Analysis.this,Chat.class);
+                Intent intent = new Intent(Analysis.this, Chat.class);
                 startActivity(intent);
             }
         });
-        pieChart =(PieChart)findViewById(R.id.pieChart);
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
-        pieChart.setDragDecelerationFrictionCoef(0.7f);
-        pieChart.setCenterText("今日\n營養攝取");
-        pieChart.setCenterTextSize(25);
-        pieChart.setCenterTextColor(Color.WHITE);
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(android.R.color.white);
-        pieChart.setTransparentCircleAlpha(80);
-        pieChart.setTransparentCircleRadius(58f);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        ArrayList<PieEntry> Values = new ArrayList<>();
-        Values.add(new PieEntry(34,"碳水化合物"));
-        Values.add(new PieEntry(23,"蛋白質"));
-        Values.add(new PieEntry(14,"脂肪"));
-        Values.add(new PieEntry(35,"鈉"));
-        Values.add(new PieEntry(23,"糖"));
+        viewPager = findViewById(R.id.view_pager);
+        tabLayout = findViewById(R.id.tab_layout);
+        fragment1 = new Fragment1();
+        fragment2 = new Fragment2();
+        fragment3 = new Fragment3();
 
-        pieChart.animateY(2000, Easing.EaseInOutCubic);
-        PieDataSet dataSet = new PieDataSet(Values,"");
-        dataSet.setSliceSpace(3f);
-        dataSet.getSelectionShift();
-        dataSet.setValueTextSize(20f);
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+        tabLayout.setupWithViewPager(viewPager);
+        Analysis.ViewPagerAdapter viewPagerAdapter = new Analysis.ViewPagerAdapter(getSupportFragmentManager(), 0);
 
-        PieData data  = new PieData((dataSet));
-        data.setValueTextSize(20f);
-        data.setValueTextColor(Color.WHITE);
-        pieChart.setData(data);
+        viewPagerAdapter.addfragment(fragment1, "數據");
+        viewPagerAdapter.addfragment(fragment2, "分數");
+        viewPagerAdapter.addfragment(fragment3, "分析");
+        viewPager.setAdapter(viewPagerAdapter);
 
-
+//        設icon
+//        tabLayout.getTabAt(0).setIcon(R.drawable.whiteuser);
 
     }
+
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+        private List<Fragment> fragments = new ArrayList<>();
+        private List<String> fragmentsTitle = new ArrayList<>();
+
+        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        public void addfragment(Fragment fragment, String title) {
+            fragments.add(fragment);
+            fragmentsTitle.add(title);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return fragmentsTitle.get(position);
+        }
     }
+
+}
+
+
+
+
 

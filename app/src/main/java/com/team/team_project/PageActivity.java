@@ -66,7 +66,7 @@ public class PageActivity extends Activity {
         tablebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PageActivity.this, Analysis.class);
+                    Intent intent = new Intent(PageActivity.this, Analysis.class);
                 startActivity(intent);
             }
         });

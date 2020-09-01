@@ -23,11 +23,14 @@
         android:layout_height="34dp"
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
+        android:onClick="onClick"
+        android:textAllCaps="false"
         android:background="@drawable/bargraph1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="OnClick"/>
 
     <Button
         android:id="@+id/chat"
@@ -36,10 +39,13 @@
         android:layout_marginStart="280dp"
         android:layout_marginLeft="280dp"
         android:background="@drawable/chat"
+        android:onClick="onClick"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="OnClick"/>
 
     <Button
         android:id="@+id/recommend"
@@ -47,20 +53,26 @@
         android:layout_height="34dp"
         android:layout_marginStart="356dp"
         android:layout_marginLeft="356dp"
+        android:onClick="onClick"
+        android:textAllCaps="false"
         android:background="@drawable/delicious"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="OnClick"/>
     <Button
         android:id="@+id/button"
         android:layout_width="87dp"
         android:layout_height="86dp"
         android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:textAllCaps="false"
         android:background="@drawable/ellipse3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick"/>
 
     <Button
         android:id="@+id/profile"
@@ -68,9 +80,9 @@
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:background="@drawable/whiteuser"
         android:onClick="onClick"
         android:textAllCaps="false"
-        android:background="@drawable/whiteuser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,54 +94,82 @@
         android:layout_width="43dp"
         android:layout_height="49dp"
         android:layout_marginBottom="36dp"
+        android:onClick="onClick"
+        android:textAllCaps="false"
         android:background="@drawable/pencil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClick"
-        android:textAllCaps="false"
         tools:ignore="OnClick"
         />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/table"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/background" />
+    <!--        <TextView-->
+    <!--        android:id="@+id/textView6"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="296dp"-->
+    <!--        android:text="聊天"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.456"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="256dp"-->
-<!--        android:text="分析"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.48"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="390dp"
-        android:layout_height="584dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="501dp">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        </com.github.mikephil.charting.charts.PieChart>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <!--                <com.google.android.material.tabs.TabItem-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="數據"-->
+                <!--                    android:icon="@drawable/detailicon"/>-->
+
+                <!--                <com.google.android.material.tabs.TabItem-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="評分"-->
+
+                <!--                    />-->
+
+                <!--                <com.google.android.material.tabs.TabItem-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="分析"-->
+
+                <!--                    />-->
+
+                <!--            </com.google.android.material.tabs.TabLayout>-->
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
+
+        </androidx.viewpager.widget.ViewPager>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
