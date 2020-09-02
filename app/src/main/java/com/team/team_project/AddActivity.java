@@ -1,27 +1,37 @@
 package com.team.team_project;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+        import androidx.annotation.NonNull;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.recyclerview.widget.DividerItemDecoration;
+        import androidx.recyclerview.widget.LinearLayoutManager;
+        import androidx.recyclerview.widget.RecyclerView;
+        import android.app.Activity;
+        import android.app.Application;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.TextView;
+        import com.github.mikephil.charting.animation.Easing;
+        import com.github.mikephil.charting.charts.PieChart;
+        import com.github.mikephil.charting.data.PieData;
+        import com.github.mikephil.charting.data.PieDataSet;
+        import com.github.mikephil.charting.data.PieEntry;
+        import com.github.mikephil.charting.utils.ColorTemplate;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.firestore.CollectionReference;
+        import com.google.firebase.firestore.FirebaseFirestore;
+        import com.google.firebase.firestore.Query;
+        import com.google.firebase.firestore.QueryDocumentSnapshot;
+        import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
+        import java.text.DecimalFormat;
+        import java.util.ArrayList;
+
+
 public class AddActivity extends Activity {
     //顏色黃→白
     final int[] MY_COLORS = {
@@ -32,6 +42,7 @@ public class AddActivity extends Activity {
     TextView remainingresult,totalmoney,totalresult;
     PieChart pieChart;
     //ListView
+    private FirebaseFirestore db ;
     private MyAdapter adapter;
     private ArrayList<foodSet> foodsets= new ArrayList<>();
     private RecyclerView recyclerView;
@@ -41,7 +52,8 @@ public class AddActivity extends Activity {
         DecimalFormat nf = new DecimalFormat("0");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-         gv= (GlobalV) getApplication();
+        gv= (GlobalV) getApplication();
+        db=FirebaseFirestore.getInstance();
 
         tablebutton  = findViewById(R.id.table);
         tablebutton.setOnClickListener(new View.OnClickListener() {
@@ -94,19 +106,23 @@ public class AddActivity extends Activity {
         totalmoney.setText((nf.format( gv.getDollar())));
         totalresult.setText((nf.format( gv.getAddcal())));
 
-    //recyclerView Set
+        //recyclerView Set
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
         //設定 LayoutManager
-        foodsets.add(new foodSet("藍莓蛋糕",125,350.0));
-        foodsets.add(new foodSet("起司蛋餅",35,380.0));
-        adapter= new MyAdapter(foodsets);
-        adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
+
+        getFood(recyclerView);
+
+
+
+//        foodsets.add(new foodSet("藍莓蛋糕",125,350.0));
+//        foodsets.add(new foodSet("起司蛋餅",35,380.0));
+
 
         //蛋糕詳細資料
         cakedetail  = findViewById(R.id.cakedetail);
@@ -158,5 +174,38 @@ public class AddActivity extends Activity {
         data.setValueTextSize(0f);
         pieChart.setData(data);
     }
+
+    public void  getFood(View v){ //食物查詢
+        final CollectionReference mydb=db.collection("personal")
+                .document("personTest").collection("allfood");
+
+
+        Query query = mydb;
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for (QueryDocumentSnapshot document : task.getResult()){
+                        foodSet bean = new foodSet();
+//                        Log.e("food",document.getData().toString());
+                        bean.setFoodNm(document.getData().get("foodnm").toString());
+                        bean.setFoodPrice(Integer.valueOf(document.getData().get("food_price").toString()));
+                        bean.setFoodCal(Double.valueOf(document.getData().get("food_calorie").toString()));
+
+                        foodsets.add(bean);
+                        adapter= new MyAdapter(foodsets);
+
+                        adapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(adapter);
+
+                    }
+                }
+
+            }
+        });
+
+
+
     }
+}
 
