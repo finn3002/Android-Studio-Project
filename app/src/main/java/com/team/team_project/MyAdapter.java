@@ -20,15 +20,18 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder
+    public class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView now;
-        private TextView rest;
+        private TextView foodNm;
+        private TextView foodPrice;
+        private TextView foodCal;
+
         public ViewHolder(View v){
             super(v);
             //MyAdapter.foodNm,MyAdapter.foodPrice,MyAdapter.foodCal
-            now=v.findViewById(R.id.foodNm);
-            rest=v.findViewById(R.id.foodPrice);
+            foodNm=v.findViewById(R.id.foodNm);
+            foodPrice=v.findViewById(R.id.foodPrice);
+            foodCal= v.findViewById(R.id.foodCal);
 
 
         }
@@ -45,9 +48,9 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder( MyAdapter.ViewHolder holder, int position) {
 
-        holder.now.setText(foodsets.get(position).getFoodNm().toString());
-        holder.rest.setText(String.valueOf(foodsets.get(position).getFoodPrice()));
-//        holder.foodCal.setText(foodsets.get(position).getFoodCal().toString());
+        holder.foodNm.setText(foodsets.get(position).getFoodNm().toString());
+        holder.foodPrice.setText(String.valueOf(foodsets.get(position).getFoodPrice()));
+        holder.foodCal.setText(foodsets.get(position).getFoodCal().toString());
         Log.e("test",foodsets.get(position).getFoodNm());
 
     }

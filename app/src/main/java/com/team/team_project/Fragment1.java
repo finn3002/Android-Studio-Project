@@ -72,10 +72,43 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_1, container, false);
+        pieChart =(PieChart)view.findViewById(R.id.pieChart);
+        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setDragDecelerationFrictionCoef(0.7f);
+        pieChart.setCenterText("今日\n營養攝取");
+        pieChart.setCenterTextSize(25);
+        pieChart.setCenterTextColor(Color.WHITE);
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(android.R.color.white);
+        pieChart.setTransparentCircleAlpha(80);
+        pieChart.setTransparentCircleRadius(58f);
+        pieChart.getLegend().setEnabled(false);
 
+        ArrayList<PieEntry> Values = new ArrayList<>();
+        Values.add(new PieEntry(34,"碳水化合物"));
+        Values.add(new PieEntry(23,"蛋白質"));
+        Values.add(new PieEntry(14,"脂肪"));
+        Values.add(new PieEntry(35,"鈉"));
+        Values.add(new PieEntry(23,"糖"));
+
+        pieChart.animateY(2000, Easing.EaseInOutCubic);
+        PieDataSet dataSet = new PieDataSet(Values,"");
+        dataSet.setSliceSpace(3f);
+        dataSet.getSelectionShift();
+        dataSet.setValueTextSize(20f);
+        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+
+        PieData data  = new PieData((dataSet));
+
+        data.setValueTextSize(20f);
+        data.setValueTextColor(Color.BLACK);
+        pieChart.setData(data);
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false);
+        return view;
     }
-
 }

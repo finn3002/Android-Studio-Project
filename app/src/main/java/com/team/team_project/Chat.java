@@ -16,23 +16,19 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.Toolbar;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.tabs.TabLayout;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Chat extends AppCompatActivity {
     Button addbutton,profilebutton,foodbutton,tablebutton;
     androidx.appcompat.widget.Toolbar toolbar;
-    BarChart barChart ;
-
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    Fragment1 fragment1;
+    Fragment2 fragment2;
+    Fragment3 fragment3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,26 +66,58 @@ public class Chat extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        barChart = findViewById(R.id.barchart);
-//        ArrayList<BarEntry> entries = new ArrayList<>();
-//        entries.add(new BarEntry(32f,0));
-//        entries.add(new BarEntry(2f,1));
-//
-//        BarDataSet bardataset = new BarDataSet(entries, "Cells");
-//
-//        ArrayList<String> labels = new ArrayList<String>();
-//        labels.add("2016");
-//        labels.add("2015");
-//        labels.add("2014");
-//        labels.add("2013");
-//        labels.add("2012");
-//        labels.add("2011");
-//
-//        BarData data = new BarData((IBarDataSet) labels,bardataset);
-//        barChart.setData(data);
-//        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-//        barChart.animateY(5000);
 
+
+//               toolbar = findViewById(R.id.toolbar);
+//    setSupportActionBar(toolbar);
+//
+//        viewPager=findViewById(R.id.view_pager);
+//        tabLayout=findViewById(R.id.tab_layout);
+//        fragment1 = new Fragment1();
+//        fragment2 = new Fragment2();
+//        fragment3 = new Fragment3();
+//
+//        tabLayout.setupWithViewPager(viewPager);
+//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),0);
+//        viewPagerAdapter.addfragment(fragment1,"數據");
+//        viewPagerAdapter.addfragment(fragment2,"分數");
+//        viewPagerAdapter.addfragment(fragment3,"分析");
+//        viewPager.setAdapter(viewPagerAdapter);
+//
+//
+//
+//
+//    }
+//    private class ViewPagerAdapter extends FragmentPagerAdapter {
+//        private List<Fragment> fragments = new ArrayList<>();
+//        private List<String> fragmentsTitle = new ArrayList<>();
+//
+//        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+//            super(fm, behavior);
+//        }
+//
+//        public void addfragment(Fragment fragment , String title){
+//            fragments.add(fragment);
+//            fragmentsTitle.add(title);
+//        }
+//
+//        @NonNull
+//        @Override
+//        public Fragment getItem(int position) {
+//            return fragments.get(position);
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return fragments.size();
+//        }
+//
+//        @Nullable
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return fragmentsTitle.get(position);
+//        }
+//    }
     }
     }
 
