@@ -3,15 +3,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment2">
 
 
 
+
+    <ImageView
+        android:id="@+id/darkback"
+        android:layout_width="444dp"
+        android:layout_height="793dp"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/scoredetailback"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/scorebackground" />
+
+
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="197dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="296dp"
-        android:textSize="30dp"
-        android:text="fragment2" />
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="140dp"
+        android:text="健康得分"
+        android:textColor="@color/darkblue"
+        android:textSize="80px"
+        android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/scroeresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="190dp"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold"
+            android:textSize="100px"
+            android:text="90"
+            />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/scoredetail" />
+
+        <TextView
+            android:id="@+id/score_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60px"
+            android:textStyle="bold"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="160dp"
+            android:textColor="#FFFF"
+            android:text="營養攝取建議" />
+
+    <ImageView
+        android:id="@+id/gray"
+        android:layout_width="328dp"
+        android:layout_height="290dp"
+        android:layout_marginLeft="42.5dp"
+        android:layout_marginTop="255dp"
+        android:src="@drawable/grayback" />
 </FrameLayout>

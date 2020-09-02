@@ -159,12 +159,12 @@
         android:id="@+id/dollor"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="140dp"
         android:text="元"
         android:textColor="#FFFFFF"
         android:textSize="40px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/totalresult"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -202,7 +202,7 @@
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -214,7 +214,7 @@
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -222,11 +222,11 @@
         android:id="@+id/moneyresult"
         android:layout_width="64dp"
         android:layout_height="21dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="140dp"
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -234,12 +234,13 @@
         android:id="@+id/cal"
         android:layout_width="35dp"
         android:layout_height="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="kcal"
         android:textColor="#FFFFFF"
         android:textSize="40px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/totalresult"
         app:layout_constraintTop_toTopOf="@+id/word" />
 

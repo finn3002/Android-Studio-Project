@@ -10,7 +10,9 @@ public class GlobalV extends Application {
     private double carbonhydrate;
     private double protein;
     private double fat,height,weight;
-    private int dollar,age;
+    private int dollar,age,score ;
+
+
 
     @Override
     public void onCreate() {
@@ -21,6 +23,8 @@ public class GlobalV extends Application {
         setAge(AGE);
         setHeight(HEIGHT);
         setWeight(WEIGHT);
+        setScore(SCORE);
+
 
     }
 
@@ -53,6 +57,9 @@ public class GlobalV extends Application {
     public int getAge(){
         return age;
     }
+    public int getScore(){
+        return score;
+    }
     public void setCal(Double cal) {
         this.cal = cal;
     }
@@ -80,6 +87,9 @@ public class GlobalV extends Application {
     public void setAge(int age) {
         this.age = age;
     }
+    public void setScore(int scroe) {
+        this.score = score;
+    }
 
     //    初始值
     private static final double CAL = 0.0;
@@ -88,6 +98,7 @@ public class GlobalV extends Application {
     private static final int AGE =21;
     private static final double HEIGHT =170.0;
     private static final double WEIGHT =56.5;
+    private static final int SCORE = 0;
 
 }
 
