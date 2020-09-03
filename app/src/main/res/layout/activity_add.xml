@@ -103,7 +103,7 @@
         android:id="@+id/word"
         android:layout_width="376dp"
         android:layout_height="198dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:background="@color/darkblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
@@ -115,7 +115,7 @@
         android:layout_width="185dp"
         android:layout_height="195dp"
 
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="@+id/dollor"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +123,7 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
+            android:layout_marginTop="-20dp"
             android:layout_width="match_parent"
             android:layout_height="193dp">
 
@@ -198,11 +199,11 @@
         android:id="@+id/totalresult"
         android:layout_width="64dp"
         android:layout_height="21dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -214,7 +215,7 @@
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
@@ -226,14 +227,14 @@
         android:textColor="#FFFFFF"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
     <TextView
         android:id="@+id/cal"
-        android:layout_width="35dp"
-        android:layout_height="24dp"
+        android:layout_width="33dp"
+        android:layout_height="21dp"
         android:layout_marginTop="40dp"
         android:text="kcal"
         android:textColor="#FFFFFF"

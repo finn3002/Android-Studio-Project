@@ -3,15 +3,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment2">
 
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/blueback"
+        android:layout_width="match_parent"
+        android:layout_height="737dp"
+        android:layout_marginTop="-10px"
+        android:layout_marginBottom="1dp"
+        app:srcCompat="@drawable/background" />
 
+    <ImageView
+        android:id="@+id/whiteback"
+        android:layout_width="361dp"
+        android:layout_height="618dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/whiteback"
+
+        />
+
+    <ImageView
+        android:id="@+id/scorebar"
+        android:layout_width="324dp"
+        android:layout_height="146dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="205dp"
+        android:src="@drawable/scorebar" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="197dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="296dp"
-        android:textSize="30dp"
-        android:text="fragment2" />
+        android:id="@+id/scoretext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_marginTop="265dp"
+        android:layout_marginLeft="130dp"
+        android:text="健康指數評分建議" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+     android:layout_marginTop="145dp"
+        android:layout_marginLeft="170dp"
+        android:textStyle="bold"
+        android:text="健康得分"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/darkblue"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="180dp"
+        android:text="90" />
+
+
 </FrameLayout>
