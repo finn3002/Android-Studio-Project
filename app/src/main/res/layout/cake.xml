@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Cake">
+    tools:context=".FoodProfile">
 
     <TextView
         android:id="@+id/back"
@@ -61,11 +61,11 @@
         app:srcCompat="@drawable/cake" />
 
     <TextView
-        android:id="@+id/bluebarrycake"
+        android:id="@+id/FoodDetailName"
         android:layout_width="268dp"
         android:layout_height="72dp"
         android:layout_marginTop="40dp"
-        android:text="藍莓蛋糕"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="50dp"
         android:textStyle="bold"
@@ -75,25 +75,39 @@
         app:layout_constraintTop_toTopOf="@+id/detailback" />
 
     <TextView
-        android:id="@+id/cakedollar"
+        android:id="@+id/FoodDetailDollar"
         android:layout_width="94dp"
         android:layout_height="45dp"
         android:layout_marginTop="56dp"
-        android:text="$125"
+        android:text=""
         android:textColor="@color/darkblue"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/bluebarrycake"
+        app:layout_constraintStart_toEndOf="@+id/FoodDetailName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cake_cal"
+        android:id="@+id/dollarsign"
+        android:layout_width="94dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="56dp"
+        android:text="$"
+        android:textColor="@color/darkblue"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toEndOf="@+id/FoodDetailName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/FoodDetailCal"
         android:layout_width="80dp"
         android:layout_height="53dp"
         android:layout_marginTop="56dp"
-        android:text="350"
+        android:text=""
         android:textColor="@color/darkblue"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -113,14 +127,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="@+id/detailback1"
-        app:layout_constraintTop_toBottomOf="@+id/cake_cal" />
+        app:layout_constraintTop_toBottomOf="@+id/FoodDetailCal" />
 
     <TextView
-        android:id="@+id/cake_carbon"
+        android:id="@+id/carbonsign"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:layout_marginTop="28dp"
-        android:text="碳水化合物            10.8g"
+        android:text="碳水化合物"
         android:textStyle="bold"
         android:textColor="@color/darkblue"
         android:textSize="18dp"
@@ -130,32 +144,74 @@
         app:layout_constraintTop_toTopOf="@+id/detailback1" />
 
     <TextView
-        android:id="@+id/cake_por"
+        android:id="@+id/FoodDetailCarbon"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/detailback1" />
+
+    <TextView
+        android:id="@+id/portinesign"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
-        android:text="蛋白質                      21g"
+        android:text="蛋白質"
         android:textStyle="bold"
         android:textColor="@color/darkblue"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cake_carbon" />
+        app:layout_constraintTop_toBottomOf="@+id/carbonsign" />
 
     <TextView
-        android:id="@+id/cake_carbon3"
+        android:id="@+id/FoodDetailPortine"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carbonsign" />
+
+    <TextView
+        android:id="@+id/fatsign"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
-        android:text="脂肪                        8.9.g"
+        android:text="脂肪"
         android:textStyle="bold"
         android:textColor="@color/darkblue"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cake_por" />
+        app:layout_constraintTop_toBottomOf="@+id/portinesign" />
+
+    <TextView
+        android:id="@+id/FoodDetailFat"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portinesign" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

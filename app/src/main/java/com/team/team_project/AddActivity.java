@@ -30,7 +30,7 @@ public class AddActivity extends Activity {
             Color.  rgb(255,204,0),
             Color. rgb(255,255,255)
     };
-    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,cakedetail,cheesedetail;
+    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton;
     TextView remainingresult,totalmoney,totalresult;
     PieChart pieChart;
     //ListView
@@ -39,6 +39,7 @@ public class AddActivity extends Activity {
     private ArrayList<foodSet> foodsets= new ArrayList<>();
     private RecyclerView recyclerView;
     private GlobalV gv;
+    private MyAdapter.RecyclerViewClickListener listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
@@ -104,25 +105,27 @@ public class AddActivity extends Activity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         getFood(recyclerView);
-        //蛋糕詳細資料
-        cakedetail  = findViewById(R.id.cakedetail);
-        cakedetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddActivity.this,Cake.class);
-                startActivity(intent);
-            }
-        });
-        //起司蛋餅詳細資料
-        cheesedetail  = findViewById(R.id.cheesedetail);
-        cheesedetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddActivity.this,Cheese.class);
-                startActivity(intent);
-            }
-        });
+//        //蛋糕詳細資料
+//        cakedetail  = findViewById(R.id.cakedetail);
+//        cakedetail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AddActivity.this,Cake.class);
+//                startActivity(intent);
+//            }
+//        });
+//        //起司蛋餅詳細資料
+//        cheesedetail  = findViewById(R.id.cheesedetail);
+//        cheesedetail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AddActivity.this,Cheese.class);
+//                startActivity(intent);
+//            }
+//        });
 
+
+//        上方pieChart
         pieChart =(PieChart)findViewById(R.id.pieChart);
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
@@ -171,15 +174,26 @@ public class AddActivity extends Activity {
                         bean.setFoodNm(document.getData().get("foodnm").toString());
                         bean.setFoodPrice(Integer.valueOf(document.getData().get("food_price").toString()));
                         bean.setFoodCal(Double.valueOf(document.getData().get("food_calorie").toString()));
-
+                        setOnClickListener();
                         foodsets.add(bean);
-                        adapter= new MyAdapter(foodsets);
+                        adapter= new MyAdapter(foodsets,listener);
                         adapter.notifyDataSetChanged();
                         recyclerView.setAdapter(adapter);
-
                     }
                 }
-
+            }
+//            點擊觸發看食物詳細資訊
+            private void setOnClickListener() {
+                listener = new MyAdapter.RecyclerViewClickListener() {
+                    @Override
+                    public void onClick(View v, int position) {
+                    Intent intent = new Intent(getApplicationContext(), FoodProfile.class);
+                            intent.putExtra("name",foodsets.get(position).getFoodNm());
+                            intent.putExtra("price",String.valueOf(foodsets.get(position).getFoodPrice()));
+                            intent.putExtra("cal",String.valueOf(foodsets.get(position).getFoodCal()));
+                            startActivity(intent);
+                    }
+                };
             }
         });
     }

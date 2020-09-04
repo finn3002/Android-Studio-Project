@@ -100,13 +100,6 @@ public class PageActivity extends Activity {
 
 
             DecimalFormat nf = new DecimalFormat("0");
-            //身高
-//            double height = Double.parseDouble(fieldheight.getText().toString());
-            //體重
-//            double weight = Double.parseDouble(fieldweight.getText().toString());
-            //年齡
-//            int age = Integer.parseInt(fieldage.getText().toString());
-
             double BMRboy = 66 + (13.7 * gv.getWeight()) + (5.0 *  gv.getHeight()) - (6.8 * gv.getAge());
             double BMRgirl = 655 + (9.6 * gv.getWeight()) + (1.8 *  gv.getHeight()) - (4.7 * gv.getAge());
 
