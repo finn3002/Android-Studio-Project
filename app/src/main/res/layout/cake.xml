@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/detailback1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/editImage"
         android:layout_width="379dp"
         android:layout_height="365dp"
         android:layout_marginTop="60dp"

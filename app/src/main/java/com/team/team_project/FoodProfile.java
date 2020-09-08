@@ -1,16 +1,33 @@
 package com.team.team_project;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.net.URL;
 
 //食物詳細資訊View
 public class FoodProfile extends AppCompatActivity {
     Button cancel;
     TextView fooddetailname , fooddetaildollor , fooddetailcal , fooddetailcarbon,fooddetailportine,fooddetailfat;
     String foodname , fooddollar , foodcal,foodcarbon,foodportine,foodfat;
+    private FirebaseStorage image_db;
+    ImageView editImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +39,32 @@ public class FoodProfile extends AppCompatActivity {
         fooddetailcarbon = findViewById(R.id.FoodDetailCarbon);
         fooddetailportine = findViewById(R.id.FoodDetailPortine);
         fooddetailfat = findViewById(R.id.FoodDetailFat);
+        editImage=findViewById(R.id.editImage);
+
+        image_db= FirebaseStorage.getInstance("gs://sprojct-f638d.appspot.com/");
+        StorageReference mStorageRef = image_db.getReference();
+        StorageReference getRef=mStorageRef.child("cheese.jpg");
+        Task<Uri> url=getRef.getDownloadUrl();
+        try {
+            final File tmpFile = File.createTempFile("img", "jpeg");
+            StorageReference reference = getRef;
+
+            //  "id" is name of the image file....
+
+            reference.getFile(tmpFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                    Bitmap image = BitmapFactory.decodeFile(tmpFile.getAbsolutePath());
+
+                    editImage.setImageBitmap(image);
+
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         Bundle extras =getIntent().getExtras();
 
