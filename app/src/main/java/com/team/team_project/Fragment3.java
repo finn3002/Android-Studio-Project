@@ -30,6 +30,7 @@ public class Fragment3 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     PieChart pieChart;
+    private GlobalV gv;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -66,6 +67,8 @@ public class Fragment3 extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,7 +79,7 @@ public class Fragment3 extends Fragment {
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.7f);
         pieChart.setCenterText("今日\n營養攝取");
-        pieChart.setCenterTextSize(25);
+        pieChart.setCenterTextSize(18);
         pieChart.setCenterTextColor(Color.WHITE);
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(android.R.color.white);
@@ -85,23 +88,19 @@ public class Fragment3 extends Fragment {
         pieChart.getLegend().setEnabled(false);
 
         ArrayList<PieEntry> Values = new ArrayList<>();
-        Values.add(new PieEntry(34,"碳水化合物"));
-        Values.add(new PieEntry(23,"蛋白質"));
-        Values.add(new PieEntry(14,"脂肪"));
-        Values.add(new PieEntry(35,"鈉"));
-        Values.add(new PieEntry(23,"糖"));
+        Values.add(new PieEntry(100,"碳水化合物"));
+        Values.add(new PieEntry(30,"蛋白質"));
+        Values.add(new PieEntry(25,"脂肪"));
 
         pieChart.animateY(2000, Easing.EaseInOutCubic);
         PieDataSet dataSet = new PieDataSet(Values,"");
-        dataSet.setSliceSpace(3f);
+        dataSet.setSliceSpace(0f);
         dataSet.getSelectionShift();
-        dataSet.setValueTextSize(20f);
+        dataSet.setValueTextSize(15f);
         dataSet.setValueTextColor(Color.BLACK);
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
-
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data  = new PieData((dataSet));
-
-        data.setValueTextSize(20f);
+        data.setValueTextSize(15f);
         data.setValueTextColor(Color.BLACK);
         pieChart.setData(data);
 

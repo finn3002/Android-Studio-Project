@@ -29,16 +29,16 @@ public class FoodProfile extends AppCompatActivity {
             foodname = extras.getString("name");
             fooddollar = extras.getString("price");
             foodcal = extras.getString("cal");
-//            foodcarbon = extras.getString("carbon");
-//            foodportine = extras.getString("portine");
-//            foodfat = extras.getString("fat");
+            foodcarbon = extras.getString("carbon");
+            foodportine = extras.getString("protein");
+            foodfat = extras.getString("fat");
         }
         fooddetailname.setText(foodname);
         fooddetaildollor.setText(fooddollar);
         fooddetailcal.setText(foodcal);
-//        fooddetailcarbon.setText(foodcarbon);
-//        fooddetailportine.setText(foodportine);
-//        fooddetailfat.setText(foodfat);
+        fooddetailcarbon.setText(foodcarbon);
+        fooddetailportine.setText(foodportine);
+        fooddetailfat.setText(foodfat);
 
 
         cancel = findViewById(R.id.cancel);

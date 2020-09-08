@@ -66,5 +66,24 @@
         android:layout_marginLeft="180dp"
         android:text="90" />
 
+    <ImageView
+        android:id="@+id/scoreback"
+        android:layout_width="305dp"
+        android:layout_height="249dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/scoreback" />
+
+    <TextView
+        android:id="@+id/Suggest"
+        android:layout_width="168dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="400dp"
+        android:text="建議"
+        android:textColor="@color/darkblue"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
 
 </FrameLayout>

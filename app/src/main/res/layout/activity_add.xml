@@ -123,7 +123,7 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
-            android:layout_marginTop="-20dp"
+            android:layout_marginTop="-25dp"
             android:layout_width="match_parent"
             android:layout_height="193dp">
 
@@ -270,32 +270,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
-    <Button
-        android:id="@+id/cakedetail"
-        android:layout_width="26dp"
-        android:layout_height="28dp"
-        android:background="@color/darkblue"
-        android:text=">"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
 
-    <Button
-        android:id="@+id/cheesedetail"
-        android:layout_width="26dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="52dp"
-        android:background="@color/darkblue"
-        android:text=">"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

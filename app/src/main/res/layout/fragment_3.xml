@@ -18,9 +18,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="390dp"
-        android:layout_height="584dp"
+        android:layout_width="432dp"
+        android:layout_height="511dp"
         android:layout_marginTop="52dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,14 +30,107 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
-            android:layout_marginTop="100px"
+            android:layout_width="346dp"
+            android:layout_height="295dp"
             android:layout_marginLeft="70px"
-            android:layout_width="match_parent"
-            android:layout_height="501dp">
+            android:layout_marginTop="100px">
 
         </com.github.mikephil.charting.charts.PieChart>
 
+
+
     </LinearLayout>
 
+
+
+    <ImageView
+        android:id="@+id/carbon_analysis"
+        android:layout_width="340dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="380dp"
+        android:src="@drawable/carbon_analysis" />
+
+    <ImageView
+        android:id="@+id/portein_analysis"
+        android:layout_width="340dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="460dp"
+        android:src="@drawable/portein_analysis" />
+
+    <ImageView
+        android:id="@+id/fat_analysis"
+        android:layout_width="340dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="540dp"
+        android:src="@drawable/fat_analysis" />
+
+    <ImageView
+        android:id="@+id/carbonanalysis"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="400dp"
+        android:layout_weight="1"
+        android:src="@drawable/carbonchinese1"
+
+        />
+
+    <ImageView
+        android:id="@+id/portineanalysis"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/porteinchinese"
+ />
+
+    <ImageView
+        android:id="@+id/fatanalysis"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:layout_marginTop="560.5dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/fatchinese"
+ />
+
+    <TextView
+        android:id="@+id/carbon_number"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 g" />
+
+    <TextView
+        android:id="@+id/portine_number"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="490dp"
+        android:layout_marginLeft="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  30 g" />
+
+    <TextView
+        android:id="@+id/fat_number"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  25 g" />
 
 </FrameLayout>

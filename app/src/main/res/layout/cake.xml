@@ -54,23 +54,23 @@
         android:id="@+id/imageView3"
         android:layout_width="379dp"
         android:layout_height="365dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/detailback"
-        app:srcCompat="@drawable/cake" />
+        app:srcCompat="@drawable/defaltpic" />
 
     <TextView
         android:id="@+id/FoodDetailName"
-        android:layout_width="268dp"
-        android:layout_height="72dp"
+        android:layout_width="238dp"
+        android:layout_height="71dp"
         android:layout_marginTop="40dp"
         android:text=""
         android:textColor="@color/white"
         android:textSize="50dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/detailback" />
 
@@ -104,15 +104,15 @@
 
     <TextView
         android:id="@+id/FoodDetailCal"
-        android:layout_width="80dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="72dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="52dp"
         android:text=""
         android:textColor="@color/darkblue"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/detailback1" />
 
@@ -212,6 +212,50 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/portinesign" />
+
+    <TextView
+        android:id="@+id/carbon_g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="g"
+        android:textColor="@color/darkblue"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/FoodDetailCarbon"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="@+id/carbonsign"
+        app:layout_constraintTop_toTopOf="@+id/detailback1" />
+
+    <TextView
+        android:id="@+id/portein_g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="g"
+        android:textColor="@color/darkblue"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/portinesign"
+        app:layout_constraintTop_toBottomOf="@+id/carbon_g" />
+
+    <TextView
+        android:id="@+id/fat_g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="g"
+        android:textColor="@color/darkblue"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/FoodDetailFat"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="@+id/fatsign"
+        app:layout_constraintTop_toBottomOf="@+id/portein_g" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

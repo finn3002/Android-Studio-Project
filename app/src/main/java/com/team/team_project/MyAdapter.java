@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 
 public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
-    public ArrayList<foodSet> foodsets;
+    public ArrayList<foodBean> foodBeans;
     public  RecyclerViewClickListener listener ;
 
-    public MyAdapter(ArrayList<foodSet> foodset , RecyclerViewClickListener listener) {
-        this.foodsets=foodset;
+    public MyAdapter(ArrayList<foodBean> foodBean , RecyclerViewClickListener listener) {
+        this.foodBeans=foodBean;
         this.listener = listener;
     }
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
@@ -44,15 +44,15 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
     }
     @Override
     public void onBindViewHolder( MyAdapter.ViewHolder holder, int position) {
-        holder.foodNm.setText(foodsets.get(position).getFoodNm().toString());
-        holder.foodPrice.setText(String.valueOf(foodsets.get(position).getFoodPrice()));
-        holder.foodCal.setText(foodsets.get(position).getFoodCal().toString());
-        Log.e("test",foodsets.get(position).getFoodNm());
+        holder.foodNm.setText(foodBeans.get(position).getFoodnm().toString());
+        holder.foodPrice.setText(String.valueOf(foodBeans.get(position).getFood_price()));
+        holder.foodCal.setText(foodBeans.get(position).getFood_calorie().toString());
+//        Log.e("test",foodBeans.get(position).getFoodnm());
 
     }
     @Override
     public int getItemCount() {
-        return foodsets.size();
+        return foodBeans.size();
     }
     public interface RecyclerViewClickListener{
         void  onClick(View v ,int position);

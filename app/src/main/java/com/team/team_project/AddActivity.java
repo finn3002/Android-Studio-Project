@@ -36,7 +36,7 @@ public class AddActivity extends Activity {
     //ListView
     private FirebaseFirestore db ;
     private MyAdapter adapter;
-    private ArrayList<foodSet> foodsets= new ArrayList<>();
+    private ArrayList<foodBean>foodbeans = new ArrayList<>();
     private RecyclerView recyclerView;
     private GlobalV gv;
     private MyAdapter.RecyclerViewClickListener listener;
@@ -92,6 +92,7 @@ public class AddActivity extends Activity {
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
 //      上方資料顯示處
+        gv.setAddcal(180.0);
         gv.setCal((gv.getCal()-gv.getAddcal()));
         remainingresult.setText((nf.format( gv.getCal())));
         totalmoney.setText((nf.format( gv.getDollar())));
@@ -105,25 +106,6 @@ public class AddActivity extends Activity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         getFood(recyclerView);
-//        //蛋糕詳細資料
-//        cakedetail  = findViewById(R.id.cakedetail);
-//        cakedetail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(AddActivity.this,Cake.class);
-//                startActivity(intent);
-//            }
-//        });
-//        //起司蛋餅詳細資料
-//        cheesedetail  = findViewById(R.id.cheesedetail);
-//        cheesedetail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(AddActivity.this,Cheese.class);
-//                startActivity(intent);
-//            }
-//        });
-
 
 //        上方pieChart
         pieChart =(PieChart)findViewById(R.id.pieChart);
@@ -141,9 +123,10 @@ public class AddActivity extends Activity {
         pieChart.setRotationEnabled(false);
         pieChart.getLegend().setEnabled(false);
 //        內容
+        gv.setAddcal(180.0);
         ArrayList<PieEntry> Values = new ArrayList<>();
-        Values.add(new PieEntry(34,""));
-        Values.add(new PieEntry(66,""));
+        Values.add(new PieEntry(Float.parseFloat(gv.getAddcal().toString()),""));
+        Values.add(new PieEntry(Float.parseFloat(gv.getCal().toString())-Float.parseFloat(gv.getAddcal().toString()),""));
 //        顏色順序
         ArrayList<Integer> colors = new ArrayList<>();
         for(int c: MY_COLORS) colors.add(c);
@@ -169,14 +152,23 @@ public class AddActivity extends Activity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for (QueryDocumentSnapshot document : task.getResult()){
-                        foodSet bean = new foodSet();
+                        foodBean bean = new foodBean();
+
 //                        Log.e("food",document.getData().toString());
-                        bean.setFoodNm(document.getData().get("foodnm").toString());
-                        bean.setFoodPrice(Integer.valueOf(document.getData().get("food_price").toString()));
-                        bean.setFoodCal(Double.valueOf(document.getData().get("food_calorie").toString()));
+//                        從DB抓取詳細資料set進recycleview
+                        bean.setFoodnm(document.getData().get("foodnm").toString());
+                        bean.setFood_price(Integer.valueOf(document.getData().get("food_price").toString()));
+                        bean.setFood_calorie(Double.valueOf(document.getData().get("food_calorie").toString()));
+                        bean.setFood_carbon(Double.valueOf(document.getData().get("food_carbon").toString()));
+                        bean.setFood_protein(Double.valueOf(document.getData().get("food_protein").toString()));
+                        bean.setFood_fat(Double.valueOf(document.getData().get("food_fat").toString()));
+
                         setOnClickListener();
-                        foodsets.add(bean);
-                        adapter= new MyAdapter(foodsets,listener);
+
+                        foodbeans.add(bean);
+                        adapter= new MyAdapter(foodbeans,listener);
+
+
                         adapter.notifyDataSetChanged();
                         recyclerView.setAdapter(adapter);
                     }
@@ -188,9 +180,13 @@ public class AddActivity extends Activity {
                     @Override
                     public void onClick(View v, int position) {
                     Intent intent = new Intent(getApplicationContext(), FoodProfile.class);
-                            intent.putExtra("name",foodsets.get(position).getFoodNm());
-                            intent.putExtra("price",String.valueOf(foodsets.get(position).getFoodPrice()));
-                            intent.putExtra("cal",String.valueOf(foodsets.get(position).getFoodCal()));
+                            intent.putExtra("name",foodbeans.get(position).getFoodnm());
+                            intent.putExtra("price",String.valueOf(foodbeans.get(position).getFood_price()));
+                        intent.putExtra("cal",String.valueOf(foodbeans.get(position).getFood_calorie()));
+                            intent.putExtra("carbon",String.valueOf(foodbeans.get(position).getFood_carbon()));
+                            intent.putExtra("protein",String.valueOf(foodbeans.get(position).getFood_protein()));
+                             intent.putExtra("fat",String.valueOf(foodbeans.get(position).getFood_fat()));
+
                             startActivity(intent);
                     }
                 };
