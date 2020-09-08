@@ -12,6 +12,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.RadioGroup;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 import java.text.DecimalFormat;
 
 public class PageActivity extends Activity {
@@ -25,6 +28,7 @@ public class PageActivity extends Activity {
     RadioButton no, low, active, high;
     TextView result,carresult,porresult,fatresult;
 
+    private FirebaseFirestore db ;
 
     private GlobalV gv;
     @Override
@@ -53,6 +57,7 @@ public class PageActivity extends Activity {
         fatresult = (TextView) findViewById(R.id.fatresult);
         DecimalFormat nf = new DecimalFormat("0");
 
+        db= FirebaseFirestore.getInstance();
         addbutton = findViewById(R.id.pencil);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,8 +204,20 @@ public class PageActivity extends Activity {
                         break;
                 }
             }
+
+            personInfo setrec = new personInfo();
+            setrec.setRec_calorie(gv.getCal());
+            setrec.setRec_carbon(gv.getCarbohydrate());
+            setrec.setRec_fat(gv.getFat());
+            setrec.setRec_protein(gv.getProtein());
+
+            db.collection("personal").document("personTest").update("rec_calorie",setrec.getRec_calorie());
+            db.collection("personal").document("personTest").update("rec_carbon",setrec.getRec_carbon());
+            db.collection("personal").document("personTest").update("rec_fat",setrec.getRec_fat());
+            db.collection("personal").document("personTest").update("rec_protein",setrec.getRec_protein());
             };
         };
+
     };
 
 

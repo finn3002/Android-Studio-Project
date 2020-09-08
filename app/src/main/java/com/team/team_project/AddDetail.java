@@ -13,7 +13,10 @@ import android.widget.Toast;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.lang.ref.Reference;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
@@ -39,6 +42,9 @@ public class AddDetail extends AppCompatActivity {
         edfat=findViewById(R.id.edFat);
         edCal=findViewById(R.id.edCal);
         db = FirebaseFirestore.getInstance();
+
+
+
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

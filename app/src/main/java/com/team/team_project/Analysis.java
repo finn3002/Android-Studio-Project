@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class Analysis extends AppCompatActivity {
     Button profilebutton;
     Button foodbutton;
     Button chatbutton;
+
     androidx.appcompat.widget.Toolbar toolbar;
     ViewPager viewPager;
     TabLayout tabLayout;

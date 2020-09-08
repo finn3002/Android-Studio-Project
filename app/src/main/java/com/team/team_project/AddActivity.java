@@ -48,6 +48,17 @@ public class AddActivity extends Activity {
          gv= (GlobalV) getApplication();
         db=FirebaseFirestore.getInstance();
 
+
+        //recyclerView Set
+        recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
+        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        getFood(recyclerView);
+
+
         tablebutton  = findViewById(R.id.table);
         tablebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,14 +108,7 @@ public class AddActivity extends Activity {
         totalmoney.setText((nf.format( gv.getDollar())));
         totalresult.setText((nf.format( gv.getAddcal())));
 
-    //recyclerView Set
-        recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
-        recyclerView.setLayoutManager(linearLayoutManager);
 
-        getFood(recyclerView);
 //        //蛋糕詳細資料
 //        cakedetail  = findViewById(R.id.cakedetail);
 //        cakedetail.setOnClickListener(new View.OnClickListener() {
