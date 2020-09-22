@@ -64,6 +64,7 @@ public class AddDetail extends AppCompatActivity {
                 Intent intent = new Intent(AddDetail.this,AddActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         });
     }

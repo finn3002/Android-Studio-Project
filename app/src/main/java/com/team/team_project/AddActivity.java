@@ -40,6 +40,8 @@ public class AddActivity extends Activity {
     private RecyclerView recyclerView;
     private GlobalV gv;
     private MyAdapter.RecyclerViewClickListener listener;
+    private int CountaddCal=0;
+    private int CountPrice=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
@@ -166,7 +168,16 @@ public class AddActivity extends Activity {
                         adapter= new MyAdapter(foodbeans,listener);
                         adapter.notifyDataSetChanged();
                         recyclerView.setAdapter(adapter);
+                        CountaddCal+=bean.getFood_calorie();
+                        CountPrice+=bean.getFood_price();
                     }
+                    totalmoney.setText(String.valueOf(CountPrice));
+                    totalresult.setText(String.valueOf(CountaddCal));
+                    remainingresult.setText(String.valueOf((int)(gv.getCal()-CountaddCal)));
+
+
+
+
                 }
             }
 //            點擊觸發看食物詳細資訊
