@@ -33,14 +33,8 @@ public class FoodProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cake);
-        fooddetailname = findViewById(R.id.FoodDetailName);
-        fooddetaildollor = findViewById(R.id.FoodDetailDollar);
-        fooddetailcal = findViewById(R.id.FoodDetailCal);
-        fooddetailcarbon = findViewById(R.id.FoodDetailCarbon);
-        fooddetailportine = findViewById(R.id.FoodDetailPortine);
-        fooddetailfat = findViewById(R.id.FoodDetailFat);
-        editImage=findViewById(R.id.editImage);
 
+        findview();
         image_db= FirebaseStorage.getInstance("gs://sprojct-f638d.appspot.com/");
         StorageReference mStorageRef = image_db.getReference();
         StorageReference getRef=mStorageRef.child("cheese.jpg");
@@ -92,5 +86,15 @@ public class FoodProfile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void findview(){
+        fooddetailname = findViewById(R.id.FoodDetailName);
+        fooddetaildollor = findViewById(R.id.FoodDetailDollar);
+        fooddetailcal = findViewById(R.id.FoodDetailCal);
+        fooddetailcarbon = findViewById(R.id.FoodDetailCarbon);
+        fooddetailportine = findViewById(R.id.FoodDetailPortine);
+        fooddetailfat = findViewById(R.id.FoodDetailFat);
+        editImage=findViewById(R.id.editImage);
+
     }
 }

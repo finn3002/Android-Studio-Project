@@ -34,17 +34,7 @@ public class AddDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_detail);
-        finish = findViewById(R.id.finish);
-        edfoodnm=findViewById(R.id.edFoodnm);
-        edprice=findViewById(R.id.edPrice);
-        edcar=findViewById(R.id.edCar);
-        edpro=findViewById(R.id.edPro);
-        edfat=findViewById(R.id.edFat);
-        edCal=findViewById(R.id.edCal);
-        db = FirebaseFirestore.getInstance();
-
-
-
+        findview();
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +57,16 @@ public class AddDetail extends AppCompatActivity {
 
             }
         });
+    }
+    private void findview(){
+        finish = findViewById(R.id.finish);
+        edfoodnm=findViewById(R.id.edFoodnm);
+        edprice=findViewById(R.id.edPrice);
+        edcar=findViewById(R.id.edCar);
+        edpro=findViewById(R.id.edPro);
+        edfat=findViewById(R.id.edFat);
+        edCal=findViewById(R.id.edCal);
+        db = FirebaseFirestore.getInstance();
     }
 
 
