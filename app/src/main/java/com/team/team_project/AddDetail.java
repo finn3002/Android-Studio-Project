@@ -49,7 +49,7 @@ public class AddDetail extends AppCompatActivity {
                 Timestamp d = new Timestamp(System.currentTimeMillis());
                 bean.setKeyin(d);
 
-                db.collection("personal").document("personTest")
+                db.collection("personal").document("personTest") //加入新食物
                         .collection("allfood").document().set(bean,SetOptions.merge());
                 Intent intent = new Intent(AddDetail.this,AddActivity.class);
                 startActivity(intent);

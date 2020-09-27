@@ -25,6 +25,7 @@
         android:layout_width="449dp"
         android:layout_height="661dp"
         android:background="@color/blue"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -268,7 +269,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/word" />
 
+    <TextView
+        android:id="@+id/dateNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020/09/24"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/word"
+        app:layout_constraintEnd_toEndOf="@+id/cal"
+        app:layout_constraintStart_toStartOf="@+id/word"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/downBt"
+        android:layout_width="57dp"
+        android:layout_height="37dp"
+        android:text="下頁"
+        app:layout_constraintBottom_toBottomOf="@+id/dateNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/dateNum"
+        app:layout_constraintTop_toTopOf="@+id/dateNum"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <Button
+        android:id="@+id/upBt"
+        android:layout_width="65dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="上頁"
+        app:layout_constraintBottom_toBottomOf="@+id/dateNum"
+        app:layout_constraintEnd_toStartOf="@+id/dateNum"
+        app:layout_constraintTop_toTopOf="@+id/dateNum"
+        app:layout_constraintVertical_bias="0.181" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

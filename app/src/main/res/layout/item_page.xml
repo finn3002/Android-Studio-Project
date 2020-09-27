@@ -1,103 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddActivity">
+    android:layout_height="match_parent">
 
-
-
-    <TextView
-        android:id="@+id/bluebar"
-        android:layout_width="426dp"
-        android:layout_height="78dp"
-        android:background="@color/darkblue"
+    <View
+        android:id="@+id/view2"
+        android:layout_width="451dp"
+        android:layout_height="676dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <TextView
         android:id="@+id/back"
         android:layout_width="449dp"
-        android:layout_height="661dp"
+        android:layout_height="665dp"
         android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/table"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:background="@drawable/bargraph"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-
-    <Button
-        android:id="@+id/chat"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
-        android:background="@drawable/chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-
-    <Button
-        android:id="@+id/recommend"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
-        android:background="@drawable/delicious"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-    <Button
-        android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/ellipse3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/profile"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:background="@drawable/whiteuser"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-
-    <Button
-        android:id="@+id/pencil"
-        android:layout_width="43dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/pencil"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.045" />
 
     <TextView
         android:id="@+id/word"
@@ -110,6 +39,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/back" />
 
+    <Button
+        android:id="@+id/additem"
+        android:layout_width="110dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="184dp"
+        android:background="@drawable/loginbar"
+        android:text="新增"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/word" />
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="185dp"
@@ -123,9 +63,9 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
-            android:layout_marginTop="-25dp"
             android:layout_width="match_parent"
-            android:layout_height="193dp">
+            android:layout_height="193dp"
+            android:layout_marginTop="-25dp">
 
         </com.github.mikephil.charting.charts.PieChart>
     </LinearLayout>
@@ -142,33 +82,6 @@
         app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="@+id/word"
         app:layout_constraintTop_toTopOf="@+id/word" />
-
-    <TextView
-        android:id="@+id/cal2"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="84dp"
-        android:text="kcal"
-        android:textColor="#FFFFFF"
-        android:textSize="40px"
-        app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/totalresult"
-        app:layout_constraintTop_toTopOf="@+id/word" />
-
-    <TextView
-        android:id="@+id/dollor"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="136dp"
-        android:text="元"
-        android:textColor="#FFFFFF"
-        android:textSize="40px"
-        app:layout_constraintEnd_toEndOf="@+id/word"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/totalresult"
-        app:layout_constraintTop_toTopOf="@+id/word" />
-
     <TextView
         android:id="@+id/remaining"
         android:layout_width="wrap_content"
@@ -181,7 +94,6 @@
         app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="@+id/word"
         app:layout_constraintTop_toTopOf="@+id/word" />
-
     <TextView
         android:id="@+id/money"
         android:layout_width="wrap_content"
@@ -194,7 +106,6 @@
         app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="@+id/word"
         app:layout_constraintTop_toTopOf="@+id/word" />
-
     <TextView
         android:id="@+id/totalresult"
         android:layout_width="64dp"
@@ -206,7 +117,6 @@
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
-
     <TextView
         android:id="@+id/remainingresult"
         android:layout_width="64dp"
@@ -230,13 +140,36 @@
         app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="@+id/word" />
-
     <TextView
         android:id="@+id/cal"
         android:layout_width="33dp"
         android:layout_height="21dp"
         android:layout_marginTop="40dp"
         android:text="kcal"
+        android:textColor="#FFFFFF"
+        android:textSize="40px"
+        app:layout_constraintEnd_toEndOf="@+id/word"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/totalresult"
+        app:layout_constraintTop_toTopOf="@+id/word" />
+    <TextView
+        android:id="@+id/cal2"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="84dp"
+        android:text="kcal"
+        android:textColor="#FFFFFF"
+        android:textSize="40px"
+        app:layout_constraintEnd_toEndOf="@+id/word"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/totalresult"
+        app:layout_constraintTop_toTopOf="@+id/word" />
+    <TextView
+        android:id="@+id/dollor"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:text="元"
         android:textColor="#FFFFFF"
         android:textSize="40px"
         app:layout_constraintEnd_toEndOf="@+id/word"
@@ -256,19 +189,19 @@
         app:layout_constraintTop_toBottomOf="@+id/word"
         />
 
-    <Button
-        android:id="@+id/additem"
-        android:layout_width="110dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="184dp"
-        android:background="@drawable/loginbar"
-        android:text="新增"
+    <TextView
+        android:id="@+id/dateNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="2020/09/23"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/word"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/word" />
-
-
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
