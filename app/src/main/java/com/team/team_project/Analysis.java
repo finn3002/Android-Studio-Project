@@ -84,9 +84,9 @@ public class Analysis extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         Analysis.ViewPagerAdapter viewPagerAdapter = new Analysis.ViewPagerAdapter(getSupportFragmentManager(), 0);
 
-        viewPagerAdapter.addfragment(fragment1, "數據");
+        viewPagerAdapter.addfragment(fragment1, "CP值");
         viewPagerAdapter.addfragment(fragment2, "分數");
-        viewPagerAdapter.addfragment(fragment3, "分析");
+        viewPagerAdapter.addfragment(fragment3, "綜合數據");
         viewPager.setAdapter(viewPagerAdapter);
 
 //        設icon

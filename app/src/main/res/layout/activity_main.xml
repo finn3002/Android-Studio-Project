@@ -23,10 +23,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/background"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.766"
+        app:layout_constraintVertical_bias="0.703"
         app:srcCompat="@drawable/redpapper" />
 
     <ImageView
@@ -39,22 +39,19 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/purple"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toEndOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.599"
+        app:layout_constraintVertical_bias="0.605"
         app:srcCompat="@drawable/group16" />
 
     <ImageView
         android:id="@+id/purple"
         android:layout_width="196dp"
         android:layout_height="488dp"
-
-
-        android:layout_marginStart="336dp"
-
-        android:layout_marginLeft="336dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         app:srcCompat="@drawable/path23" />
@@ -68,10 +65,10 @@
         android:layout_marginTop="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toEndOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/purple"
-        app:layout_constraintVertical_bias="0.938"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/group17" />
 
     <ImageView
@@ -79,9 +76,9 @@
         android:layout_width="115dp"
         android:layout_height="345dp"
 
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toStartOf="@+id/leaf"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         app:srcCompat="@drawable/group15" />
@@ -90,7 +87,7 @@
         android:id="@+id/circle"
         android:layout_width="160dp"
         android:layout_height="272dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,13 +150,12 @@
         android:layout_height="55dp"
         android:background="@color/yellow"
         android:gravity="center"
-        android:text="                  Don't have an account? "
         android:textColor="@color/white"
         android:textSize="20dp"
         app:fontFamily="sans-serif-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         app:layout_constraintVertical_bias="1.0" />
@@ -169,13 +165,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Sign up!"
+        android:text="註冊點這!"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="292dp"
+
+        android:layout_height="78dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
