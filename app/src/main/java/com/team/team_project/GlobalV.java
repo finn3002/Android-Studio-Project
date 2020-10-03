@@ -3,6 +3,9 @@ package com.team.team_project;
 import android.app.Application;
 import android.view.View;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.DuplicateFormatFlagsException;
 
 public class GlobalV extends Application {
@@ -11,6 +14,7 @@ public class GlobalV extends Application {
     private double protein;
     private double fat,height,weight;
     private int dollar,age;
+    private String date;
 
     @Override
     public void onCreate() {
@@ -21,9 +25,13 @@ public class GlobalV extends Application {
         setAge(AGE);
         setHeight(HEIGHT);
         setWeight(WEIGHT);
+        setDate(datenum);
 
     }
 
+    public String getDate() {
+        return date;
+    }
     public Double getCal() {
 
         return cal;
@@ -81,6 +89,10 @@ public class GlobalV extends Application {
         this.age = age;
     }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     //    初始值
     private static final double CAL = 0.0;
 
@@ -89,6 +101,7 @@ public class GlobalV extends Application {
     private static final int AGE =21;
     private static final double HEIGHT =170.0;
     private static final double WEIGHT =56.5;
+    private static final String datenum="2020/09/02";
 
 }
 

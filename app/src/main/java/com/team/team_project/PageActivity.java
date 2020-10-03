@@ -43,7 +43,7 @@ public class PageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
         findview();
-//        countDayEat();
+        countDayEat();
 //        DocumentReference item=db.collection("personal").document("personalTest");
 //        item.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
 //            @Override
@@ -57,8 +57,24 @@ public class PageActivity extends Activity {
 
     }
 
+    public View.OnClickListener calcBMI = new View.OnClickListener() {
 
+        public void onClick(View v) {
 
+            countDayEat();
+
+            personInfo setrec = new personInfo();//建議攝取量
+            setrec.setRec_calorie(gv.getCal());
+            setrec.setRec_carbon(gv.getCarbohydrate());
+            setrec.setRec_fat(gv.getFat());
+            setrec.setRec_protein(gv.getProtein());
+
+            db.collection("personal").document("personTest").update("rec_calorie",setrec.getRec_calorie());
+            db.collection("personal").document("personTest").update("rec_carbon",setrec.getRec_carbon());
+            db.collection("personal").document("personTest").update("rec_fat",setrec.getRec_fat());
+            db.collection("personal").document("personTest").update("rec_protein",setrec.getRec_protein());
+            };
+        };
 
 
     private void findview(){
@@ -118,32 +134,13 @@ public class PageActivity extends Activity {
             }
         });
 
-        gv.setCal(0.0);
-        gv.setCarbonhydrate(0.0);
-        gv.setProtein(0.0);
-        gv.setFat(0.0);
-        result.setText(nf.format(gv.getCal()));
-        carresult.setText(nf.format(gv.getCarbohydrate()));
-        porresult.setText(nf.format(gv.getProtein()));
-        fatresult.setText(nf.format(gv.getFat()));
+        fieldheight.setText((nf.format( gv.getHeight())));
+        fieldweight.setText((nf.format( gv.getWeight())));
+        fieldweight.setText((nf.format( gv.getWeight())));
+        fieldage.setText((nf.format( gv.getAge())));
 
     }
-    public View.OnClickListener calcBMI = new View.OnClickListener() {
 
-        public void onClick(View v) {
-            countDayEat();
-            personInfo setrec = new personInfo();
-            setrec.setRec_calorie(gv.getCal());
-            setrec.setRec_carbon(gv.getCarbohydrate());
-            setrec.setRec_fat(gv.getFat());
-            setrec.setRec_protein(gv.getProtein());
-
-            db.collection("personal").document("personTest").update("rec_calorie",setrec.getRec_calorie());
-            db.collection("personal").document("personTest").update("rec_carbon",setrec.getRec_carbon());
-            db.collection("personal").document("personTest").update("rec_fat",setrec.getRec_fat());
-            db.collection("personal").document("personTest").update("rec_protein",setrec.getRec_protein());
-        };
-    };
     public void countDayEat(){
         DecimalFormat nf = new DecimalFormat("0");
         double BMRboy = 66 + (13.7 * gv.getWeight()) + (5.0 *  gv.getHeight()) - (6.8 * gv.getAge());
