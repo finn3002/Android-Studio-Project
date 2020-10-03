@@ -103,17 +103,17 @@
         android:layout_width="149dp"
         android:layout_height="39dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@color/white"
         android:ems="15"
         android:inputType="textPersonName"
-        android:text="User Name"
+        android:text="   綺綺"
         android:textColorHint="@color/blue"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -141,12 +141,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="137dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/userpic"
+        android:layout_width="128dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/userphoto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -262,11 +262,11 @@
         app:layout_constraintStart_toEndOf="@+id/cal"
         app:layout_constraintTop_toBottomOf="@+id/everyday" />
 
-    <TextView
+    <EditText
         android:id="@+id/editage"
         android:layout_width="42dp"
         android:layout_height="21dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/grayback"
         android:ems="10"
         android:textColor="@color/darkblue"
@@ -275,11 +275,11 @@
         app:layout_constraintStart_toEndOf="@+id/age2"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 
-    <TextView
+    <EditText
         android:id="@+id/edheight"
         android:layout_width="51dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/grayback"
         android:ems="10"
         android:textColor="@color/darkblue"
@@ -299,11 +299,11 @@
         app:layout_constraintStart_toEndOf="@+id/edheight"
         app:layout_constraintTop_toBottomOf="@+id/age2" />
 
-    <TextView
+    <EditText
         android:id="@+id/edweight"
         android:layout_width="62dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/grayback"
         android:ems="10"
         android:textColor="@color/darkblue"
@@ -406,7 +406,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="@color/yellow"
-            android:checked="true"
+
             android:gravity="start"
             android:text="男"
             android:textSize="20sp" />
@@ -419,6 +419,7 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="-44dp"
             android:layout_weight="1"
+            android:checked="true"
             android:buttonTint="@color/yellow"
             android:gravity="end"
             android:text="女"

@@ -83,6 +83,7 @@ public class GlobalV extends Application {
 
     //    初始值
     private static final double CAL = 0.0;
+
     private static final double ADDCAL=0.0;
     private static final int Dollar =0;
     private static final int AGE =21;
