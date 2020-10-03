@@ -63,7 +63,7 @@ public class PageActivity extends Activity {
 
             countDayEat();
 
-            personInfo setrec = new personInfo();
+            personInfo setrec = new personInfo();//建議攝取量
             setrec.setRec_calorie(gv.getCal());
             setrec.setRec_carbon(gv.getCarbohydrate());
             setrec.setRec_fat(gv.getFat());

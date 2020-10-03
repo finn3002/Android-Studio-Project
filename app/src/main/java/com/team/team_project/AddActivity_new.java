@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,8 +27,16 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class AddActivity_new extends Activity {
     //顏色黃→白
@@ -35,9 +44,11 @@ public class AddActivity_new extends Activity {
             Color.  rgb(255,204,0),
             Color. rgb(255,255,255)
     };
-    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,upBt;
+    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,upBt,downBt;
     TextView remainingresult,totalmoney,totalresult;
+    TextView dateNum;
     PieChart pieChart;
+
 
     //ListView
     private FirebaseFirestore db ;
@@ -48,6 +59,8 @@ public class AddActivity_new extends Activity {
     private MyAdapter.RecyclerViewClickListener listener;
     private int CountaddCal=0;
     private int CountPrice=0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
@@ -58,7 +71,11 @@ public class AddActivity_new extends Activity {
         findview();
         //recyclerView Set
         settingRecycleV();
-        getFood(recyclerView);
+        try {
+            getFood(recyclerView);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
 //      上方資料顯示處
 //        gv.setCal((gv.getCal()-gv.getAddcal()));
@@ -66,47 +83,23 @@ public class AddActivity_new extends Activity {
         totalmoney.setText((nf.format( gv.getDollar())));
         totalresult.setText((nf.format( gv.getAddcal())));
 
-
 //        上方pieChart
-        pieChart =(PieChart)findViewById(R.id.pieChart);
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
-        pieChart.setDragDecelerationFrictionCoef(0.7f);
-        pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
-        pieChart.setCenterTextColor(Color.WHITE);
-        pieChart.setCenterTextSize(15);
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(android.R.color.white);
-        pieChart.setTransparentCircleAlpha(110);
-        pieChart.setTransparentCircleRadius(58f);
-        pieChart.setRotationEnabled(false);
-        pieChart.getLegend().setEnabled(false);
-//        內容
-        ArrayList<PieEntry> Values = new ArrayList<>();
-        Values.add(new PieEntry(Float.parseFloat(gv.getAddcal().toString()),""));
-        Values.add(new PieEntry(Float.parseFloat(gv.getCal().toString())-Float.parseFloat(gv.getAddcal().toString()),""));
-//        顏色順序
-        ArrayList<Integer> colors = new ArrayList<>();
-        for(int c: MY_COLORS) colors.add(c);
-//        pie動畫
-        pieChart.animateY(2000, Easing.EaseInOutCubic);
-//        顯示
-        PieDataSet dataSet = new PieDataSet(Values,"");
-        dataSet.setSliceSpace(0f);
-        dataSet.setColors(colors);
-        PieData data  = new PieData((dataSet));
-        data.setValueTextSize(0f);
-        pieChart.setData(data);
+        getPieChart();
+
     }
 
-    public void  getFood(View v){ //食物查詢
+    public void  getFood(View v) throws ParseException { //食物查詢
         final DecimalFormat nf = new DecimalFormat("0");
         final CollectionReference mydb=db.collection("personal")
                 .document("personTest").collection("allfood");
+        String [] dateset= dateNum.getText().toString().split("/");
 
+        DateFormat fmtDateTime = new SimpleDateFormat("yyyy/MM/dd");
+        Date datatest=fmtDateTime.parse(dateNum.getText().toString());
+        Log.e("datatest",fmtDateTime.format(datatest));
 
-        Query query = mydb;
+        Query query = mydb.whereEqualTo("keyin",gv.getDate());
+
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -128,8 +121,8 @@ public class AddActivity_new extends Activity {
                         CountaddCal+=bean.getFood_calorie();
                         CountPrice+=bean.getFood_price();
                     }
-                    gv.setAddcal((double)CountaddCal);
-                    gv.setDollar(CountPrice);
+                    gv.setAddcal((double)CountaddCal);//總攝取卡路里
+                    gv.setDollar(CountPrice);//總花費金錢
                     gv.setCal((gv.getCal()-gv.getAddcal()));
 
                     totalmoney.setText(String.valueOf(CountPrice));
@@ -160,14 +153,59 @@ public class AddActivity_new extends Activity {
     private void findview(){
         gv= (GlobalV) getApplication();
         db=FirebaseFirestore.getInstance();
+        dateNum=findViewById(R.id.dateNum);
+        dateNum.setText(gv.getDate());
         upBt=findViewById(R.id.upBt);
         upBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddActivity_new.this,AddActivity.class);
+                Calendar calendar= Calendar.getInstance();
+                calendar.setTime(new Date());
+
+                DateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+
+                try {
+                    Date mdate=fmt.parse(gv.getDate());
+                    calendar.setTime(mdate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                    calendar.add(Calendar.DATE,-1);
+                    gv.setDate(fmt.format(calendar.getTime()));
+
+                Log.e("datatest",String.valueOf(fmt.format(calendar.getTime())));
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
+            }
+        });
+       downBt=findViewById(R.id.downBt);
+        downBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity_new.this,AddActivity.class);
+                Calendar calendar= Calendar.getInstance();
+                calendar.setTime(new Date());
+
+                DateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+
+                try {
+                    Date mdate=fmt.parse(gv.getDate());
+                    calendar.setTime(mdate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                calendar.add(Calendar.DATE,1);
+                gv.setDate(fmt.format(calendar.getTime()));
 
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
             }
         });
         tablebutton  = findViewById(R.id.table);
@@ -221,6 +259,40 @@ public class AddActivity_new extends Activity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    private void getPieChart(){
+        DecimalFormat nf = new DecimalFormat("0");
+        pieChart =(PieChart)findViewById(R.id.pieChart);
+        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setDragDecelerationFrictionCoef(0.7f);
+        pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
+        pieChart.setCenterTextColor(Color.WHITE);
+        pieChart.setCenterTextSize(15);
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(android.R.color.white);
+        pieChart.setTransparentCircleAlpha(110);
+        pieChart.setTransparentCircleRadius(58f);
+        pieChart.setRotationEnabled(false);
+        pieChart.getLegend().setEnabled(false);
+//        內容
+        ArrayList<PieEntry> Values = new ArrayList<>();
+        Values.add(new PieEntry(Float.parseFloat(gv.getAddcal().toString()),""));
+        Values.add(new PieEntry(Float.parseFloat(gv.getCal().toString())-Float.parseFloat(gv.getAddcal().toString()),""));
+//        顏色順序
+        ArrayList<Integer> colors = new ArrayList<>();
+        for(int c: MY_COLORS) colors.add(c);
+//        pie動畫
+        pieChart.animateY(2000, Easing.EaseInOutCubic);
+//        顯示
+        PieDataSet dataSet = new PieDataSet(Values,"");
+        dataSet.setSliceSpace(0f);
+        dataSet.setColors(colors);
+        PieData data  = new PieData((dataSet));
+        data.setValueTextSize(0f);
+        pieChart.setData(data);
     }
 }
 

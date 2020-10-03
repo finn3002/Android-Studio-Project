@@ -18,7 +18,10 @@ import com.google.firebase.storage.StorageReference;
 
 import java.lang.ref.Reference;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 public class AddDetail extends AppCompatActivity {
     Button finish;
@@ -46,11 +49,19 @@ public class AddDetail extends AppCompatActivity {
                 bean.setFood_protein(Double.valueOf(edpro.getText().toString()));
                 bean.setFood_fat(Double.valueOf(edfat.getText().toString()));
                 bean.setFood_carbon(Double.valueOf(edcar.getText().toString()));
-                Timestamp d = new Timestamp(System.currentTimeMillis());
-                bean.setKeyin(d);
+//                Timestamp d = new Timestamp(System.currentTimeMillis());
+//                List<String> date= Arrays.asList(d.toString().split(" "));
+//                bean.setKeyin(date.get(0).toString());
+                String dateData=getIntent().getExtras().getString("dateData");
+                bean.setKeyin(dateData);
 
-                db.collection("personal").document("personTest") //加入新食物
-                        .collection("allfood").document().set(bean,SetOptions.merge());
+                if(db.collection("personal").document(dateData).equals(null)){
+
+                    db.collection("personal").document().set(bean);
+                }else{
+                    db.collection("personal").document(dateData) //加入新食物
+                            .collection("allfood").document().set(bean,SetOptions.merge());
+                }
                 Intent intent = new Intent(AddDetail.this,AddActivity.class);
                 startActivity(intent);
                 finish();

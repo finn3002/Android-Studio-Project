@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,20 +19,30 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
 public class AddActivity extends Activity {
     //顏色黃→白
     final int[] MY_COLORS = {
             Color.  rgb(255,204,0),
             Color. rgb(255,255,255)
     };
-    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton;
+    Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,upBt,downBt;
     TextView remainingresult,totalmoney,totalresult;
+    TextView dateNum;
     PieChart pieChart;
     //ListView
     private FirebaseFirestore db ;
@@ -42,6 +53,9 @@ public class AddActivity extends Activity {
     private MyAdapter.RecyclerViewClickListener listener;
     private int CountaddCal=0;
     private int CountPrice=0;
+    private int Countcarbon=0;
+    private int Countprotein=0;
+    private int Countfat=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
@@ -98,9 +112,22 @@ public class AddActivity extends Activity {
         final DecimalFormat nf = new DecimalFormat("0");
         final CollectionReference mydb=db.collection("personal")
                 .document("personTest").collection("allfood");
+        final DocumentReference updAllcal=db.collection("personal").document("personTest");
+        final CollectionReference updAllcal2=db.collection("personal");
+        Query query = mydb.whereEqualTo("keyin",gv.getDate());
+        final String[] rec_calorie = {""};
+        db.collection("personal").document("personTest").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()){
+                    rec_calorie[0] =task.getResult().getDouble("rec_calorie").toString();
+                }
+            }
+        });
 
 
-        Query query = mydb;
+
+
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -119,15 +146,30 @@ public class AddActivity extends Activity {
                         adapter= new MyAdapter(foodbeans,listener);
                         adapter.notifyDataSetChanged();
                         recyclerView.setAdapter(adapter);
-                        CountaddCal+=bean.getFood_calorie();
+                        CountaddCal+=bean.getFood_calorie();//計算總攝取
                         CountPrice+=bean.getFood_price();
+                        Countfat+=bean.getFood_fat();
+                        Countprotein+=bean.getFood_protein();
+                        Countcarbon+=bean.getFood_carbon();
                     }
                     gv.setAddcal((double)CountaddCal);
                     gv.setDollar(CountPrice);
-                    gv.setCal((gv.getCal()-gv.getAddcal()));
+
 
                     totalmoney.setText(String.valueOf(CountPrice));
                     totalresult.setText(String.valueOf(CountaddCal));
+                    updAllcal.update("today_calorie",CountaddCal);
+                    updAllcal.update("today_protein",Countprotein);
+                    updAllcal.update("today_fat",Countfat);
+                    updAllcal.update("today_carbon",Countcarbon);
+
+
+                    if(!rec_calorie[0].isEmpty()){
+                        gv.setCal((Double.valueOf(rec_calorie[0])-gv.getAddcal()));
+                        Log.e("testdata", rec_calorie[0]);
+                        Log.e("testdata", gv.getAddcal().toString());
+                    }
+
                     remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
 
                 }
@@ -154,6 +196,62 @@ public class AddActivity extends Activity {
     private void findview(){
         gv= (GlobalV) getApplication();
         db=FirebaseFirestore.getInstance();
+        dateNum=findViewById(R.id.dateNum);
+        dateNum.setText(gv.getDate());
+        upBt=findViewById(R.id.upBt);
+        upBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AddActivity.this,AddActivity.class);
+                Calendar calendar= Calendar.getInstance();
+                calendar.setTime(new Date());
+
+                DateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+
+                try {
+                    Date mdate=fmt.parse(gv.getDate());
+                    calendar.setTime(mdate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                calendar.add(Calendar.DATE,-1);
+                gv.setDate(fmt.format(calendar.getTime()));
+
+                Log.e("datatest",String.valueOf(fmt.format(calendar.getTime())));
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+//                finish();
+            }
+        });
+        downBt=findViewById(R.id.down);
+        downBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this,AddActivity.class);
+                Calendar calendar= Calendar.getInstance();
+                calendar.setTime(new Date());
+
+                DateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+
+                try {
+                    Date mdate=fmt.parse(gv.getDate());
+                    calendar.setTime(mdate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                calendar.add(Calendar.DATE,1);
+                gv.setDate(fmt.format(calendar.getTime()));
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
+            }
+        });
         tablebutton  = findViewById(R.id.table);
         tablebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,7 +288,10 @@ public class AddActivity extends Activity {
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle dateData = new Bundle();
+                dateData.putString("dateData",dateNum.getText().toString());
                 Intent intent = new Intent(AddActivity.this,AddDetail.class);
+                intent.putExtras(dateData);
                 startActivity(intent);
             }
         });

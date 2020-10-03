@@ -11,7 +11,7 @@ public class foodBean {
     private Double food_fat;
     private Double food_calorie;
     private Double food_carbon;
-    private Timestamp keyin;
+    private String keyin;
     foodBean(){
         this.foodnm="";
         this.food_protein=0.0;
@@ -19,7 +19,7 @@ public class foodBean {
         this.food_fat=0.0;
         this.food_calorie=0.0;
         this.food_carbon=0.0;
-        this.keyin=Timestamp.valueOf("2020-01-01 00:00:00");
+        this.keyin="";
     }
 
     public String getFoodnm() {
@@ -70,11 +70,11 @@ public class foodBean {
         this.food_carbon = food_carbon;
     }
 
-    public Timestamp getKeyin() {
+    public String getKeyin() {
         return keyin;
     }
 
-    public void setKeyin(Timestamp keyin) {
+    public void setKeyin(String keyin) {
         this.keyin = keyin;
     }
 

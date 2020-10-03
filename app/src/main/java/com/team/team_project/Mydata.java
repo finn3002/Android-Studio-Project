@@ -12,6 +12,7 @@ public class Mydata {
     int totalresult=0;
     int remainingresult=0;
     int moneyresult=0;
+
     public Mydata(int totalresult,int remainingresult,int moneyresult){
         this.totalresult=totalresult;
         this.remainingresult=remainingresult;

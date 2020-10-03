@@ -78,14 +78,6 @@ public class FoodProfile extends AppCompatActivity {
         fooddetailfat.setText(foodfat);
 
 
-        cancel = findViewById(R.id.cancel);
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FoodProfile.this,AddActivity.class);
-                startActivity(intent);
-            }
-        });
     }
     private void findview(){
         fooddetailname = findViewById(R.id.FoodDetailName);
@@ -95,6 +87,16 @@ public class FoodProfile extends AppCompatActivity {
         fooddetailportine = findViewById(R.id.FoodDetailPortine);
         fooddetailfat = findViewById(R.id.FoodDetailFat);
         editImage=findViewById(R.id.editImage);
+
+
+        cancel = findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FoodProfile.this,AddActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
