@@ -252,8 +252,3 @@ public class PageActivity extends Activity {
 
 
 
-
-
-
-
-

@@ -53,15 +53,13 @@ public class AddDetail extends AppCompatActivity {
 //                List<String> date= Arrays.asList(d.toString().split(" "));
 //                bean.setKeyin(date.get(0).toString());
                 String dateData=getIntent().getExtras().getString("dateData");
+
                 bean.setKeyin(dateData);
 
-                if(db.collection("personal").document(dateData).equals(null)){
-
-                    db.collection("personal").document().set(bean);
-                }else{
-                    db.collection("personal").document(dateData) //加入新食物
+                    db.collection("personal").document("personTest") //加入新食物
                             .collection("allfood").document().set(bean,SetOptions.merge());
-                }
+
+
                 Intent intent = new Intent(AddDetail.this,AddActivity.class);
                 startActivity(intent);
                 finish();
