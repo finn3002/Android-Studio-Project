@@ -59,15 +59,16 @@
         app:layout_constraintEnd_toEndOf="@+id/dollor"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/back">
+        app:layout_constraintTop_toTopOf="@+id/back"
+        android:orientation="horizontal">
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
-            android:layout_width="match_parent"
-            android:layout_height="193dp"
-            android:layout_marginTop="-25dp">
+<!--        <com.github.mikephil.charting.charts.PieChart-->
+<!--            android:id="@+id/pieChart"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="193dp"-->
+<!--            android:layout_marginTop="-25dp">-->
 
-        </com.github.mikephil.charting.charts.PieChart>
+<!--        </com.github.mikephil.charting.charts.PieChart>-->
     </LinearLayout>
 
     <TextView
