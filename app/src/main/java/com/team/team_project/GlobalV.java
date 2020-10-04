@@ -16,6 +16,7 @@ public class GlobalV extends Application {
     private int dollar,age;
     private String date;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,6 +27,7 @@ public class GlobalV extends Application {
         setHeight(HEIGHT);
         setWeight(WEIGHT);
         setDate(datenum);
+
 
     }
 

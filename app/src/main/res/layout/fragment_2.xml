@@ -76,11 +76,11 @@
 
     <TextView
         android:id="@+id/Suggest"
-        android:layout_width="168dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="400dp"
-        android:text="建議"
+        android:layout_width="239dp"
+        android:layout_height="162dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="350dp"
+        android:text="今日營養攝取充足!\n還缺少些蛋白質!\n建議多攝取肉類或雞蛋喔~"
         android:textColor="@color/darkblue"
         android:textSize="25dp"
         android:textStyle="bold" />

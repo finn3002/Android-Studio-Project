@@ -56,6 +56,7 @@ public class AddActivity extends Activity {
     private int Countcarbon=0;
     private int Countprotein=0;
     private int Countfat=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DecimalFormat nf = new DecimalFormat("0");
@@ -70,42 +71,15 @@ public class AddActivity extends Activity {
 
 //      上方資料顯示處
 //        gv.setCal((gv.getCal()-gv.getAddcal()));
-        remainingresult.setText((nf.format( gv.getCal())));
-        totalmoney.setText((nf.format( gv.getDollar())));
-        totalresult.setText((nf.format( gv.getAddcal())));
+//        remainingresult.setText((nf.format( gv.getCal())));
+//        totalmoney.setText((nf.format( gv.getDollar())));
+//        totalresult.setText((nf.format( gv.getAddcal())));
 
 
 //        上方pieChart
-        pieChart =(PieChart)findViewById(R.id.pieChart);
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.7f);
-        pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
-        pieChart.setCenterTextColor(Color.WHITE);
-        pieChart.setCenterTextSize(15);
-        pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(android.R.color.white);
-        pieChart.setTransparentCircleAlpha(110);
-        pieChart.setTransparentCircleRadius(58f);
-        pieChart.setRotationEnabled(false);
-        pieChart.getLegend().setEnabled(false);
-//        內容
-        ArrayList<PieEntry> Values = new ArrayList<>();
-        Values.add(new PieEntry(Float.parseFloat(gv.getAddcal().toString()),""));
-        Values.add(new PieEntry(Float.parseFloat(gv.getCal().toString())-Float.parseFloat(gv.getAddcal().toString()),""));
-//        顏色順序
-        ArrayList<Integer> colors = new ArrayList<>();
-        for(int c: MY_COLORS) colors.add(c);
-//        pie動畫
-        pieChart.animateY(2000, Easing.EaseInOutCubic);
-//        顯示
-        PieDataSet dataSet = new PieDataSet(Values,"");
-        dataSet.setSliceSpace(0f);
-        dataSet.setColors(colors);
-        PieData data  = new PieData((dataSet));
-        data.setValueTextSize(0f);
-        pieChart.setData(data);
+
+
     }
 
     public void  getFood(View v){ //食物查詢
@@ -113,7 +87,7 @@ public class AddActivity extends Activity {
         final CollectionReference mydb=db.collection("personal")
                 .document("personTest").collection("allfood");
         final DocumentReference updAllcal=db.collection("personal").document("personTest");
-        final CollectionReference updAllcal2=db.collection("personal");
+
         Query query = mydb.whereEqualTo("keyin",gv.getDate());
         final String[] rec_calorie = {""};
         db.collection("personal").document("personTest").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -121,12 +95,10 @@ public class AddActivity extends Activity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()){
                     rec_calorie[0] =task.getResult().getDouble("rec_calorie").toString();
+
                 }
             }
         });
-
-
-
 
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -163,14 +135,49 @@ public class AddActivity extends Activity {
                     updAllcal.update("today_fat",Countfat);
                     updAllcal.update("today_carbon",Countcarbon);
 
+//                    if (!rec_calorie[0].isEmpty()) {
+//                        gv.setCal((Double.valueOf(rec_calorie[0]) - CountaddCal));
+                    gv.setCal(2177.0- CountaddCal);
+                        remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
+//                    }
 
-                    if(!rec_calorie[0].isEmpty()){
-                        gv.setCal((Double.valueOf(rec_calorie[0])-CountaddCal));
 //                        Log.e("testdata", rec_calorie[0]);
 //                        Log.e("testdata",String.valueOf(gv.getCal()));
-                    }
 
-                    remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
+
+
+                    pieChart.setUsePercentValues(true);
+                    pieChart.getDescription().setEnabled(false);
+                    pieChart.setExtraOffsets(5,10,5,5);
+                    pieChart.setDragDecelerationFrictionCoef(0.7f);
+                    pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
+                    pieChart.setCenterTextColor(Color.WHITE);
+                    pieChart.setCenterTextSize(15);
+                    pieChart.setDrawHoleEnabled(true);
+                    pieChart.setHoleColor(android.R.color.white);
+                    pieChart.setTransparentCircleAlpha(110);
+                    pieChart.setTransparentCircleRadius(58f);
+                    pieChart.setRotationEnabled(false);
+                    pieChart.getLegend().setEnabled(false);
+//        內容
+                    ArrayList<PieEntry> Values = new ArrayList<>();
+                    Values.add(new PieEntry(Float.parseFloat(gv.getAddcal().toString()),""));
+                    Values.add(new PieEntry(Float.parseFloat(gv.getCal().toString()),""));
+
+
+//        顏色順序
+                    ArrayList<Integer> colors = new ArrayList<>();
+                    for(int c: MY_COLORS) colors.add(c);
+//        pie動畫
+                    pieChart.animateY(2000, Easing.EaseInOutCubic);
+//        顯示
+                    PieDataSet dataSet = new PieDataSet(Values,"");
+
+                    dataSet.setSliceSpace(0f);
+                    dataSet.setColors(colors);
+                    PieData data  = new PieData((dataSet));
+                    data.setValueTextSize(0f);
+                    pieChart.setData(data);
 
                 }
             }
@@ -299,6 +306,7 @@ public class AddActivity extends Activity {
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
+        pieChart =(PieChart)findViewById(R.id.pieChart);
     }
 
     private void settingRecycleV(){
