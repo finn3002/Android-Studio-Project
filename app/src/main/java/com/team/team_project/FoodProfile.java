@@ -37,7 +37,7 @@ public class FoodProfile extends AppCompatActivity {
         findview();
         image_db= FirebaseStorage.getInstance("gs://sprojct-f638d.appspot.com/");
         StorageReference mStorageRef = image_db.getReference();
-        StorageReference getRef=mStorageRef.child("cheese.jpg");
+        StorageReference getRef=mStorageRef.child("woodon.jpg");
         Task<Uri> url=getRef.getDownloadUrl();
         try {
             final File tmpFile = File.createTempFile("img", "jpeg");
@@ -50,8 +50,9 @@ public class FoodProfile extends AppCompatActivity {
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
                     Bitmap image = BitmapFactory.decodeFile(tmpFile.getAbsolutePath());
-
+                    editImage.setMaxHeight(300);
                     editImage.setImageBitmap(image);
+
 
                 }
             });
