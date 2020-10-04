@@ -77,7 +77,6 @@ public class AddActivity extends Activity {
 
 
 //        上方pieChart
-        pieChart.setDragDecelerationFrictionCoef(0.7f);
 
 
     }

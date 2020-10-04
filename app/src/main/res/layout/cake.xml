@@ -53,11 +53,15 @@
     <ImageView
         android:id="@+id/editImage"
         android:layout_width="379dp"
-        android:layout_height="365dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="251dp"
+        android:maxHeight="365px"
+        android:maxWidth = "300px"
+        app:layout_constraintBottom_toTopOf="@+id/detailback1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/detailback"
+        app:layout_constraintTop_toBottomOf="@+id/FoodDetailName"
+        app:layout_constraintVertical_bias="0.0"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/defaltpic" />
 
     <TextView
