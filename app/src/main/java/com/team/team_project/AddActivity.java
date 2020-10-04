@@ -223,7 +223,7 @@ public class AddActivity extends Activity {
                 Log.e("datatest",String.valueOf(fmt.format(calendar.getTime())));
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-//                finish();
+                finish();
             }
         });
         downBt=findViewById(R.id.down);
