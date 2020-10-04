@@ -148,7 +148,6 @@ public class PageActivity extends Activity {
         DecimalFormat nf = new DecimalFormat("0");
         double BMRboy = 66 + (13.7 * gv.getWeight()) + (5.0 *  gv.getHeight()) - (6.8 * gv.getAge());
         double BMRgirl = 655 + (9.6 * gv.getWeight()) + (1.8 *  gv.getHeight()) - (4.7 * gv.getAge());
-//  ˊ655+432+288-98.7 =
         if (sex.getCheckedRadioButtonId() == R.id.boy) {
 
             switch (work.getCheckedRadioButtonId()) {

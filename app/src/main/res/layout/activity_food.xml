@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Food">
 
+    <TextView
+        android:id="@+id/detailphoto"
+        android:layout_width="189dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/selfphoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addphoto"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/selfcamera"
+        app:layout_constraintEnd_toEndOf="@+id/detailphoto"
+        app:layout_constraintStart_toStartOf="@+id/detailphoto"
+        app:layout_constraintTop_toTopOf="@+id/detailphoto" />
 
     <TextView
         android:id="@+id/bluebar"
@@ -105,14 +124,86 @@
         />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="284dp"
-        android:text="推薦"
+        android:layout_marginBottom="12dp"
+        android:text="請拍攝或選擇一張個人臉部照片"
+        android:textColor="@color/darkblue"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/detailphoto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/selfclick"
+        android:layout_width="119dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/loginbar"
+        android:text="開始分析"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
+
+    <TextView
+        android:id="@+id/selfdetail"
+        android:layout_width="378dp"
+        android:layout_height="392dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/selfdetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
+
+    <TextView
+        android:id="@+id/resulttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:textSize="25dp"
+        android:textColor="@color/darkblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/selfdetail" />
+
+    <TextView
+        android:id="@+id/selfinside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/darkblue"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resulttitle" />
+
+    <ImageView
+        android:id="@+id/chicken"
+        android:layout_width="305dp"
+        android:layout_height="206dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        app:layout_constraintBottom_toTopOf="@+id/pencil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selfclick"
+        app:layout_constraintVertical_bias="0.864" />
+
+    <TextView
+        android:id="@+id/foodname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:textColor="@color/darkblue"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/selfdetail"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selfclick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

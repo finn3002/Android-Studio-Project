@@ -1,6 +1,9 @@
 package com.team.team_project;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,6 +41,9 @@ public class AddDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_detail);
         findview();
+
+
+
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +72,25 @@ public class AddDetail extends AppCompatActivity {
 
             }
         });
+    }
+    public void showdialog(View v){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(AddDetail.this);
+        final String[] food = {"粄條","烏龍麵","炒烏龍麵","炒麵","意麵"};
+        dialog.setTitle("請選擇符合項目");
+        dialog.setItems(food, new DialogInterface.OnClickListener(){
+            @Override
+
+            public void onClick(DialogInterface dialog, int which) {
+                edfoodnm.setText("炒烏龍麵");
+                edCal.setText("354");
+                edcar.setText("61");
+                edpro.setText("9");
+                edfat.setText("8.2");
+            }
+        });
+        dialog.show();
+
+
     }
     private void findview(){
         finish = findViewById(R.id.finish);

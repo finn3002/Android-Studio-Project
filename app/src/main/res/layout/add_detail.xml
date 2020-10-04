@@ -33,7 +33,7 @@
         android:layout_height="432dp"
         android:background="@drawable/detailback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
         android:layout_width="160dp"
         android:layout_height="151dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/detailphoto"
+        android:background="@drawable/yakiudon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
@@ -241,7 +241,7 @@
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/max"
         app:layout_constraintStart_toStartOf="@+id/max"
         app:layout_constraintTop_toBottomOf="@+id/max" />
@@ -254,7 +254,7 @@
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/carbon2"
         app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="@+id/carbon2"
@@ -268,7 +268,7 @@
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/por"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="@+id/por"
@@ -276,16 +276,32 @@
 
     <EditText
         android:id="@+id/edFat"
-        android:layout_width="65dp"
-        android:layout_height="35dp"
+        android:layout_width="57dp"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/fat2"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="@+id/fat2"
         app:layout_constraintTop_toBottomOf="@+id/fat2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="88dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/buttonana"
+        android:text="影像分析"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:onClick="showdialog"
+        app:layout_constraintEnd_toEndOf="@+id/detailback"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
