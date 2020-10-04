@@ -48,17 +48,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/addphoto"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="60dp"
+<!--    <Button-->
+<!--        android:id="@+id/addphoto"-->
+<!--        android:layout_width="33dp"-->
+<!--        android:layout_height="33dp"-->
+<!--        android:layout_marginTop="60dp"-->
 
-        android:background="@drawable/detailicon"
-        app:layout_constraintEnd_toEndOf="@+id/detailphoto"
-        app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="@+id/detailphoto"
-        app:layout_constraintTop_toTopOf="@+id/detailphoto" />
+<!--        android:background="@drawable/detailicon"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/detailphoto"-->
+<!--        app:layout_constraintHorizontal_bias="0.519"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/detailphoto"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/detailphoto" />-->
 
     <Button
         android:id="@+id/finish"
