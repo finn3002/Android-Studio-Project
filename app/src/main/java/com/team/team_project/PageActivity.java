@@ -43,7 +43,7 @@ public class PageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
         findview();
-        countDayEat();
+//        countDayEat();
 //        DocumentReference item=db.collection("personal").document("personalTest");
 //        item.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
 //            @Override
@@ -133,11 +133,14 @@ public class PageActivity extends Activity {
                 startActivity(intent);
             }
         });
-
-        fieldheight.setText((nf.format( gv.getHeight())));
-        fieldweight.setText((nf.format( gv.getWeight())));
-        fieldweight.setText((nf.format( gv.getWeight())));
-        fieldage.setText((nf.format( gv.getAge())));
+        gv.setCal(0.0);
+        gv.setCarbonhydrate(0.0);
+        gv.setProtein(0.0);
+        gv.setFat(0.0);
+        result.setText(nf.format(gv.getCal()));
+        carresult.setText(nf.format(gv.getCarbohydrate()));
+        porresult.setText(nf.format(gv.getProtein()));
+        fatresult.setText(nf.format(gv.getFat()));
 
     }
 
