@@ -88,11 +88,14 @@ public class Fragment3 extends Fragment {
         pieChart.getLegend().setEnabled(false);
 
         ArrayList<PieEntry> Values = new ArrayList<>();
+//        Values.add(new PieEntry(Float.parseFloat(gv.getCarbohydrate().toString()),"碳水化合物"));
+//        Values.add(new PieEntry(Float.parseFloat(gv.getProtein().toString()),"蛋白質"));
+//        Values.add(new PieEntry(Float.parseFloat(gv.getFat().toString()),"脂肪"));
 
-//        Values.add(new PieEntry((float) car,"碳水化合物"));
-        Values.add(new PieEntry(323,"碳水化合物"));
-        Values.add(new PieEntry(64,"蛋白質"));
-        Values.add(new PieEntry(26,"脂肪"));
+
+        Values.add(new PieEntry(300,"碳水化合物"));
+        Values.add(new PieEntry(35,"蛋白質"));
+        Values.add(new PieEntry(40,"脂肪"));
 
         pieChart.animateY(2000, Easing.EaseInOutCubic);
         PieDataSet dataSet = new PieDataSet(Values,"");

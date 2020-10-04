@@ -136,7 +136,7 @@ public class AddActivity extends Activity {
 
 //                    if (!rec_calorie[0].isEmpty()) {
 //                        gv.setCal((Double.valueOf(rec_calorie[0]) - CountaddCal));
-                    gv.setCal(2177.0- CountaddCal);
+                    gv.setCal(1978.0- CountaddCal);
                         remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
 //                    }
 

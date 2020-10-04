@@ -82,7 +82,7 @@
         android:layout_marginTop="350dp"
         android:text="今日營養攝取充足!\n還缺少些蛋白質!\n建議多攝取肉類或雞蛋喔~"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
 
