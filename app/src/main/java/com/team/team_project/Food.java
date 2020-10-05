@@ -67,8 +67,8 @@ public class Food extends AppCompatActivity {
     }
     public View.OnClickListener clickaddphoto = new View.OnClickListener(){
         public void onClick(View v){
-            selfphoto=findViewById(R.id.detailphoto);
-            selfphoto.setImageResource(R.drawable.userpic);
+            selfphoto=findViewById(R.id.imageView10);
+            selfphoto.setImageResource(R.drawable.kiki);
             addphoto.setVisibility(View.INVISIBLE);
         }
     };

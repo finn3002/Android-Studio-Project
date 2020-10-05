@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/detailphoto"
-        android:layout_width="189dp"
-        android:layout_height="177dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/selfphoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +20,11 @@
         android:id="@+id/addphoto"
         android:layout_width="33dp"
         android:layout_height="33dp"
-        android:layout_marginTop="72dp"
-        android:visibility="visible"
+        android:layout_marginTop="40dp"
         android:background="@drawable/selfcamera"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/detailphoto"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/detailphoto"
         app:layout_constraintTop_toTopOf="@+id/detailphoto" />
 
@@ -142,7 +143,7 @@
         android:id="@+id/selfclick"
         android:layout_width="119dp"
         android:layout_height="33dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/loginbar"
         android:text="開始分析"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +154,7 @@
         android:id="@+id/selfdetail"
         android:layout_width="378dp"
         android:layout_height="392dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/selfdetail"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,14 +210,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selfclick" />
 
+
     <ImageView
-        android:id="@+id/selfphoto"
-        android:layout_width="217dp"
-        android:layout_height="198dp"
-        android:layout_marginTop="68dp"
+        android:id="@+id/imageView10"
+        android:layout_width="176dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
