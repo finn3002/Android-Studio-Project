@@ -12,13 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Food extends AppCompatActivity {
-    Button addbutton;
+    Button addbutton,addphoto;
     Button tablebutton;
     Button profilebutton;
     Button chatbuttom;
     Button selfdetailclick;
     TextView selfresult, selfinside,foodname;
-    ImageView chicken;
+    ImageView chicken,selfphoto;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +61,17 @@ public class Food extends AppCompatActivity {
 
         selfdetailclick = (Button) findViewById(R.id.selfclick);
         selfdetailclick.setOnClickListener(selfdetail);
+        addphoto=findViewById(R.id.addphoto);
+        addphoto.setOnClickListener(clickaddphoto);
 
     }
+    public View.OnClickListener clickaddphoto = new View.OnClickListener(){
+        public void onClick(View v){
+            selfphoto=findViewById(R.id.detailphoto);
+            selfphoto.setImageResource(R.drawable.userpic);
+            addphoto.setVisibility(View.INVISIBLE);
+        }
+    };
 
     public View.OnClickListener selfdetail = new View.OnClickListener() {
 

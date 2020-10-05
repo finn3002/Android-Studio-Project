@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Food">
 
-    <TextView
+    <ImageView
         android:id="@+id/detailphoto"
         android:layout_width="189dp"
         android:layout_height="177dp"
@@ -21,6 +21,7 @@
         android:layout_width="33dp"
         android:layout_height="33dp"
         android:layout_marginTop="72dp"
+        android:visibility="visible"
         android:background="@drawable/selfcamera"
         app:layout_constraintEnd_toEndOf="@+id/detailphoto"
         app:layout_constraintStart_toStartOf="@+id/detailphoto"
@@ -207,5 +208,15 @@
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selfclick" />
+
+    <ImageView
+        android:id="@+id/selfphoto"
+        android:layout_width="217dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

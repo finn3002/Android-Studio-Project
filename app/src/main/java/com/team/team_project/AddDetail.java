@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
@@ -27,13 +30,14 @@ import java.util.Calendar;
 import java.util.List;
 
 public class AddDetail extends AppCompatActivity {
-    Button finish;
+    Button finish,changephoto;
     EditText edfoodnm;
     EditText edprice;
     EditText edcar;
     EditText edpro;
     EditText edfat;
     EditText edCal;
+    ImageView yaki;
     private FirebaseFirestore db ;
 
     @Override
@@ -43,7 +47,16 @@ public class AddDetail extends AppCompatActivity {
         findview();
 
 
+        changephoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            yaki.findViewById(R.id.yaki);
+            yaki.setImageResource(R.drawable.yaki);
+                changephoto.setVisibility(View.INVISIBLE);
 
+
+            }
+        });
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +106,8 @@ public class AddDetail extends AppCompatActivity {
 
     }
     private void findview(){
+        changephoto=findViewById(R.id.addphoto);
+        yaki=findViewById(R.id.yaki);
         finish = findViewById(R.id.finish);
         edfoodnm=findViewById(R.id.edFoodnm);
         edprice=findViewById(R.id.edPrice);
