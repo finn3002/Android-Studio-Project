@@ -53,6 +53,12 @@ public class AddDetail extends AppCompatActivity {
             yaki.findViewById(R.id.yaki);
             yaki.setImageResource(R.drawable.yaki);
                 changephoto.setVisibility(View.INVISIBLE);
+                edfoodnm.setText("炒烏龍麵");
+                edCal.setText("354");
+                edcar.setText("61");
+                edpro.setText("9");
+                edfat.setText("8.2");
+
 
 
             }
@@ -86,25 +92,25 @@ public class AddDetail extends AppCompatActivity {
             }
         });
     }
-    public void showdialog(View v){
-        AlertDialog.Builder dialog = new AlertDialog.Builder(AddDetail.this);
-        final String[] food = {"粄條","烏龍麵","炒烏龍麵","炒麵","意麵"};
-        dialog.setTitle("請選擇符合項目");
-        dialog.setItems(food, new DialogInterface.OnClickListener(){
-            @Override
-
-            public void onClick(DialogInterface dialog, int which) {
-                edfoodnm.setText("炒烏龍麵");
-                edCal.setText("354");
-                edcar.setText("61");
-                edpro.setText("9");
-                edfat.setText("8.2");
-            }
-        });
-        dialog.show();
-
-
-    }
+//    public void showdialog(View v){
+//        AlertDialog.Builder dialog = new AlertDialog.Builder(AddDetail.this);
+//        final String[] food = {"粄條","烏龍麵","炒烏龍麵","炒麵","意麵"};
+//        dialog.setTitle("請選擇符合項目");
+//        dialog.setItems(food, new DialogInterface.OnClickListener(){
+//            @Override
+//
+//            public void onClick(DialogInterface dialog, int which) {
+//                edfoodnm.setText("炒烏龍麵");
+//                edCal.setText("354");
+//                edcar.setText("61");
+//                edpro.setText("9");
+//                edfat.setText("8.2");
+//            }
+//        });
+//        dialog.show();
+//
+//
+//    }
     private void findview(){
         changephoto=findViewById(R.id.addphoto);
         yaki=findViewById(R.id.yaki);

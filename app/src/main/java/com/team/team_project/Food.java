@@ -81,7 +81,7 @@ public class Food extends AppCompatActivity {
             foodname=findViewById(R.id.foodname);
             chicken=findViewById(R.id.chicken);
         selfresult.setText("分析結果：");
-        selfinside.setText("    根據個人化分析，\n    心情愉悅、蛋白質攝取量偏低。");
+        selfinside.setText("    情緒：心情愉悅　\n　攝取：蛋白質攝取量偏低。");
         foodname.setText("推薦：雞肉飯");
         chicken.setImageResource( R.drawable.chickenla);
 

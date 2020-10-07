@@ -11,10 +11,11 @@
         android:layout_width="458dp"
         android:layout_height="744dp"
         android:background="@color/blue"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/detailback1"
@@ -33,7 +34,7 @@
         android:layout_height="432dp"
         android:background="@drawable/detailback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,6 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/back" />
 
+
     <TextView
         android:id="@+id/cost"
         android:layout_width="wrap_content"
@@ -91,9 +93,9 @@
         android:layout_marginTop="128dp"
         android:text="金額："
         android:textColor="@color/darkblue"
-        android:textSize="60px"
+        android:textSize="90px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/detailphoto"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,27 +103,57 @@
         android:id="@+id/foodname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="68dp"
         android:text="名稱："
         android:textColor="@color/darkblue"
-        android:textSize="60px"
+        android:textSize="90px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/detailphoto"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <TextView-->
+<!--        android:id="@+id/line5"-->
+<!--        android:layout_width="10dp"-->
+<!--        android:layout_height="43dp"-->
+<!--        android:layout_marginStart="200dp"-->
+<!--        android:layout_marginLeft="200dp"-->
+<!--        android:text="|"-->
+<!--        android:textColor="@color/darkblue"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/detailback1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/word"-->
+<!--        app:layout_constraintVertical_bias="0.131" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/line6"-->
+<!--        android:layout_width="10dp"-->
+<!--        android:layout_height="43dp"-->
+<!--        android:layout_marginStart="300dp"-->
+<!--        android:layout_marginLeft="300dp"-->
+<!--        android:text="|"-->
+<!--        android:textColor="@color/darkblue"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/detailback1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/word"-->
+<!--        app:layout_constraintVertical_bias="0.131" />-->
 
     <TextView
         android:id="@+id/por"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:text="蛋白質"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textColor="@color/darkblue"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/detailback1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/max"
         app:layout_constraintTop_toBottomOf="@+id/word"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -129,86 +161,48 @@
         android:id="@+id/fat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:text="脂肪"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textColor="@color/darkblue"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/detailback1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.596" />
 
     <TextView
         android:id="@+id/carbon2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="218dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
         android:text="碳水化合物"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback"
-        app:layout_constraintStart_toEndOf="@+id/line"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/line"
-        android:layout_width="10dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:text="|"
         android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.131" />
+        android:textSize="35sp"
 
-    <TextView
-        android:id="@+id/line5"
-        android:layout_width="10dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:text="|"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <TextView
-        android:id="@+id/line6"
-        android:layout_width="10dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginLeft="300dp"
-        android:text="|"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.131" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/max"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@+id/max"
+        app:layout_constraintTop_toBottomOf="@+id/edCal" />
 
     <TextView
         android:id="@+id/max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
         android:text="熱量"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+
+        android:textSize="35sp"
         app:layout_constraintEnd_toStartOf="@+id/line"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/back"
         app:layout_constraintTop_toBottomOf="@+id/word" />
+
     <EditText
         android:id="@+id/edFoodnm"
         android:layout_width="97dp"
@@ -217,6 +211,7 @@
         android:layout_marginLeft="4dp"
         android:ems="10"
         android:hint=""
+        android:textSize="20dp"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/foodname"
         app:layout_constraintStart_toEndOf="@+id/foodname"
@@ -225,24 +220,29 @@
 
     <EditText
         android:id="@+id/edPrice"
-        android:layout_width="97dp"
-        android:layout_height="38dp"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/cost"
         app:layout_constraintStart_toEndOf="@+id/cost"
         app:layout_constraintTop_toTopOf="@+id/cost" />
 
     <EditText
         android:id="@+id/edCal"
-        android:layout_width="38dp"
-        android:layout_height="45dp"
+        android:layout_width="55dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/max"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="@+id/max"
         app:layout_constraintTop_toBottomOf="@+id/max" />
 
@@ -250,59 +250,57 @@
         android:id="@+id/edCar"
         android:layout_width="43dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/carbon2"
-        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="@+id/carbon2"
         app:layout_constraintTop_toBottomOf="@+id/carbon2" />
 
     <EditText
         android:id="@+id/edPro"
-        android:layout_width="57dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="58dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/por"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="@+id/por"
         app:layout_constraintTop_toBottomOf="@+id/por" />
 
     <EditText
         android:id="@+id/edFat"
-        android:layout_width="57dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="64dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint=""
         android:inputType="number|textPersonName"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/fat2"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/fat2"
         app:layout_constraintTop_toBottomOf="@+id/fat2" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="88dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/buttonana"
-        android:text="影像分析"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        android:onClick="showdialog"
-        app:layout_constraintEnd_toEndOf="@+id/detailback"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="88dp"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@drawable/buttonana"-->
+<!--        android:text="影像分析"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="12dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:onClick="showdialog"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/detailback"-->
+<!--        app:layout_constraintHorizontal_bias="0.179"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/detailphoto" />-->
 
     <ImageView
         android:id="@+id/yaki"
