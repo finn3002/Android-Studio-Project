@@ -196,7 +196,6 @@
         android:text="熱量"
         android:textStyle="bold"
         android:textColor="@color/darkblue"
-
         android:textSize="35sp"
         app:layout_constraintEnd_toStartOf="@+id/line"
         app:layout_constraintHorizontal_bias="0.527"
