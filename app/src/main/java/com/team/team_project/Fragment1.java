@@ -3,11 +3,16 @@ package com.team.team_project;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -34,7 +39,13 @@ public class Fragment1 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private Button proteinBt;
+    private Button fatBt;
+    private Button sugarBt;
+    private TextView firstitem;
+    private TextView seconditem;
+    private TextView thirditem;
+    private TextView explain2;
 
     public Fragment1() {
         // Required empty public constructor
@@ -64,8 +75,53 @@ public class Fragment1 extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
 
+
+
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        proteinBt=getActivity().findViewById(R.id.proteinBt);
+        fatBt=getActivity().findViewById(R.id.fatBt);
+        sugarBt=getActivity().findViewById(R.id.sugarBt);
+        firstitem=getActivity().findViewById(R.id.firstitem);
+        seconditem=getActivity().findViewById(R.id.seconditem);
+        thirditem=getActivity().findViewById(R.id.thirditem);
+        explain2=getActivity().findViewById(R.id.explain2);
+        proteinBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstitem.setText("茶葉蛋");
+                seconditem.setText("鹽水雞");
+                thirditem.setText("木瓜牛奶");
+                explain2.setText("每單位價格可獲得的蛋白質");
+            }
+        });
+        sugarBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstitem.setText("烤地瓜");
+                seconditem.setText("飯糰");
+                thirditem.setText("焗烤馬鈴薯");
+                explain2.setText("每單位價格可獲得的醣類");
+            }
+        });
+        fatBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstitem.setText("甜甜圈");
+                seconditem.setText("酥皮濃湯");
+                thirditem.setText("鹽酥雞");
+                explain2.setText("每單位價格可獲得的脂肪");
+            }
+        });
 
     }
 
