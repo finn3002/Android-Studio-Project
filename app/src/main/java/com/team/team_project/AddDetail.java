@@ -59,8 +59,6 @@ public class AddDetail extends AppCompatActivity {
                 edpro.setText("9");
                 edfat.setText("8.2");
 
-
-
             }
         });
         finish.setOnClickListener(new View.OnClickListener() {
