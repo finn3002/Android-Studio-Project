@@ -33,6 +33,7 @@ public class Analysis extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
+    Fragment4 fragment4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +81,15 @@ public class Analysis extends AppCompatActivity {
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
         fragment3 = new Fragment3();
+        fragment4= new Fragment4();
 
         tabLayout.setupWithViewPager(viewPager);
         Analysis.ViewPagerAdapter viewPagerAdapter = new Analysis.ViewPagerAdapter(getSupportFragmentManager(), 0);
 
         viewPagerAdapter.addfragment(fragment1, "CP值");
         viewPagerAdapter.addfragment(fragment2, "分數");
-        viewPagerAdapter.addfragment(fragment3, "綜合數據");
+        viewPagerAdapter.addfragment(fragment3, "每日數據");
+        viewPagerAdapter.addfragment(fragment4, "每週數據");
         viewPager.setAdapter(viewPagerAdapter);
 
 //        設icon
