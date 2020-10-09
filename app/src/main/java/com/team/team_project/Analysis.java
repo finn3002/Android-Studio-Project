@@ -89,7 +89,7 @@ public class Analysis extends AppCompatActivity {
         viewPagerAdapter.addfragment(fragment1, "CP值");
         viewPagerAdapter.addfragment(fragment2, "分數");
         viewPagerAdapter.addfragment(fragment3, "每日數據");
-        viewPagerAdapter.addfragment(fragment4, "每週數據");
+        viewPagerAdapter.addfragment(fragment4, "一週數據");
         viewPager.setAdapter(viewPagerAdapter);
 
 //        設icon

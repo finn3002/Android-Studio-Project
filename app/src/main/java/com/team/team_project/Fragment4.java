@@ -40,6 +40,7 @@ public class Fragment4 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+
     BarChart stackedChat;
 
     int[] color = new int[]{
@@ -94,44 +95,31 @@ public class Fragment4 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_4, container, false);
         stackedChat = view.findViewById(R.id.chart_bar);
-
-
-
         BarDataSet barDataSet = new BarDataSet(dataValue(), "");
         barDataSet.setColors(color);
         BarData barData = new BarData(barDataSet);
+        Legend legend = stackedChat.getLegend();
+        legend.setTextSize(20);   //下方label字大小
         stackedChat.setData(barData);
         barData.setValueTextSize(15);
         barDataSet.setStackLabels(new String[]{"醣類","蛋白質","脂肪"});
         barDataSet.setFormSize(20);
-
         stackedChat.getDescription().setEnabled(false);
         XAxis xAxis = stackedChat.getXAxis();
         xAxis.setDrawGridLines(false);
-
-        xAxis.setTextSize(20);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setTextSize(18);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM_INSIDE);
         YAxis LeftYAxis = stackedChat.getAxisLeft();
         YAxis RightYAxis = stackedChat.getAxisRight();
         LeftYAxis.setTextSize(15);
         RightYAxis.setEnabled(false);   //不顯示右側
-        LeftYAxis.setEnabled(false);   //不顯示右側
+        barDataSet.setHighlightEnabled(false);
         stackedChat.animateXY(1000, 2000);
         return view;
     }
 
     private ArrayList<BarEntry> dataValue() {
-        final ArrayList<String> xAxisLabel = new ArrayList<>();
-//        xAxisLabel.add("10/3");
-//        xAxisLabel.add("10/4");
-//        xAxisLabel.add("10/5");
-//        xAxisLabel.add("10/6");
-//        xAxisLabel.add("10/7");
-//        xAxisLabel.add("10/8");
-//        xAxisLabel.add("10/9");
-        String[] xAxisLables = new String[]{"1","2", "3", "4"};
-
-
+        String[] xAxisLables = new String[]{"10/3","10/3","10/4", "10/5", "10/6", "10/7", "10/8", "10/9"};
         stackedChat.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLables));
         ArrayList<BarEntry> dataValue = new ArrayList<>();
         dataValue.add(new BarEntry(1, new float[]{300, 35, 40}));
