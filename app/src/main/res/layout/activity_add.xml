@@ -282,9 +282,12 @@
 
     <Button
         android:id="@+id/down"
-        android:layout_width="57dp"
-        android:layout_height="37dp"
-        android:text="下頁"
+        android:layout_width="60dp"
+        android:layout_height="26dp"
+        android:background="@drawable/loginbar"
+        android:text="&gt;"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/dateNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
@@ -294,16 +297,18 @@
 
     <Button
         android:id="@+id/upBt"
-        android:layout_width="65dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="上頁"
+        android:layout_width="58dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/loginbar"
+        android:text="&lt;"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/dateNum"
         app:layout_constraintEnd_toStartOf="@+id/dateNum"
         app:layout_constraintTop_toTopOf="@+id/dateNum"
-        app:layout_constraintVertical_bias="0.181" />
-
+        app:layout_constraintVertical_bias="0.285" />
 
 
 

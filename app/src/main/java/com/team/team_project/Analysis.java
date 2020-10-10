@@ -87,7 +87,7 @@ public class Analysis extends AppCompatActivity {
         Analysis.ViewPagerAdapter viewPagerAdapter = new Analysis.ViewPagerAdapter(getSupportFragmentManager(), 0);
 
         viewPagerAdapter.addfragment(fragment1, "CP值");
-        viewPagerAdapter.addfragment(fragment2, "分數");
+        viewPagerAdapter.addfragment(fragment2, "健康得分");
         viewPagerAdapter.addfragment(fragment3, "每日數據");
         viewPagerAdapter.addfragment(fragment4, "一週數據");
         viewPager.setAdapter(viewPagerAdapter);

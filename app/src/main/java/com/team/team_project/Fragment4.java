@@ -119,7 +119,7 @@ public class Fragment4 extends Fragment {
     }
 
     private ArrayList<BarEntry> dataValue() {
-        String[] xAxisLables = new String[]{"10/3","10/3","10/4", "10/5", "10/6", "10/7", "10/8", "10/9"};
+        String[] xAxisLables = new String[]{"9/17","9/18","9/19", "9/20", "9/21", "9/22", "9/23", "9/24"};
         stackedChat.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLables));
         ArrayList<BarEntry> dataValue = new ArrayList<>();
         dataValue.add(new BarEntry(1, new float[]{300, 35, 40}));
