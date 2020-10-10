@@ -103,7 +103,7 @@ public class GlobalV extends Application {
     private static final int AGE =21;
     private static final double HEIGHT =160.0;
     private static final double WEIGHT =45;
-    private static final String datenum="2020/09/02";
+    private static final String datenum="2020/09/24";
 
 }
 

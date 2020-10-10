@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +26,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 
@@ -49,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
             foodPrice=v.findViewById(R.id.foodPrice);
             foodCal= v.findViewById(R.id.foodCal);
             delBt=v.findViewById(R.id.delBt);
+
             db=FirebaseFirestore.getInstance();
 
             itemView.setOnClickListener(this);
@@ -61,21 +66,21 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
 
     public void removeItem(int position){
 
-//       db.collection("personal").document("personTest") //刪除食物
-//       .collection("allfood").whereEqualTo("foodnm",foodBeans.get(position).getFoodnm()).get()
-//               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                   @Override
-//                   public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                       if(task.isSuccessful()){
-//                           for(QueryDocumentSnapshot document : task.getResult()){
-//                               String delId=document.getId();
-//                               db.collection("personal").document("personTest") //刪除食物
-//                                       .collection("allfood").document(delId).delete();
-//
-//                           }
-//                       }
-//                   }
-//               });
+       db.collection("personal").document("personTest") //刪除食物
+       .collection("allfood").whereEqualTo("foodnm",foodBeans.get(position).getFoodnm()).get()
+               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                   @Override
+                   public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                       if(task.isSuccessful()){
+                           for(QueryDocumentSnapshot document : task.getResult()){
+                               String delId=document.getId();
+                               db.collection("personal").document("personTest") //刪除食物
+                                       .collection("allfood").document(delId).delete();
+
+                           }
+                       }
+                   }
+               });
 
         foodBeans.remove(position);
         notifyItemRemoved(position);
@@ -94,6 +99,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
         holder.foodPrice.setText(String.valueOf(foodBeans.get(position).getFood_price()));
         holder.foodCal.setText(foodBeans.get(position).getFood_calorie().toString());
         holder.delBt.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -107,6 +113,14 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
                 }).setMessage("確定要刪除"+foodBeans.get(position).getFoodnm()+"?").show();
                 builder.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.rgb(12,28,37));
                 builder.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.rgb(12,28,37));
+//                builder.getButton(AlertDialog.BUTTON_POSITIVE).setBackgroundColor(Color.rgb(255,204,0));
+//                builder.getButton(AlertDialog.BUTTON_NEGATIVE).setBackgroundColor(Color.rgb(255,204,0));
+                builder.getWindow().getAttributes();
+                TextView textView=(TextView) builder.findViewById(android.R.id.message);
+                textView.setTextSize(25);
+
+
+
 
 
             }
