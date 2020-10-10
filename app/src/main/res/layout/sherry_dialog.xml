@@ -104,7 +104,7 @@
                 android:id="@+id/foodlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="260dp"
+                android:layout_marginTop="228dp"
                 android:text="\n起司蛋餅\n溫紅茶\n燒肉磚壓吐司\n水果茶\n烤地瓜"
                 android:textColor="#FFFFFF"
                 android:textSize="36sp"
