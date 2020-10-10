@@ -3,6 +3,7 @@ package com.team.team_project;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,6 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
     {
         private TextView foodNm,foodPrice,foodCal;
         private Button delBt;
+
 
         public ViewHolder(View v){
             super(v);
@@ -84,6 +87,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
         ViewHolder viewHolder=new ViewHolder(view);
         return viewHolder;
     }
+
     @Override
     public void onBindViewHolder(final MyAdapter.ViewHolder holder, final int position) {
         holder.foodNm.setText(foodBeans.get(position).getFoodnm().toString());
@@ -92,12 +96,18 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
         holder.delBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(v.getContext()).setNegativeButton("取消",null).setPositiveButton("確定", new DialogInterface.OnClickListener() {
+
+                AlertDialog builder= new AlertDialog.Builder(v.getContext())
+                       .setNegativeButton("取消",null)
+                       .setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         removeItem(position);
                     }
-                }).setMessage("確定要刪除"+foodBeans.get(position).getFoodnm()+"?").create().show();
+                }).setMessage("確定要刪除"+foodBeans.get(position).getFoodnm()+"?").show();
+                builder.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.rgb(12,28,37));
+                builder.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.rgb(12,28,37));
+
 
             }
         });
