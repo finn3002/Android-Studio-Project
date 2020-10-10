@@ -124,30 +124,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/textView5"
+
+
+    <ImageButton
+        android:id="@+id/finn"
         android:layout_width="352dp"
         android:layout_height="105dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/friendslist"
-        android:onClick="showfinn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <ImageButton
+        android:id="@+id/sherry"
         android:layout_width="352dp"
         android:layout_height="105dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/friendslist"
-        android:onClick="showsherry"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/finn"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
+        app:layout_constraintStart_toStartOf="@+id/finn"
+        app:layout_constraintTop_toBottomOf="@+id/finn" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -289,7 +288,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/frirank"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/finn"
         app:layout_constraintTop_toBottomOf="@+id/frirank" />
 
     <TextView
@@ -315,7 +314,7 @@
         android:textColor="@color/darkblue"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/finn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/friscore"
         app:layout_constraintTop_toBottomOf="@+id/friscore" />
