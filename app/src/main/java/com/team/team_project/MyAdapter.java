@@ -1,12 +1,12 @@
 package com.team.team_project;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +14,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.AlertDialogLayout;
+
+import androidx.recyclerview.widget.AsyncListDiffer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
+
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.SetOptions;
-
-import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.logging.Handler;
 
 
 public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
@@ -84,6 +82,9 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
 
         foodBeans.remove(position);
         notifyItemRemoved(position);
+        notifyDataSetChanged();
+
+
     }
 
     @Override
@@ -101,7 +102,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
         holder.delBt.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
 
                 AlertDialog builder= new AlertDialog.Builder(v.getContext())
                        .setNegativeButton("取消",null)
@@ -109,6 +110,9 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         removeItem(position);
+                        AddActivity activity=(AddActivity)v.getContext();
+                        activity.reload();
+
                     }
                 }).setMessage("確定要刪除"+foodBeans.get(position).getFoodnm()+"?").show();
                 builder.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.rgb(12,28,37));
@@ -118,6 +122,14 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder>{
                 builder.getWindow().getAttributes();
                 TextView textView=(TextView) builder.findViewById(android.R.id.message);
                 textView.setTextSize(25);
+//                builder.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        removeItem(position);
+//                        AddActivity activity=(AddActivity)v.getContext();
+//                        activity.reload();
+//                    }
+//                });
 
 
 
