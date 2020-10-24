@@ -69,7 +69,6 @@ public class AddActivity extends Activity {
         settingRecycleV();
         getFood(recyclerView);
 
-
 //      上方資料顯示處
 //        gv.setCal((gv.getCal()-gv.getAddcal()));
 //        remainingresult.setText((nf.format( gv.getCal())));
@@ -78,25 +77,6 @@ public class AddActivity extends Activity {
 
 
 //        上方pieChart
-
-
-    }
-
-    //重整用
-    @Override
-    public void onRestart() {
-        super.onRestart();
-
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
-    }
-
-    public void reload(){
-
-        Intent intent = new Intent(AddActivity.this,AddActivity.class);
-        finish();
-        startActivity(intent);
 
 
     }
@@ -160,6 +140,8 @@ public class AddActivity extends Activity {
                         remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
 //                    }
 
+//                        Log.e("testdata", rec_calorie[0]);
+//                        Log.e("testdata",String.valueOf(gv.getCal()));
 
 
 
@@ -323,7 +305,6 @@ public class AddActivity extends Activity {
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
-
         pieChart =(PieChart)findViewById(R.id.pieChart);
     }
 
@@ -332,8 +313,6 @@ public class AddActivity extends Activity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(linearLayoutManager);
-
-
     }
 }
 
