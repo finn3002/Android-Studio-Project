@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/back"
-        android:layout_width="449dp"
-        android:layout_height="661dp"
+        android:layout_width="445dp"
+        android:layout_height="686dp"
         android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

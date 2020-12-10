@@ -61,10 +61,10 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="40dp"
-        android:textColor="@color/darkblue"
+        android:textColor="#F41818"
         android:layout_marginTop="180dp"
         android:layout_marginLeft="180dp"
-        android:text="90" />
+        android:text="55" />
 
     <ImageView
         android:id="@+id/scoreback"
@@ -76,11 +76,11 @@
 
     <TextView
         android:id="@+id/Suggest"
-        android:layout_width="239dp"
+        android:layout_width="258dp"
         android:layout_height="162dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="350dp"
-        android:text="今日營養攝取充足!\n還缺少些蛋白質!\n建議多攝取肉類或雞蛋喔~"
+        android:text="今日熱量攝取過多!\n請減少攝取油炸類食物!\n建議多攝取蔬菜或水果喔~"
         android:textColor="@color/darkblue"
         android:textSize="20dp"
         android:textStyle="bold" />
