@@ -6,23 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Chat">
 
-    <TextView
-        android:id="@+id/bluebar"
-        android:layout_width="458dp"
-        android:layout_height="64dp"
-        android:background="@color/darkblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/table"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/bargraph"
@@ -34,10 +24,10 @@
 
     <Button
         android:id="@+id/chat"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="236dp"
         android:background="@drawable/yellowchat"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -49,10 +39,10 @@
 
     <Button
         android:id="@+id/recommend"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/delicious"
@@ -61,25 +51,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977"
         tools:ignore="OnClick"/>
+
     <Button
         android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/ellipse3"
         android:onClick="onClick"
         android:textAllCaps="false"
-        android:background="@drawable/ellipse3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick"/>
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/whiteuser"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -91,9 +82,9 @@
 
     <Button
         android:id="@+id/pencil"
-        android:layout_width="43dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="32dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/pencil"
@@ -106,55 +97,55 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="354dp"
-        android:layout_height="235dp"
-        android:layout_marginTop="124dp"
+        android:layout_width="319dp"
+        android:layout_height="180dp"
         android:background="@drawable/friendyellow"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="413dp"
-        android:layout_height="390dp"
-        android:layout_marginTop="300dp"
+        android:layout_width="369dp"
+        android:layout_height="407dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/friendblue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageButton
         android:id="@+id/finn"
-        android:layout_width="352dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="307dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/friendslist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <ImageButton
         android:id="@+id/sherry"
-        android:layout_width="352dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="307dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/friendslist"
         app:layout_constraintEnd_toEndOf="@+id/finn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="@+id/finn"
         app:layout_constraintTop_toBottomOf="@+id/finn" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="152dp"
-        android:layout_height="122dp"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
         android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/userpicpix" />
@@ -163,13 +154,13 @@
         android:id="@+id/userscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="72dp"
         android:text="綺綺"
         android:textColor="@color/darkblue"
-        android:textSize="120px"
+        android:textSize="90px"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -177,13 +168,13 @@
         android:id="@+id/friendcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="188dp"
         android:text="好友數"
         android:textColor="@color/blue"
-        android:textSize="80px"
+        android:textSize="60px"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintHorizontal_bias="0.244"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,13 +182,13 @@
         android:id="@+id/rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="188dp"
         android:text="排名"
         android:textColor="@color/blue"
-        android:textSize="80px"
+        android:textSize="60px"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintHorizontal_bias="0.708"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -231,32 +222,32 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="308dp"
         android:text="排名     使用者                           分數"
         android:textColor="@color/white"
-        android:textSize="22dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:srcCompat="@drawable/friendpi" />
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
@@ -267,13 +258,13 @@
         android:id="@+id/frirank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="36dp"
         android:text="2"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintHorizontal_bias="0.742"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -281,10 +272,10 @@
         android:id="@+id/friendrank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="80dp"
         android:text="3"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/frirank"
         app:layout_constraintHorizontal_bias="1.0"
@@ -295,41 +286,41 @@
         android:id="@+id/friscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="370dp"
         android:text="88"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/friescore2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="476dp"
         android:text="85"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/finn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/friscore"
-        app:layout_constraintTop_toBottomOf="@+id/friscore" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/friendnm2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="80dp"
         android:text="Sherry"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/friendnm"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="@+id/friendnm"
         app:layout_constraintTop_toBottomOf="@+id/friendnm" />
 
@@ -337,30 +328,41 @@
         android:id="@+id/friendnm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="368dp"
         android:text="阿涵"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userscorebar"
-        android:layout_width="86dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/userscorebar"
-        android:text="  90分"
+        android:text="       90分"
         android:textColor="@color/darkblue"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/bluebar"
+        android:layout_width="458dp"
+        android:layout_height="55dp"
+        android:background="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

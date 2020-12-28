@@ -6,23 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Analysis">
 
-    <TextView
-        android:id="@+id/bluebar"
-        android:layout_width="458dp"
-        android:layout_height="64dp"
-        android:background="@color/darkblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/table"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/bargraph1"
@@ -34,10 +24,10 @@
 
     <Button
         android:id="@+id/chat"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="236dp"
         android:background="@drawable/chat"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -49,10 +39,10 @@
 
     <Button
         android:id="@+id/recommend"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/delicious"
@@ -63,8 +53,8 @@
         tools:ignore="OnClick"/>
     <Button
         android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -76,10 +66,10 @@
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/whiteuser"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -91,9 +81,9 @@
 
     <Button
         android:id="@+id/pencil"
-        android:layout_width="43dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="32dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/pencil"
@@ -102,6 +92,17 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="OnClick"
         />
+    <TextView
+        android:id="@+id/bluebar"
+        android:layout_width="458dp"
+        android:layout_height="55dp"
+        android:background="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <!--        <TextView-->
     <!--        android:id="@+id/textView6"-->
@@ -117,7 +118,10 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -165,7 +169,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="642dp"
             app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
 
         </androidx.viewpager.widget.ViewPager>

@@ -11,11 +11,12 @@
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart_bar"
-        android:layout_width="409dp"
-        android:layout_height="575dp"
+        android:layout_width="361dp"
+        android:layout_height="455dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="0.376" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

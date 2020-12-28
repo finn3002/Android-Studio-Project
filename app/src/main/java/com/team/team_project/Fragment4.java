@@ -122,13 +122,13 @@ public class Fragment4 extends Fragment {
         String[] xAxisLables = new String[]{"9/17","9/18","9/19", "9/20", "9/21", "9/22", "9/23", "9/24"};
         stackedChat.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLables));
         ArrayList<BarEntry> dataValue = new ArrayList<>();
-        dataValue.add(new BarEntry(1, new float[]{300, 35, 40}));
+        dataValue.add(new BarEntry(1, new float[]{300, 35, 45}));
         dataValue.add(new BarEntry(2, new float[]{200, 40, 35}));
         dataValue.add(new BarEntry(3, new float[]{120, 22, 40}));
         dataValue.add(new BarEntry(4, new float[]{100, 30, 45}));
         dataValue.add(new BarEntry(5, new float[]{250, 50, 50}));
         dataValue.add(new BarEntry(6, new float[]{320, 62, 38}));
-        dataValue.add(new BarEntry(7, new float[]{550, 20, 62}));
+        dataValue.add(new BarEntry(7, new float[]{300, 35, 40}));
         return dataValue;
     }
     

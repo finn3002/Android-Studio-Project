@@ -79,7 +79,7 @@ public class Fragment3 extends Fragment {
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.7f);
         pieChart.setCenterText("今日\n營養攝取");
-        pieChart.setCenterTextSize(18);
+        pieChart.setCenterTextSize(15);
         pieChart.setCenterTextColor(Color.WHITE);
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(android.R.color.white);
@@ -105,7 +105,7 @@ public class Fragment3 extends Fragment {
         dataSet.setValueTextColor(Color.BLACK);
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data  = new PieData((dataSet));
-        data.setValueTextSize(15f);
+        data.setValueTextSize(12f);
         data.setValueTextColor(Color.BLACK);
         pieChart.setData(data);
 

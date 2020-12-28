@@ -8,18 +8,19 @@
 
     <ImageView
         android:id="@+id/detailphoto"
-        android:layout_width="130dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="114dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/selfphoto"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addphoto"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/selfcamera"
         android:visibility="visible"
@@ -28,23 +29,13 @@
         app:layout_constraintStart_toStartOf="@+id/detailphoto"
         app:layout_constraintTop_toTopOf="@+id/detailphoto" />
 
-    <TextView
-        android:id="@+id/bluebar"
-        android:layout_width="458dp"
-        android:layout_height="64dp"
-        android:background="@color/darkblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/table"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/bargraph"
@@ -56,10 +47,10 @@
 
     <Button
         android:id="@+id/chat"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="236dp"
         android:background="@drawable/chat"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -71,10 +62,10 @@
 
     <Button
         android:id="@+id/recommend"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/yellowdelicious"
@@ -85,8 +76,8 @@
         tools:ignore="OnClick"/>
     <Button
         android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -98,10 +89,10 @@
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/whiteuser"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -113,9 +104,9 @@
 
     <Button
         android:id="@+id/pencil"
-        android:layout_width="43dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="32dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/pencil"
@@ -129,36 +120,37 @@
         android:id="@+id/hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="20dp"
         android:text="請拍攝或選擇一張個人臉部照片"
         android:textColor="@color/darkblue"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/detailphoto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/selfclick"
         android:layout_width="119dp"
         android:layout_height="33dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/loginbar"
         android:text="開始分析"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
 
+
     <TextView
         android:id="@+id/selfdetail"
-        android:layout_width="378dp"
-        android:layout_height="392dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="318dp"
+        android:layout_height="391dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/selfdetail"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailphoto" />
 
@@ -166,11 +158,11 @@
         android:id="@+id/resulttitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:textSize="25dp"
+        android:layout_marginTop="32dp"
         android:textColor="@color/darkblue"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/selfdetail" />
 
@@ -178,48 +170,60 @@
         android:id="@+id/selfinside"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:textColor="@color/darkblue"
-        android:textSize="20dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resulttitle" />
 
     <ImageView
         android:id="@+id/chicken"
-        android:layout_width="322dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
+        android:layout_width="256dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/pencil"
+        app:layout_constraintEnd_toEndOf="@+id/selfdetail"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selfclick"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.804" />
 
     <TextView
         android:id="@+id/foodname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="100dp"
         android:textColor="@color/darkblue"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/selfdetail"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selfclick" />
 
-
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="176dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="125dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="76dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bluebar"
+        android:layout_width="458dp"
+        android:layout_height="55dp"
+        android:background="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,62 +15,63 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.538" />
 
     <TextView
         android:id="@+id/detailback1"
-        android:layout_width="412dp"
-        android:layout_height="185dp"
-        android:layout_marginBottom="252dp"
+        android:layout_width="361dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="280dp"
         android:background="@drawable/detailback1"
         app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/detailback"
-        android:layout_width="412dp"
-        android:layout_height="432dp"
+        android:layout_width="369dp"
+        android:layout_height="316dp"
         android:background="@drawable/detailback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/detailphoto"
-        android:layout_width="160dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="130dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/detailphoto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addphoto"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="60dp"
-        android:visibility="visible"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/detailicon"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/detailphoto"
-        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/detailphoto"
         app:layout_constraintTop_toTopOf="@+id/detailphoto" />
+
 
     <Button
         android:id="@+id/finish"
         android:layout_width="136dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/loginbar"
         android:text="完成"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailback1" />
 
@@ -79,38 +80,10 @@
         android:layout_width="406dp"
         android:layout_height="51dp"
         android:layout_marginTop="180dp"
-        android:background="@drawable/yellowchat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/back" />
-
-
-    <TextView
-        android:id="@+id/cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:text="金額："
-        android:textColor="@color/darkblue"
-        android:textSize="90px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toEndOf="@+id/detailphoto"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/foodname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="名稱："
-        android:textColor="@color/darkblue"
-        android:textSize="90px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toEndOf="@+id/detailphoto"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <TextView-->
 <!--        android:id="@+id/line5"-->
@@ -141,66 +114,92 @@
 <!--        app:layout_constraintVertical_bias="0.131" />-->
 
     <TextView
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="金額："
+        android:textColor="@color/darkblue"
+        android:textSize="50px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <TextView
+        android:id="@+id/foodname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名稱："
+        android:textColor="@color/darkblue"
+        android:textSize="50px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detailback"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <TextView
         android:id="@+id/por"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
         android:text="蛋白質"
         android:textColor="@color/darkblue"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/detailback1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/max"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
 
     <TextView
         android:id="@+id/fat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
         android:text="脂肪"
         android:textColor="@color/darkblue"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/word"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 
     <TextView
         android:id="@+id/carbon2"
         android:layout_width="218dp"
         android:layout_height="59dp"
-        android:layout_marginTop="20dp"
         android:text="碳水化合物"
         android:textColor="@color/darkblue"
-        android:textSize="35sp"
+        android:textSize="30sp"
 
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/max"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="@+id/max"
-        app:layout_constraintTop_toBottomOf="@+id/edCal" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:text="熱量"
-        android:textStyle="bold"
         android:textColor="@color/darkblue"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toStartOf="@+id/line"
-        app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="@+id/back"
-        app:layout_constraintTop_toBottomOf="@+id/word" />
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
 
     <EditText
         android:id="@+id/edFoodnm"
@@ -249,13 +248,12 @@
         android:id="@+id/edCar"
         android:layout_width="43dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint=""
         android:inputType="number|textPersonName"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/carbon2"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.268"
         app:layout_constraintStart_toStartOf="@+id/carbon2"
         app:layout_constraintTop_toBottomOf="@+id/carbon2" />
 
@@ -303,13 +301,13 @@
 
     <ImageView
         android:id="@+id/yaki"
-        android:layout_width="258dp"
-        android:layout_height="156dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailback1"
+        android:layout_width="154dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/detailback"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

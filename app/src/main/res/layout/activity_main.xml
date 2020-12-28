@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/Redpapper"
-        android:layout_width="225dp"
-        android:layout_height="517dp"
+        android:layout_width="180dp"
+        android:layout_height="405dp"
         android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/background"
@@ -31,67 +31,64 @@
 
     <ImageView
         android:id="@+id/leaf"
-        android:layout_width="139dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="121dp"
+        android:layout_height="71dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toEndOf="@+id/background"
-        app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.605"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.839"
         app:srcCompat="@drawable/group16" />
 
     <ImageView
         android:id="@+id/purple"
-        android:layout_width="196dp"
-        android:layout_height="488dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginLeft="328dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        android:layout_width="119dp"
+        android:layout_height="346dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/path23" />
 
     <ImageView
         android:id="@+id/line"
-        android:layout_width="170dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="26dp"
+        android:layout_width="97dp"
+        android:layout_height="121dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toEndOf="@+id/background"
-        app:layout_constraintTop_toBottomOf="@+id/purple"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/group17" />
 
     <ImageView
         android:id="@+id/shallot"
-        android:layout_width="115dp"
-        android:layout_height="345dp"
+        android:layout_width="111dp"
+        android:layout_height="275dp"
 
-        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toStartOf="@+id/leaf"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         app:srcCompat="@drawable/group15" />
 
     <ImageView
         android:id="@+id/circle"
-        android:layout_width="160dp"
-        android:layout_height="272dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="203dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="216dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background"
+        app:layout_constraintVertical_bias="0.099"
         app:srcCompat="@drawable/ellipse2" />
 
     <EditText
@@ -99,7 +96,7 @@
         android:layout_width="250dp"
         android:layout_height="50sp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginTop="240dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/input_field"
@@ -116,7 +113,7 @@
         android:id="@+id/editText3"
         android:layout_width="250dp"
         android:layout_height="50sp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="324dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="密碼"
@@ -129,9 +126,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="180dp"
-        android:layout_height="50sp"
-        android:layout_marginTop="72dp"
+        android:layout_width="154dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/loginbar"
         android:onClick="onClick"
         android:text="登入"
@@ -139,7 +136,7 @@
         android:textColor="@color/white"
         android:textSize="50px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         tools:ignore="OnClick" />
@@ -171,7 +168,7 @@
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -179,7 +176,7 @@
         android:layout_width="292dp"
 
         android:layout_height="78dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

@@ -7,8 +7,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="86dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/ellipse3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,9 +17,9 @@
 
     <Button
         android:id="@+id/pencil"
-        android:layout_width="43dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/pencil"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -31,10 +31,10 @@
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/user"
@@ -46,10 +46,10 @@
 
     <Button
         android:id="@+id/table"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:background="@drawable/bargraph"
         android:onClick="onClick"
         android:textAllCaps="false"
@@ -62,10 +62,10 @@
 
     <Button
         android:id="@+id/chat"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="236dp"
         android:onClick="onClick"
         android:textAllCaps="false"
         android:background="@drawable/chat"
@@ -76,73 +76,45 @@
 
     <Button
         android:id="@+id/recommend"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
         android:background="@drawable/delicious"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977" />
 
-    <TextView
-        android:id="@+id/bluebar"
-        android:layout_width="458dp"
-        android:layout_height="64dp"
-        android:background="@color/darkblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/user"
-        android:layout_width="149dp"
-        android:layout_height="39dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@color/white"
-        android:ems="15"
-        android:inputType="textPersonName"
-        android:text="   綺綺"
-        android:textColorHint="@color/blue"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.751"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/grayback"
-        android:layout_width="376dp"
-        android:layout_height="302dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="374dp"
+        android:layout_height="289dp"
         android:background="@drawable/grayback"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174" />
 
     <TextView
         android:id="@+id/darkback"
         android:layout_width="331dp"
         android:layout_height="158dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="380dp"
         android:background="@drawable/darkblueback"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="128dp"
-        android:layout_height="149dp"
+        android:layout_width="98dp"
+        android:layout_height="92dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/userphoto"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,11 +126,11 @@
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="104dp"
         android:text="性別："
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -168,21 +140,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:text="體重："
-        android:textSize="18dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/height2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_width="48dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="156dp"
         android:text="身高："
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,22 +163,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
+        android:inputType="numberDecimal"
         android:text="年齡："
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:inputType="numberDecimal"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="104dp"
         android:text="歲"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toEndOf="@+id/gender"
         app:layout_constraintTop_toTopOf="@+id/user" />
 
@@ -266,13 +238,13 @@
         android:id="@+id/editage"
         android:layout_width="42dp"
         android:layout_height="21dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/grayback"
         android:ems="10"
-        android:textColor="@color/darkblue"
         android:inputType="number|textPersonName"
+        android:textColor="@color/darkblue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toEndOf="@+id/age2"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 
@@ -280,38 +252,38 @@
         android:id="@+id/edheight"
         android:layout_width="51dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="152dp"
         android:background="@drawable/grayback"
         android:ems="10"
         android:inputType="number|textPersonName"
         android:textColor="@color/darkblue"
-        app:layout_constraintEnd_toStartOf="@+id/weight"
-        app:layout_constraintHorizontal_bias="0.239"
-        app:layout_constraintStart_toEndOf="@+id/height2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="156dp"
         android:text="公分"
-        app:layout_constraintEnd_toStartOf="@+id/weight"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toEndOf="@+id/edheight"
-        app:layout_constraintTop_toBottomOf="@+id/age2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edweight"
         android:layout_width="62dp"
         android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/grayback"
         android:ems="10"
         android:inputType="number|textPersonName"
         android:textColor="@color/darkblue"
         app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toEndOf="@+id/weight"
         app:layout_constraintTop_toBottomOf="@+id/editage" />
 
@@ -319,12 +291,13 @@
         android:id="@+id/kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
         android:text="公斤"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/edweight" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
 
     <TextView
         android:id="@+id/everyday"
@@ -391,17 +364,47 @@
         app:layout_constraintStart_toStartOf="@+id/darkback"
         app:layout_constraintTop_toBottomOf="@+id/cal" />
 
+
+    <!--        <Button-->
+<!--        android:state_pressed="false"-->
+<!--        android:id="@+id/boy"-->
+<!--        android:layout_width="41dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="18dp"-->
+<!--        android:text="男"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/gender"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/user" />-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/girl"-->
+<!--        android:layout_width="42dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginTop="18dp"-->
+<!--        android:text="女"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.449"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/boy"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/user" />-->
+<!--    android:inputType="numberDecimal"-->
+
     <RadioGroup
         android:id="@+id/sex"
-        android:layout_width="231dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="104dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432">
+        tools:ignore="MissingConstraints"><![CDATA[
+
+        />
+
+        ]]>
 
         <RadioButton
             android:id="@+id/boy"
@@ -412,34 +415,36 @@
 
             android:gravity="start"
             android:text="男"
-            android:textSize="20sp" />
-        />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/girl"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="37dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="-44dp"
+            android:layout_marginTop="-35dp"
             android:layout_weight="1"
-            android:checked="true"
             android:buttonTint="@color/yellow"
+            android:checked="true"
             android:gravity="end"
             android:text="女"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/work"
-        android:layout_width="180dp"
-        android:layout_height="157dp"
+        android:layout_width="113dp"
+        android:layout_height="155dp"
 
         android:layout_marginBottom="224dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.239"
-        app:layout_constraintStart_toStartOf="@+id/grayback">
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818">
 
         <RadioButton
             android:id="@+id/no"
@@ -481,38 +486,45 @@
         android:id="@+id/button2"
         android:layout_width="110dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="96dp"
         android:background="@drawable/loginbar"
 
         android:text="分析"
-        app:layout_constraintBottom_toTopOf="@+id/darkback"
-        app:layout_constraintEnd_toEndOf="@+id/grayback"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/work" />
 
+        app:layout_constraintBottom_toBottomOf="@+id/bluebar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
 
-    <!--        <Button-->
-<!--        android:state_pressed="false"-->
-<!--        android:id="@+id/boy"-->
-<!--        android:layout_width="41dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="18dp"-->
-<!--        android:text="男"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/gender"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user" />-->
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="149dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/white"
+        android:ems="15"
+        android:inputType="textPersonName"
+        android:text="   綺綺"
+        android:textColorHint="@color/blue"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-<!--    <Button-->
-<!--        android:id="@+id/girl"-->
-<!--        android:layout_width="42dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginTop="18dp"-->
-<!--        android:text="女"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.449"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/boy"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user" />-->
-<!--    android:inputType="numberDecimal"-->
+    <TextView
+        android:id="@+id/bluebar"
+        android:layout_width="458dp"
+        android:layout_height="55dp"
+        android:background="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,9 @@
 
     <TextView
         android:id="@+id/detailback1"
-        android:layout_width="412dp"
-        android:layout_height="185dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="361dp"
+        android:layout_height="164dp"
+        android:layout_marginBottom="240dp"
         android:background="@drawable/detailback1"
         app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,8 @@
 
     <TextView
         android:id="@+id/detailback"
-        android:layout_width="415dp"
-        android:layout_height="491dp"
+        android:layout_width="395dp"
+        android:layout_height="393dp"
         android:background="@drawable/detailback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,9 +39,9 @@
 
     <Button
         android:id="@+id/cancel"
-        android:layout_width="136dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="110dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/loginbar"
         android:text="X"
         android:textSize="18sp"
@@ -52,16 +52,17 @@
 
     <ImageView
         android:id="@+id/editImage"
-        android:layout_width="379dp"
-        android:layout_height="251dp"
+        android:layout_width="324dp"
+        android:layout_height="219dp"
+        android:maxWidth="300px"
         android:maxHeight="365px"
-        android:maxWidth = "300px"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/detailback1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FoodDetailName"
         app:layout_constraintVertical_bias="0.0"
-        android:scaleType="centerCrop"
         app:srcCompat="@drawable/yakiudon" />
 
     <TextView
@@ -71,10 +72,10 @@
         android:layout_marginTop="40dp"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/detailback" />
 
@@ -82,41 +83,41 @@
         android:id="@+id/FoodDetailDollar"
         android:layout_width="94dp"
         android:layout_height="45dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text=""
         android:textColor="@color/darkblue"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/FoodDetailName"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dollarsign"
         android:layout_width="94dp"
         android:layout_height="45dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text="$"
         android:textColor="@color/darkblue"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toEndOf="@+id/FoodDetailName"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/FoodDetailCal"
         android:layout_width="72dp"
         android:layout_height="51dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:text=""
         android:textColor="@color/darkblue"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/detailback1" />
 
@@ -129,7 +130,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="@+id/detailback1"
         app:layout_constraintTop_toBottomOf="@+id/FoodDetailCal" />
 
