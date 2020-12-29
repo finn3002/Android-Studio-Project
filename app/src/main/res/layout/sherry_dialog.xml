@@ -78,7 +78,6 @@
                 app:layout_constraintHorizontal_bias="0.662"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/todayfood"
                 android:layout_width="wrap_content"

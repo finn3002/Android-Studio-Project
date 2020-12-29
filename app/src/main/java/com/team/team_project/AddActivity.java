@@ -18,6 +18,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.api.services.vision.v1.Vision;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -25,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -35,10 +38,15 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class AddActivity extends Activity {
-    //顏色黃→白
-    final int[] MY_COLORS = {
-            Color.  rgb(255,204,0),
-            Color. rgb(255,255,255)
+
+    final int[] MY_COLORS1 = {
+            Color.  rgb(255,204,0), //黃
+            Color. rgb(255,255,255), //白
+    };
+    final int[] MY_COLORS2 = {
+            Color. rgb(255,99,71),//紅
+            Color. rgb(255,255,255) //白
+
     };
     Button tablebutton,foodbutton,profilebutton,chatbutton,addbutton,upBt,downBt;
     TextView remainingresult,totalmoney,totalresult;
@@ -63,8 +71,8 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-
         findview();
+
         //recyclerView Set
         settingRecycleV();
         getFood(recyclerView);
@@ -78,25 +86,6 @@ public class AddActivity extends Activity {
 
 
 //        上方pieChart
-
-
-    }
-
-    //重整用
-    @Override
-    public void onRestart() {
-        super.onRestart();
-
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
-    }
-
-    public void reload(){
-
-        Intent intent = new Intent(AddActivity.this,AddActivity.class);
-        finish();
-        startActivity(intent);
 
 
     }
@@ -154,13 +143,14 @@ public class AddActivity extends Activity {
                     updAllcal.update("today_fat",Countfat);
                     updAllcal.update("today_carbon",Countcarbon);
 
-//                    if (!rec_calorie[0].isEmpty()) {
-//                        gv.setCal((Double.valueOf(rec_calorie[0]) - CountaddCal));
-                    gv.setCal(1978.0- CountaddCal);
+                    Double leftCal=1978.0- CountaddCal;
+                    if(leftCal<=0){
+                        gv.setCal(0.0);
+                    }else{
+                        gv.setCal(leftCal);
+                    }
+
                         remainingresult.setText(String.valueOf(nf.format(gv.getCal())));
-//                    }
-
-
 
 
                     pieChart.setUsePercentValues(true);
@@ -168,7 +158,12 @@ public class AddActivity extends Activity {
                     pieChart.setExtraOffsets(5,10,5,5);
                     pieChart.setDragDecelerationFrictionCoef(0.7f);
                     pieChart.setCenterText(nf.format(gv.getAddcal()).toString());
-                    pieChart.setCenterTextColor(Color.WHITE);
+                    if(Double.valueOf(remainingresult.getText().toString())<=0){
+                        pieChart.setCenterTextColor(Color.rgb(255,69,0));
+                    }else{
+                        pieChart.setCenterTextColor(Color.WHITE);
+                    }
+
                     pieChart.setCenterTextSize(15);
                     pieChart.setDrawHoleEnabled(true);
                     pieChart.setHoleColor(android.R.color.white);
@@ -184,7 +179,13 @@ public class AddActivity extends Activity {
 
 //        顏色順序
                     ArrayList<Integer> colors = new ArrayList<>();
-                    for(int c: MY_COLORS) colors.add(c);
+                    if(Integer.valueOf(remainingresult.getText().toString())<=0){
+                        for(int c: MY_COLORS2) colors.add(c);
+                        pieChart.setCenterTextSize(20);
+                    }else{
+                        for(int c: MY_COLORS1) colors.add(c);
+                    }
+
 //        pie動畫
                     pieChart.animateY(2000, Easing.EaseInOutCubic);
 //        顯示
@@ -323,7 +324,6 @@ public class AddActivity extends Activity {
         totalmoney=findViewById(R.id.moneyresult);
         totalresult=findViewById(R.id.totalresult);
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
-
         pieChart =(PieChart)findViewById(R.id.pieChart);
     }
 
@@ -332,8 +332,6 @@ public class AddActivity extends Activity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(linearLayoutManager);
-
-
     }
 }
 
