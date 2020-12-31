@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.common.AccountPicker;
+import com.google.android.gms.tasks.Task;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -38,6 +39,7 @@ import com.google.api.services.vision.v1.model.BatchAnnotateImagesResponse;
 import com.google.api.services.vision.v1.model.EntityAnnotation;
 import com.google.api.services.vision.v1.model.Feature;
 import com.google.api.services.vision.v1.model.Image;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -94,18 +96,22 @@ public class DetectActivity extends AppCompatActivity {
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
+
             case REQUEST_PERMISSIONS:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     getAuthToken();
-                } else {
-                    Toast.makeText(DetectActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
-                }
+//                } else {
+//                    Toast.makeText(DetectActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+//                }
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
+        Uri temp=Uri.parse("https://igav3-metcdn-com.global.ssl.fastly.net/content/uploads/sites/2/2018/10/16091327/49_Hero.png");
+        performCloudVisionRequest(temp);
         if (requestCode == REQUEST_GALLERY_IMAGE && resultCode == RESULT_OK && data != null) {
             performCloudVisionRequest(data.getData());
         } else if (requestCode == REQUEST_CODE_PICK_ACCOUNT) {
