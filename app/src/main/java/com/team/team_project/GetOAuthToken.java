@@ -27,6 +27,7 @@ public class GetOAuthToken extends AsyncTask<Void, Void, Void> {
     protected Void doInBackground(Void... params) {
         try {
             String token = fetchToken();
+            System.out.println("abcabc"+token);
             if (token != null) {
                 ((DetectActivity)mActivity).onTokenReceived(token);
             }
@@ -40,8 +41,10 @@ public class GetOAuthToken extends AsyncTask<Void, Void, Void> {
         String accessToken;
         try {
             accessToken = GoogleAuthUtil.getToken(mActivity, mAccount, mScope);
+
             GoogleAuthUtil.clearToken (mActivity, accessToken);
             accessToken = GoogleAuthUtil.getToken(mActivity, mAccount, mScope);
+            System.out.println("tokentoken"+accessToken);
             return accessToken;
         } catch (UserRecoverableAuthException userRecoverableException) {
             mActivity.startActivityForResult(userRecoverableException.getIntent(), mRequestCode);

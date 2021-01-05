@@ -25,7 +25,7 @@ public class FoodProfile extends AppCompatActivity {
     Button cancel;
     TextView fooddetailname , fooddetaildollor , fooddetailcal , fooddetailcarbon,fooddetailportine,fooddetailfat;
     String foodname , fooddollar , foodcal,foodcarbon,foodportine,foodfat;
-    private FirebaseStorage image_db;
+   public FirebaseStorage image_db;
     ImageView editImage;
 
 
