@@ -25,7 +25,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.common.AccountPicker;
-import com.google.android.gms.tasks.Task;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -39,7 +38,7 @@ import com.google.api.services.vision.v1.model.BatchAnnotateImagesResponse;
 import com.google.api.services.vision.v1.model.EntityAnnotation;
 import com.google.api.services.vision.v1.model.Feature;
 import com.google.api.services.vision.v1.model.Image;
-import com.google.firebase.storage.StorageReference;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -76,9 +75,12 @@ public class DetectActivity extends AppCompatActivity {
         selectImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 ActivityCompat.requestPermissions(DetectActivity.this,
                         new String[]{Manifest.permission.GET_ACCOUNTS},
                         REQUEST_PERMISSIONS);
+
+//                launchImagePicker();
             }
         });
     }
@@ -98,11 +100,12 @@ public class DetectActivity extends AppCompatActivity {
         switch (requestCode) {
 
             case REQUEST_PERMISSIONS:
-//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     getAuthToken();
-//                } else {
-//                    Toast.makeText(DetectActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
-//                }
+                } else {
+                    Toast.makeText(DetectActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 
@@ -110,10 +113,10 @@ public class DetectActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        Uri temp=Uri.parse("https://igav3-metcdn-com.global.ssl.fastly.net/content/uploads/sites/2/2018/10/16091327/49_Hero.png");
-        performCloudVisionRequest(temp);
+
         if (requestCode == REQUEST_GALLERY_IMAGE && resultCode == RESULT_OK && data != null) {
             performCloudVisionRequest(data.getData());
+
         } else if (requestCode == REQUEST_CODE_PICK_ACCOUNT) {
             if (resultCode == RESULT_OK) {
                 String email = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
@@ -144,6 +147,7 @@ public class DetectActivity extends AppCompatActivity {
     public void performCloudVisionRequest(Uri uri) {
         if (uri != null) {
             try {
+
                 Bitmap bitmap = resizeBitmap(
                         MediaStore.Images.Media.getBitmap(getContentResolver(), uri));
                 callCloudVision(bitmap);
@@ -161,6 +165,7 @@ public class DetectActivity extends AppCompatActivity {
             @Override
             protected BatchAnnotateImagesResponse doInBackground(Object... params) {
                 try {
+
                     GoogleCredential credential = new GoogleCredential().setAccessToken(accessToken);
                     HttpTransport httpTransport = AndroidHttp.newCompatibleTransport();
                     JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
@@ -288,8 +293,10 @@ public class DetectActivity extends AppCompatActivity {
 
     private void getAuthToken() {
         String SCOPE = "oauth2:https://www.googleapis.com/auth/cloud-platform";
+        System.out.println("bbbbbbbb");
         if (mAccount == null) {
             pickUserAccount();
+            System.out.println("aaaaaaaaaaaaaaa");
         } else {
             new GetOAuthToken(DetectActivity.this, mAccount, SCOPE, REQUEST_ACCOUNT_AUTHORIZATION)
                     .execute();
@@ -298,6 +305,7 @@ public class DetectActivity extends AppCompatActivity {
 
     public void onTokenReceived(String token){
         accessToken = token;
+        System.out.println("AAAAAAAAAAAAAAAA"+accessToken);
         launchImagePicker();
     }
 

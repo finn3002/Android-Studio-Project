@@ -70,6 +70,7 @@ public class Food extends AppCompatActivity {
             selfphoto=findViewById(R.id.imageView10);
             selfphoto.setImageResource(R.drawable.kiki);
             addphoto.setVisibility(View.INVISIBLE);
+
         }
     };
 
