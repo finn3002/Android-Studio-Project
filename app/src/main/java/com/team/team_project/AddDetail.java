@@ -1,6 +1,7 @@
 package com.team.team_project;
 
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -35,34 +36,54 @@ public class AddDetail extends AppCompatActivity {
     EditText edpro;
     EditText edfat;
     EditText edCal;
-    ImageView yaki;
+    public  ImageView yaki;
     private FirebaseFirestore db ;
+    int visible=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_detail);
         findview();
-
+        yaki.findViewById(R.id.yaki);
+        final Intent intent=getIntent();
+        Bundle b=intent.getExtras();
+        final Bitmap bmp=(Bitmap) b.getParcelable("bitmap");
+        yaki.setImageBitmap(bmp);
+        visible=b.getInt("visible");
+        if(visible==1)
+            changephoto.setVisibility(View.INVISIBLE);
 
         changephoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< Updated upstream
             yaki.findViewById(R.id.yaki);
 //            yaki.setImageResource(R.drawable.yaki);
 //                changephoto.setVisibility(View.INVISIBLE);
 
 
+=======
+
+//            yaki.setImageResource(R.drawable.yaki);
+
+
+                Intent intent2=new Intent(AddDetail.this,MainActivityy.class);
+                startActivity(intent2);
+>>>>>>> Stashed changes
                 edfoodnm.setText("炒烏龍麵");
                 edCal.setText("354");
                 edcar.setText("61");
                 edpro.setText("9");
                 edfat.setText("8.2");
+<<<<<<< Updated upstream
                 Intent camera_intent
                         = new Intent(MediaStore
                         .ACTION_IMAGE_CAPTURE);
 
                 startActivityForResult(camera_intent, pic_id);
+=======
+>>>>>>> Stashed changes
                 changephoto.setVisibility(View.INVISIBLE);
 
             }
@@ -88,13 +109,16 @@ public class AddDetail extends AppCompatActivity {
                     db.collection("personal").document("personTest") //加入新食物
                             .collection("allfood").document().set(bean,SetOptions.merge());
 
-
+//                Bundle bundle=new Bundle();
+//                bundle.putParcelable("bitmap",bmp);
                 Intent intent = new Intent(AddDetail.this,AddActivity.class);
+//                intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
 
             }
         });
+        visible=0;
     }
 //    public void showdialog(View v){
 //        AlertDialog.Builder dialog = new AlertDialog.Builder(AddDetail.this);

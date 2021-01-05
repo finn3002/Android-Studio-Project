@@ -1,15 +1,32 @@
-package com.team.team_project;
+/*
+ *    Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
 
-import androidx.appcompat.app.AppCompatActivity;
+package com.team.team_project;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+//import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
@@ -21,7 +38,9 @@ import com.wonderkiln.camerakit.CameraView;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class FoodCamActivity extends AppCompatActivity {
+
+public class MainActivityy extends AppCompatActivity {
+
     private static final int INPUT_SIZE = 224;
     private static final int IMAGE_MEAN = 117;
     private static final float IMAGE_STD = 1;
@@ -42,19 +61,21 @@ public class FoodCamActivity extends AppCompatActivity {
     private ImageView imageViewResult;
     private CameraView cameraView;
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_cam);
+        setContentView(R.layout.activity_mainn);
+
+
+
         cameraView = (CameraView) findViewById(R.id.cameraView);
-        btnDetectObject = (Button) findViewById(R.id.btnDetectObject);
-        cameraView = (CameraView) findViewById(R.id.cameraView);
-//        imageViewResult = (ImageView) findViewById(R.id.imageViewResult);
-//        textViewResult = (TextView) findViewById(R.id.textViewResult);
+        imageViewResult = (ImageView) findViewById(R.id.imageViewResult);
+        textViewResult = (TextView) findViewById(R.id.textViewResult);
         textViewResult.setMovementMethod(new ScrollingMovementMethod());
 
-//        btnToggleCamera = (Button) findViewById(R.id.btnToggleCamera);
-
+        btnToggleCamera = (Button) findViewById(R.id.btnToggleCamera);
+        btnDetectObject = (Button) findViewById(R.id.btnDetectObject);
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
@@ -75,6 +96,14 @@ public class FoodCamActivity extends AppCompatActivity {
                 bitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, false);
 
                 imageViewResult.setImageBitmap(bitmap);
+                Bundle b = new Bundle();
+                b.putParcelable("bitmap", bitmap);
+                b.putInt("visible",1);
+
+                Intent intent = new Intent(MainActivityy.this,AddDetail.class);
+                intent.putExtras(b);
+                startActivity(intent);
+
 
                 final String results = classifier.recognizeImage(bitmap);
 
@@ -104,25 +133,10 @@ public class FoodCamActivity extends AppCompatActivity {
 
 
 
-//                Button next=(Button)findViewById(R.id.personalinfo);
-//                next.setOnClickListener(new View.OnClickListener(){
-//                    public void onClick(View v){
-//                        Intent intent = new Intent();
-//                        intent.setClass(MainActivity.this, personalinfo.class);
-//
-//                        intent.setClass(MainActivity.this,personalinfo.class);
-//                        Bundle bundle = new Bundle();
-//                        bundle.putString("cal", String.valueOf(cal));
-//                        bundle.putString("na", String.valueOf(na));
-//                        bundle.putString("su", String.valueOf(su));
-//
-//                        intent.putExtras(bundle);   // 記得put進去，不然資料不會帶過去哦
-//                        startActivity(intent);
-//                    }
-//                });
 
 
             }
+
 
             @Override
             public void onVideo(CameraKitVideo cameraKitVideo) {
@@ -145,6 +159,7 @@ public class FoodCamActivity extends AppCompatActivity {
         });
 
         initTensorFlowAndLoadModel();
+
     }
 
     @Override
@@ -200,5 +215,4 @@ public class FoodCamActivity extends AppCompatActivity {
             }
         });
     }
-
 }

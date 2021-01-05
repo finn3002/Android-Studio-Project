@@ -14,12 +14,14 @@
  *    limitations under the License.
  */
 
-package com.mindorks.NutritionInformation;
+package com.team.team_project;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.support.v4.os.TraceCompat;
+import android.support.v4.os.*;
 import android.util.Log;
+
+import androidx.core.os.TraceCompat;
 
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
 

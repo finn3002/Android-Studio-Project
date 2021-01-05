@@ -29,15 +29,14 @@ public class Food extends AppCompatActivity {
     TextView selfresult, selfinside,foodname;
     ImageView chicken,selfphoto;
 
-    ////////
     private static final int INPUT_SIZE = 224;
     private static final int IMAGE_MEAN = 117;
     private static final float IMAGE_STD = 1;
     private static final String INPUT_NAME = "input";
     private static final String OUTPUT_NAME = "output";
-//    public float cal=0;
-//    public float na=0;
-//    public float su=0;
+    public float cal=0;
+    public float na=0;
+    public float su=0;
 
     private static final String MODEL_FILE = "file:///android_asset/tensorflow_inception_graph.pb";
     private static final String LABEL_FILE =
@@ -98,7 +97,16 @@ public class Food extends AppCompatActivity {
         addphoto.setOnClickListener(clickaddphoto);
 
     }
+    public View.OnClickListener clickaddphoto = new View.OnClickListener(){
+        public void onClick(View v){
 
+<<<<<<< Updated upstream
+=======
+
+        }
+    };
+
+>>>>>>> Stashed changes
 //    @Override
 //    public void onImage(CameraKitImage cameraKitImage) {
 //
@@ -136,7 +144,7 @@ public class Food extends AppCompatActivity {
 
 
 
-//        Button next=(Button)findViewById(R.id.personalinfo);
+        Button next=(Button)findViewById(R.id.personalinfo);
 //        next.setOnClickListener(new View.OnClickListener(){
 //            public void onClick(View v){
 //                Intent intent = new Intent();
@@ -155,6 +163,7 @@ public class Food extends AppCompatActivity {
 
 
 //    }
+<<<<<<< Updated upstream
 
 
     public View.OnClickListener clickaddphoto = new View.OnClickListener(){
@@ -177,6 +186,8 @@ public class Food extends AppCompatActivity {
         }
     };
 
+=======
+>>>>>>> Stashed changes
 
 
     public View.OnClickListener selfdetail = new View.OnClickListener() {

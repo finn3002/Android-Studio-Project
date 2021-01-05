@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.mindorks.NutritionInformation;
+package com.team.team_project;
 
 import android.graphics.Bitmap;
 import android.graphics.RectF;
