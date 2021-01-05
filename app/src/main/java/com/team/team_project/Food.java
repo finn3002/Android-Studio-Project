@@ -71,16 +71,13 @@ public class Food extends AppCompatActivity {
     }
     public View.OnClickListener clickaddphoto = new View.OnClickListener(){
         public void onClick(View v){
-//            selfphoto=findViewById(R.id.imageView10);
-//            selfphoto.setImageResource(R.drawable.kiki);
-//            addphoto.setVisibility(View.INVISIBLE);
+
             Intent camera_intent
                     = new Intent(MediaStore
                     .ACTION_IMAGE_CAPTURE);
 
-            // Start the activity with camera_intent,
-            // and request pic id
             startActivityForResult(camera_intent, pic_id);
+            addphoto.setVisibility(View.INVISIBLE);
         }
     };
 
@@ -105,16 +102,12 @@ public class Food extends AppCompatActivity {
                                     int resultCode,
                                     Intent data) {
 
-        // Match the request 'pic id with requestCode
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == pic_id) {
 
-            // BitMap is data structure of image file
-            // which stor the image in memory
             Bitmap photo = (Bitmap) data.getExtras()
                     .get("data");
 
-            // Set the image in imageview for display
             selfphoto.setImageBitmap(photo);
         }
     }

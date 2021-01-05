@@ -79,6 +79,7 @@ public class DetectActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(DetectActivity.this,
                         new String[]{Manifest.permission.GET_ACCOUNTS},
                         REQUEST_PERMISSIONS);
+                launchImagePicker();
             }
         });
     }

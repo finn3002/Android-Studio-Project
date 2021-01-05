@@ -10,13 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.util.Log;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,6 +27,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class AddDetail extends AppCompatActivity {
+    public static final int pic_id = 123;
     Button finish,changephoto;
     EditText edfoodnm;
     EditText edprice;
@@ -51,13 +49,21 @@ public class AddDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             yaki.findViewById(R.id.yaki);
-            yaki.setImageResource(R.drawable.yaki);
-                changephoto.setVisibility(View.INVISIBLE);
+//            yaki.setImageResource(R.drawable.yaki);
+//                changephoto.setVisibility(View.INVISIBLE);
+
+
                 edfoodnm.setText("炒烏龍麵");
                 edCal.setText("354");
                 edcar.setText("61");
                 edpro.setText("9");
                 edfat.setText("8.2");
+                Intent camera_intent
+                        = new Intent(MediaStore
+                        .ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(camera_intent, pic_id);
+                changephoto.setVisibility(View.INVISIBLE);
 
             }
         });
@@ -120,6 +126,19 @@ public class AddDetail extends AppCompatActivity {
         edfat=findViewById(R.id.edFat);
         edCal=findViewById(R.id.edCal);
         db = FirebaseFirestore.getInstance();
+    }
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,
+                                    Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == pic_id) {
+
+            Bitmap photo = (Bitmap) data.getExtras()
+                    .get("data");
+
+            yaki.setImageBitmap(photo);
+        }
     }
 
 
