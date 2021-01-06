@@ -27,6 +27,7 @@ public class FoodProfile extends AppCompatActivity {
     String foodname , fooddollar , foodcal,foodcarbon,foodportine,foodfat;
    public FirebaseStorage image_db;
     ImageView editImage;
+    String foodname2="";
 
 
     @Override
@@ -35,9 +36,32 @@ public class FoodProfile extends AppCompatActivity {
         setContentView(R.layout.cake);
 
         findview();
+        Bundle extras =getIntent().getExtras();
+
+        if(extras!=null){
+            foodname = extras.getString("name");
+            fooddollar = extras.getString("price");
+            foodcal = extras.getString("cal");
+            foodcarbon = extras.getString("carbon");
+            foodportine = extras.getString("protein");
+            foodfat = extras.getString("fat");
+        }
+        fooddetailname.setText(foodname);
+        fooddetaildollor.setText(fooddollar);
+        fooddetailcal.setText(foodcal);
+        fooddetailcarbon.setText(foodcarbon);
+        fooddetailportine.setText(foodportine);
+        fooddetailfat.setText(foodfat);
+
         image_db= FirebaseStorage.getInstance("gs://sprojct-f638d.appspot.com/");
         StorageReference mStorageRef = image_db.getReference();
-        StorageReference getRef=mStorageRef.child("woodon.jpg");
+        switch (foodname){
+            case "熱狗":foodname2="hotdog";break;
+            case "香蕉":foodname2="banana";break;
+            case "蛋糕":foodname2="cake";break;
+            default:foodname2="defaltpic";break;
+        }
+        StorageReference getRef=mStorageRef.child(foodname2+".jpg");
         Task<Uri> url=getRef.getDownloadUrl();
         try {
             final File tmpFile = File.createTempFile("img", "jpeg");
@@ -61,22 +85,7 @@ public class FoodProfile extends AppCompatActivity {
         }
 
 
-        Bundle extras =getIntent().getExtras();
 
-        if(extras!=null){
-            foodname = extras.getString("name");
-            fooddollar = extras.getString("price");
-            foodcal = extras.getString("cal");
-            foodcarbon = extras.getString("carbon");
-            foodportine = extras.getString("protein");
-            foodfat = extras.getString("fat");
-        }
-        fooddetailname.setText(foodname);
-        fooddetaildollor.setText(fooddollar);
-        fooddetailcal.setText(foodcal);
-        fooddetailcarbon.setText(foodcarbon);
-        fooddetailportine.setText(foodportine);
-        fooddetailfat.setText(foodfat);
 
 
     }

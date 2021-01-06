@@ -95,22 +95,10 @@ public class MainActivityy extends AppCompatActivity {
 
                 bitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, false);
 
-                imageViewResult.setImageBitmap(bitmap);
-                Bundle b = new Bundle();
-                b.putParcelable("bitmap", bitmap);
-                b.putInt("visible",1);
-
-                Intent intent = new Intent(MainActivityy.this,AddDetail.class);
-                intent.putExtras(b);
-                startActivity(intent);
-
-
-                final String results = classifier.recognizeImage(bitmap);
-
-                textViewResult.setText(results);
+                String results = classifier.recognizeImage(bitmap);
                 switch (results){
                     case "hotdog":
-                        textViewResult.setText("hotdog:289.7; kcal;1,090 mg; 0.4 g");
+                        textViewResult.setText("hotdog:289.7");
                         cal+=289.7;
                         na+=1090;
                         su+=0.4;
@@ -127,9 +115,29 @@ public class MainActivityy extends AppCompatActivity {
                         cal+=226;
                         na+=598;
                         su+=3.6;
+
+                    case "cake":
+                        textViewResult.setText("cake:300 kcal; 523 mg; 3.3 g");
+                        cal+=300;
+                        na+=523;
+                        su+=3.3;
                     default:
-                        textViewResult.setText("cake");
+                        results="no";
+                        textViewResult.setText("no");
                 }
+                textViewResult.setText(results);
+
+                imageViewResult.setImageBitmap(bitmap);
+                Bundle b = new Bundle();
+                b.putParcelable("bitmap", bitmap);
+                b.putInt("visible",1);
+                b.putString("results",results);
+
+                Intent intent = new Intent(MainActivityy.this,AddDetail.class);
+                intent.putExtras(b);
+                startActivity(intent);
+
+
 
 
 

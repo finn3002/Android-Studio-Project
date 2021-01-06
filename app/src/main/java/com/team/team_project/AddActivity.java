@@ -201,6 +201,7 @@ public class AddActivity extends Activity {
                         intent.putExtra("carbon",String.valueOf(foodbeans.get(position).getFood_carbon()));
                         intent.putExtra("protein",String.valueOf(foodbeans.get(position).getFood_protein()));
                         intent.putExtra("fat",String.valueOf(foodbeans.get(position).getFood_fat()));
+
                             startActivity(intent);
                     }
                 };
