@@ -51,39 +51,32 @@ public class AddDetail extends AppCompatActivity {
         final Bitmap bmp=(Bitmap) b.getParcelable("bitmap");
         yaki.setImageBitmap(bmp);
         visible=b.getInt("visible");
-        if(visible==1)
+        if(visible==1){
             changephoto.setVisibility(View.INVISIBLE);
+            edfoodnm.setText("炒烏龍麵");
+            edCal.setText("354");
+            edcar.setText("61");
+            edpro.setText("9");
+            edfat.setText("8.2");
+        }
+
 
         changephoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< Updated upstream
-            yaki.findViewById(R.id.yaki);
-//            yaki.setImageResource(R.drawable.yaki);
-//                changephoto.setVisibility(View.INVISIBLE);
 
-
-=======
 
 //            yaki.setImageResource(R.drawable.yaki);
-
 
                 Intent intent2=new Intent(AddDetail.this,MainActivityy.class);
                 startActivity(intent2);
->>>>>>> Stashed changes
-                edfoodnm.setText("炒烏龍麵");
-                edCal.setText("354");
-                edcar.setText("61");
-                edpro.setText("9");
-                edfat.setText("8.2");
-<<<<<<< Updated upstream
-                Intent camera_intent
-                        = new Intent(MediaStore
-                        .ACTION_IMAGE_CAPTURE);
+//
+//                edfoodnm.setText("炒烏龍麵");
+//                edCal.setText("354");
+//                edcar.setText("61");
+//                edpro.setText("9");
+//                edfat.setText("8.2");
 
-                startActivityForResult(camera_intent, pic_id);
-=======
->>>>>>> Stashed changes
                 changephoto.setVisibility(View.INVISIBLE);
 
             }
@@ -104,10 +97,12 @@ public class AddDetail extends AppCompatActivity {
 //                bean.setKeyin(date.get(0).toString());
                 String dateData=getIntent().getExtras().getString("dateData");
 
-                bean.setKeyin(dateData);
+                bean.setKeyin("2021/01/05");
+                System.out.println(dateData);
 
                     db.collection("personal").document("personTest") //加入新食物
                             .collection("allfood").document().set(bean,SetOptions.merge());
+                    Log.e("qwerqwe",bean.toString());
 
 //                Bundle bundle=new Bundle();
 //                bundle.putParcelable("bitmap",bmp);

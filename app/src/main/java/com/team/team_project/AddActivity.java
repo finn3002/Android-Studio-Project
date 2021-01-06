@@ -77,20 +77,10 @@ public class AddActivity extends Activity {
         settingRecycleV();
         getFood(recyclerView);
 
-
-//      上方資料顯示處
-//        gv.setCal((gv.getCal()-gv.getAddcal()));
-//        remainingresult.setText((nf.format( gv.getCal())));
-//        totalmoney.setText((nf.format( gv.getDollar())));
-//        totalresult.setText((nf.format( gv.getAddcal())));
-
-
-//        上方pieChart
-
-
     }
 
-    public void  getFood(View v){ //食物查詢
+    //食物查詢
+    public void  getFood(View v){
         final DecimalFormat nf = new DecimalFormat("0");
         final CollectionReference mydb=db.collection("personal")
                 .document("personTest").collection("allfood");

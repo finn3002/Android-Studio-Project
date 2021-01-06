@@ -128,7 +128,7 @@ public class MainActivityy extends AppCompatActivity {
                         na+=598;
                         su+=3.6;
                     default:
-                        textViewResult.setText("暫時沒有數據");
+                        textViewResult.setText("cake");
                 }
 
 
